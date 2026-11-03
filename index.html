@@ -217,7 +217,7 @@ a.c-row:hover{border-color:rgba(238,241,242,.3)}
 .c-row .v small{display:block;font-weight:500;color:var(--mute);font-size:.78rem}
 .copy{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;background:none;border:1px solid var(--line);color:var(--paper);border-radius:999px;padding:.45em .9em;cursor:pointer;flex:none}
 .copy:hover{border-color:var(--paper)}
-form.f{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3.4vw,38px);display:grid;gap:18px;min-width:0}
+form.f{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3.4vw,38px);display:grid;gap:18px;min-width:0}
 .f .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media (max-width:560px){.f .row{grid-template-columns:1fr}}
 .f label{display:grid;gap:8px;font-size:.82rem;font-weight:600;color:var(--mute);min-width:0}
@@ -536,7 +536,8 @@ footer .flogo{height:46px;width:auto;opacity:.9}
           </select>
         </label>
         <label for="f-msg"><span data-i="f.msg">Mensagem</span><textarea id="f-msg" name="message" required data-ph="f.ph" placeholder="Fale-nos do projeto, datas e local."></textarea></label>
-        <p class="status" id="status" role="status"></p>
+        <input type="checkbox" name="botcheck" id="f-bot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <p class="status" id="status" role="status" aria-live="polite"></p>
         <button class="btn btn-primary" type="submit"><span data-i="f.send">Enviar pedido</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </form>
     </div>
@@ -649,7 +650,7 @@ pt:{
  "ct.eyebrow":"Contacto","ct.title":"Vamos criar algo novo juntos.","ct.lead":"Conte-nos o seu projeto. Respondemos normalmente no próprio dia útil.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nome","f.svc":"Serviço","f.other":"Outro","f.msg":"Mensagem","f.ph":"Fale-nos do projeto, datas e local.","f.send":"Enviar pedido",
- "f.err":"Preencha o nome, um email válido e a mensagem.","f.ok":"A abrir o seu programa de email com o pedido preenchido. Se não abrir, escreva para hello@eagleviewportugal.com.",
+ "f.err":"Preencha o nome, um email válido e a mensagem.","f.ok":"Obrigado! Recebemos o seu pedido e respondemos em breve.","f.sending":"A enviar…","f.fail":"Não foi possível enviar. Tente de novo ou escreva para hello@eagleviewportugal.com.",
  "ft.rights":"Todos os direitos reservados",
  "pop.eyebrow":"O próximo projeto","pop.title":"Pronto para dar um novo alcance à sua marca?","pop.p":"Conte-nos a sua ideia. Enviamos uma proposta à medida, sem compromisso.","pop.go":"Quero uma proposta","pop.later":"Agora não"
 },
@@ -685,7 +686,7 @@ es:{
  "ct.eyebrow":"Contacto","ct.title":"Creemos algo nuevo juntos.","ct.lead":"Cuéntenos su proyecto. Normalmente respondemos el mismo día laborable.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nombre","f.svc":"Servicio","f.other":"Otro","f.msg":"Mensaje","f.ph":"Háblenos del proyecto, fechas y lugar.","f.send":"Enviar solicitud",
- "f.err":"Indique su nombre, un email válido y el mensaje.","f.ok":"Abriendo su programa de correo con la solicitud. Si no se abre, escriba a hello@eagleviewportugal.com.",
+ "f.err":"Indique su nombre, un email válido y el mensaje.","f.ok":"¡Gracias! Hemos recibido su solicitud y responderemos pronto.","f.sending":"Enviando…","f.fail":"No se pudo enviar. Inténtelo de nuevo o escriba a hello@eagleviewportugal.com.",
  "ft.rights":"Todos los derechos reservados",
  "pop.eyebrow":"El próximo proyecto","pop.title":"¿Listo para dar un nuevo alcance a su marca?","pop.p":"Cuéntenos su idea. Le enviamos una propuesta a medida, sin compromiso.","pop.go":"Quiero una propuesta","pop.later":"Ahora no"
 },
@@ -721,7 +722,7 @@ en:{
  "ct.eyebrow":"Contact","ct.title":"Let's make something new together.","ct.lead":"Tell us about your project. We usually reply within the same working day.",
  "ct.copy":"Copy","ct.copied":"Copied",
  "f.name":"Name","f.svc":"Service","f.other":"Other","f.msg":"Message","f.ph":"Tell us about the project, dates and location.","f.send":"Send request",
- "f.err":"Please add your name, a valid email and a message.","f.ok":"Opening your email app with the request filled in. If it doesn't open, write to hello@eagleviewportugal.com.",
+ "f.err":"Please add your name, a valid email and a message.","f.ok":"Thank you! We've received your request and will reply soon.","f.sending":"Sending…","f.fail":"We couldn't send it. Please try again or write to hello@eagleviewportugal.com.",
  "ft.rights":"All rights reserved",
  "pop.eyebrow":"Your next project","pop.title":"Ready to take your brand to new heights?","pop.p":"Tell us your idea and we'll send a tailored proposal, with no commitment.","pop.go":"I want a proposal","pop.later":"Not now"
 }};
@@ -763,8 +764,14 @@ $("#copyMail").addEventListener("click",async e=>{const b=e.currentTarget;
 $("#form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTarget,st=$("#status");
   const name=f.name.value.trim(),mail=f.email.value.trim(),msg=f.message.value.trim();
   if(!name||!/^\S+@\S+\.\S+$/.test(mail)||!msg){st.textContent=t("f.err");return;}
-  st.textContent=t("f.ok");
-  location.href=`mailto:hello@eagleviewportugal.com?subject=${encodeURIComponent(`Pedido de proposta — ${f.service.value} — ${name}`)}&body=${encodeURIComponent(`${msg}\n\n${name}\n${mail}`)}`;});
+  if(f.botcheck&&f.botcheck.checked)return;
+  const btn=f.querySelector('button[type="submit"]');btn.disabled=true;st.textContent=t("f.sending");
+  fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+    body:JSON.stringify({access_key:"c0a422ef-0b61-4dc2-a4c9-8826c0958662",subject:`Pedido de proposta — ${f.service.value} — ${name}`,from_name:"Site Eagleview",
+      name,email:mail,servico:f.service.value,mensagem:msg,idioma:lang.toUpperCase(),replyto:mail})})
+  .then(r=>r.json()).then(d=>{if(!d.success)throw 0;st.textContent=t("f.ok");f.reset();})
+  .catch(()=>{st.textContent=t("f.fail");})
+  .finally(()=>{btn.disabled=false;});});
 
 const tc=$("#tc"),t0=performance.now(),pad=n=>String(n).padStart(2,"0");
 (function tick(now){const f=Math.floor(((now||t0)-t0)/40);tc.textContent=`${pad(Math.floor(f/90000))}:${pad(Math.floor(f/1500)%60)}:${pad(Math.floor(f/25)%60)}:${pad(f%25)}`;requestAnimationFrame(tick);})();
