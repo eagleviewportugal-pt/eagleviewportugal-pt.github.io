@@ -163,6 +163,18 @@ section.alt{background:var(--char);border-block:1px solid var(--line)}
 @media (hover:none){.card .play{opacity:1;transform:none;width:46px;height:46px;margin:-23px 0 0 -23px}}
 .pf-more{display:flex;justify-content:center;margin-top:36px}
 
+/* Reels */
+.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(326px,100%),1fr));gap:22px;align-items:start}
+.reel{min-width:0;display:flex;justify-content:center}
+.reel .instagram-media{margin:0!important;width:100%!important;min-width:0!important;max-width:540px!important;border-radius:16px!important;border:1px solid var(--line)!important;background:var(--card)!important;box-shadow:none!important;padding:0!important}
+.reel iframe{border-radius:16px!important;background:#fff}
+.reel-fb{display:grid;align-content:end;gap:8px;aspect-ratio:9/14;max-width:100%;padding:22px;text-decoration:none;color:var(--paper);border-radius:16px;background:radial-gradient(120% 80% at 20% 10%,rgba(188,211,220,.18),transparent 60%),linear-gradient(170deg,#1d2125,#0f1113)}
+.reel-fb .ig{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;color:var(--mist)}
+.reel-fb .rt{font-family:var(--f-display);font-weight:300;font-size:1.25rem;line-height:1.2}
+.reel-fb .go{display:inline-flex;align-items:center;gap:.5em;font-weight:700;font-size:.9rem;margin-top:6px}
+.reel-fb .go svg{width:14px;height:14px}
+.pf-more{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+
 /* Drone band */
 .aerial{position:relative;overflow:hidden;isolation:isolate}
 .aerial .bg{position:absolute;inset:0;z-index:-2;background:url("bg4.webp") center 60%/cover no-repeat}
@@ -353,12 +365,96 @@ footer .flogo{height:46px;width:auto;opacity:.9}
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow" data-i="pf.eyebrow">Portfólio</span>
-        <h2 data-i="pf.title">Trabalho recente, do Alentejo às Maldivas.</h2>
-        <p data-i="pf.lead">Escolha uma categoria e carregue num vídeo para o ver.</p>
+        <h2 data-i="pf.title">Reels que fizeram parar o scroll.</h2>
+        <p data-i="pf.lead">Uma seleção do nosso trabalho mais recente para marcas, eventos e turismo no Alentejo.</p>
       </div>
-      <div class="pf-bar" id="filters" role="group" aria-label="Filtrar portfólio"></div>
-      <div class="grid" id="grid"></div>
-      <div class="pf-more"><button class="btn btn-ghost" id="more" type="button"></button></div>
+      <div class="reels">
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHyjYRRN7Hv/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DHyjYRRN7Hv/" target="_blank" rel="noopener">
+              <span class="ig">@visitmourao</span>
+              <span class="rt">Passadiço da Luz</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Da-272otF2p/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/Da-272otF2p/" target="_blank" rel="noopener">
+              <span class="ig">@alqueva.vibes</span>
+              <span class="rt">Alqueva Vibes</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DURIVVYjN-s/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DURIVVYjN-s/" target="_blank" rel="noopener">
+              <span class="ig">@eagleviewportugal</span>
+              <span class="rt">Festas de Mourão 2026</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaDd6GzMjqE/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DaDd6GzMjqE/" target="_blank" rel="noopener">
+              <span class="ig">@beachclubmourao</span>
+              <span class="rt">Beach Club Mourão</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKhZNGztww9/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DKhZNGztww9/" target="_blank" rel="noopener">
+              <span class="ig">@eagleviewportugal</span>
+              <span class="rt">Sharish Gin — Casa Cheia</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSGBgEwDAZ6/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DSGBgEwDAZ6/" target="_blank" rel="noopener">
+              <span class="ig">@eagleviewportugal</span>
+              <span class="rt">Natal em Mourão</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfDHHlHMR20/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DfDHHlHMR20/" target="_blank" rel="noopener">
+              <span class="ig">@eagleviewportugal</span>
+              <span class="rt">Herdade dos Delgados</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNvFPJz2AC4/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DNvFPJz2AC4/" target="_blank" rel="noopener">
+              <span class="ig">@alcanti.oficial</span>
+              <span class="rt">Al-Canti — As Mulatinhas</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+        <div class="reel">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOOcvFUjGVT/" data-instgrm-version="14">
+            <a class="reel-fb" href="https://www.instagram.com/reel/DOOcvFUjGVT/" target="_blank" rel="noopener">
+              <span class="ig">@eagleviewportugal</span>
+              <span class="rt">OcasoFest — Aldeia da Luz</span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span>
+            </a>
+          </blockquote>
+        </div>
+      </div>
+      <div class="pf-more">
+        <a class="btn btn-ghost" href="https://www.instagram.com/eagleviewportugal" target="_blank" rel="noopener"><span data-i="rl.more">Mais no Instagram</span></a>
+        <a class="btn btn-ghost" href="https://www.youtube.com/@eagleviewproductions" target="_blank" rel="noopener"><span data-i="rl.yt">Arquivo no YouTube</span></a>
+      </div>
     </div>
   </section>
 
@@ -535,7 +631,7 @@ pt:{
  "svc.3t":"Criação de Reels","svc.3p":"Vídeos curtos com história, pensados para prender a atenção desde o primeiro segundo. Grande ou pequeno, cada projeto recebe a mesma dedicação.",
  "svc.4tag":"Mensal","svc.4t":"Gestão de redes sociais","svc.4p":"Planeamos, criamos e publicamos Reels, Stories e posts que geram interação real. Trabalhamos com hotéis, restaurantes e entidades públicas e privadas.",
  "svc.4a":"Estratégia","svc.4b":"Conteúdo","svc.4c":"Publicação","svc.4d":"Relatórios",
- "pf.eyebrow":"Portfólio","pf.title":"Trabalho recente, do Alentejo às Maldivas.","pf.lead":"Escolha uma categoria e carregue num vídeo para o ver.",
+ "pf.eyebrow":"Portfólio","pf.title":"Reels que fizeram parar o scroll.","pf.lead":"Uma seleção do nosso trabalho mais recente para marcas, eventos e turismo no Alentejo.","rl.watch":"Ver no Instagram","rl.more":"Mais no Instagram","rl.yt":"Arquivo no YouTube",
  "cat.all":"Todos","cat.tur":"Turismo e regiões","cat.evt":"Eventos","cat.brand":"Marcas e negócios","cat.mus":"Música",
  "pf.more":"Ver todos os vídeos","pf.less":"Mostrar menos",
  "air.eyebrow":"Filmagem aérea","air.title":"Visto de cima, tudo tem outro aspeto.",
@@ -571,7 +667,7 @@ es:{
  "svc.3t":"Creación de Reels","svc.3p":"Vídeos cortos con historia, pensados para captar la atención desde el primer segundo. Grande o pequeño, cada proyecto recibe la misma dedicación.",
  "svc.4tag":"Mensual","svc.4t":"Gestión de redes sociales","svc.4p":"Planificamos, creamos y publicamos Reels, Stories y posts que generan interacción real. Trabajamos con hoteles, restaurantes y entidades públicas y privadas.",
  "svc.4a":"Estrategia","svc.4b":"Contenido","svc.4c":"Publicación","svc.4d":"Informes",
- "pf.eyebrow":"Portafolio","pf.title":"Trabajo reciente, del Alentejo a las Maldivas.","pf.lead":"Elija una categoría y pulse un vídeo para verlo.",
+ "pf.eyebrow":"Portafolio","pf.title":"Reels que detuvieron el scroll.","pf.lead":"Una selección de nuestro trabajo más reciente para marcas, eventos y turismo en el Alentejo.","rl.watch":"Ver en Instagram","rl.more":"Más en Instagram","rl.yt":"Archivo en YouTube",
  "cat.all":"Todos","cat.tur":"Turismo y regiones","cat.evt":"Eventos","cat.brand":"Marcas y negocios","cat.mus":"Música",
  "pf.more":"Ver todos los vídeos","pf.less":"Mostrar menos",
  "air.eyebrow":"Filmación aérea","air.title":"Desde arriba, todo se ve diferente.",
@@ -607,7 +703,7 @@ en:{
  "svc.3t":"Reels creation","svc.3p":"Short videos with a story, built to hold attention from the first second. Big or small, every project gets the same care.",
  "svc.4tag":"Monthly","svc.4t":"Social media management","svc.4p":"We plan, create and publish Reels, Stories and posts that drive real engagement, for hotels, restaurants and public and private organisations.",
  "svc.4a":"Strategy","svc.4b":"Content","svc.4c":"Publishing","svc.4d":"Reporting",
- "pf.eyebrow":"Work","pf.title":"Recent work, from the Alentejo to the Maldives.","pf.lead":"Pick a category and tap a video to watch it.",
+ "pf.eyebrow":"Work","pf.title":"Reels that stopped the scroll.","pf.lead":"A selection of our latest work for brands, events and tourism in the Alentejo.","rl.watch":"Watch on Instagram","rl.more":"More on Instagram","rl.yt":"YouTube archive",
  "cat.all":"All","cat.tur":"Tourism & regions","cat.evt":"Events","cat.brand":"Brands & business","cat.mus":"Music",
  "pf.more":"See all videos","pf.less":"Show less",
  "air.eyebrow":"Aerial filming","air.title":"From above, everything looks different.",
@@ -641,30 +737,11 @@ function applyLang(l){
   $$("[data-ph]").forEach(el=>el.placeholder=t(el.dataset.ph));
   $$(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
   try{localStorage.setItem("ev-lang",lang)}catch(e){}
-  renderFilters();renderGrid();
 }
 
 (function(){const ul=h=>`<ul${h?' aria-hidden="true"':""}>`+CLIENTS.map(([f,n,u,ht])=>{const img=`<img src="c-${f}.png" alt="${h?"":n}" loading="lazy"${ht?` style="height:${ht}px"`:""}>`;return `<li>${u?`<a href="${u}" target="_blank" rel="noopener" ${h?'tabindex="-1"':""}>${img}</a>`:`<a>${img}</a>`}</li>`}).join("")+"</ul>";
  $("#marquee").innerHTML=ul(false)+ul(true);})();
 
-const CATS=["all","tur","evt","brand","mus"];
-function renderFilters(){
-  $("#filters").innerHTML=CATS.map(c=>{const n=c==="all"?VIDEOS.length:VIDEOS.filter(v=>v[2]===c).length;
-    return `<button class="chip" type="button" data-c="${c}" aria-pressed="${c===filter}">${t("cat."+c)}<span class="n">${n}</span></button>`}).join("");
-}
-function renderGrid(){
-  const list=VIDEOS.filter(v=>filter==="all"||v[2]===filter),shown=expanded?list:list.slice(0,9);
-  $("#grid").innerHTML=shown.map(([id,ttl,c],i)=>`
-    <a class="card" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" data-video="${id}" style="animation-delay:${Math.min(i,8)*40}ms">
-      <img src="w-${id}.webp" alt="" loading="lazy" width="480" height="270">
-      <span class="shade"></span>
-      <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg></span>
-      <span class="meta"><span class="cat">${t("cat."+c)}</span><span class="ttl">${ttl}</span></span>
-    </a>`).join("");
-  const b=$("#more");b.hidden=list.length<=9;b.textContent=expanded?t("pf.less"):`${t("pf.more")} (${list.length})`;
-}
-$("#filters").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;filter=b.dataset.c;expanded=false;renderFilters();renderGrid();});
-$("#more").addEventListener("click",()=>{expanded=!expanded;renderGrid();if(!expanded)$("#portfolio").scrollIntoView();});
 
 document.addEventListener("click",e=>{const a=e.target.closest("[data-video]");if(!a||!LIVE)return;e.preventDefault();
   $("#lbBox").innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${a.dataset.video}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Vídeo"></iframe>`;
@@ -712,6 +789,8 @@ $("#popClose").addEventListener("click",closePop);$("#popLater").addEventListene
 pop.addEventListener("click",e=>{if(e.target===pop)closePop()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!pop.hidden)closePop()});
 $("#popGo").addEventListener("click",()=>{closePop();$("#contacto").scrollIntoView({behavior:reduce?"auto":"smooth"});setTimeout(()=>$("#f-name").focus({preventScroll:true}),reduce?0:700);});
+
+(function(){const sc=document.createElement("script");sc.async=true;sc.src="https://www.instagram.com/embed.js";document.body.appendChild(sc);})();
 
 let start="";try{start=localStorage.getItem("ev-lang")||""}catch(e){}
 if(!start){const n=(navigator.language||"pt").slice(0,2);start=T[n]?n:"en";}
