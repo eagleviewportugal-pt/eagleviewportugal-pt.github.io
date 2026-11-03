@@ -176,7 +176,7 @@ section.alt{background:var(--char);border-block:1px solid var(--line)}
 .stats{border-bottom:1px solid var(--line)}
 .stats-in{display:grid;grid-template-columns:repeat(4,1fr);padding-block:clamp(34px,5vw,56px);gap:24px}
 .st{display:grid;gap:6px;min-width:0;padding-left:20px;border-left:1px solid var(--line)}
-.st b{font-family:var(--f-display);font-weight:200;font-size:clamp(1.9rem,4vw,3rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.st b{min-height:1em;font-family:var(--f-display);font-weight:200;font-size:clamp(1.9rem,4vw,3rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .st span{color:var(--mute);font-size:.88rem}
 @media (max-width:820px){.stats-in{grid-template-columns:repeat(2,1fr);row-gap:30px}}
 
@@ -336,10 +336,10 @@ footer .flogo{height:46px;width:auto;opacity:.9}
 
   <section class="stats" aria-label="Em números">
     <div class="wrap stats-in">
-      <div class="st reveal"><b>+100</b><span data-i="st.1">Vídeos institucionais e promocionais</span></div>
-      <div class="st reveal"><b>+500</b><span data-i="st.2">Reels produzidos</span></div>
-      <div class="st reveal"><b>+15</b><span data-i="st.4">Marcas e entidades clientes</span></div>
-      <div class="st reveal"><b data-i="st.3n">14,8 mil</b><span data-i="st.3">Gostos num só Reel</span></div>
+      <div class="st reveal"><b class="cnt" data-to="100" data-pre="+">+100</b><span data-i="st.1">Vídeos institucionais e promocionais</span></div>
+      <div class="st reveal"><b class="cnt" data-to="500" data-pre="+">+500</b><span data-i="st.2">Reels produzidos</span></div>
+      <div class="st reveal"><b class="cnt" data-to="15" data-pre="+">+15</b><span data-i="st.4">Marcas e entidades clientes</span></div>
+      <div class="st reveal"><b class="cnt" data-to="14.8" data-dec="1" data-k="1">14,8 mil</b><span data-i="st.3">Gostos num só Reel</span></div>
     </div>
   </section>
 
@@ -631,7 +631,7 @@ pt:{
  "svc.3t":"Criação de Reels","svc.3p":"Vídeos curtos com história, pensados para prender a atenção desde o primeiro segundo. Grande ou pequeno, cada projeto recebe a mesma dedicação.",
  "svc.4tag":"Mensal","svc.4t":"Gestão de redes sociais","svc.4p":"Planeamos, criamos e publicamos Reels, Stories e posts que geram interação real. Trabalhamos com hotéis, restaurantes e entidades públicas e privadas.",
  "svc.4a":"Estratégia","svc.4b":"Conteúdo","svc.4c":"Publicação","svc.4d":"Relatórios",
- "pf.eyebrow":"Portfólio","pf.title":"Reels que fizeram parar o scroll.","pf.lead":"Uma seleção do nosso trabalho mais recente para marcas, eventos e turismo no Alentejo.","st.3n":"14,8 mil","st.1":"Vídeos institucionais e promocionais","st.2":"Reels produzidos","st.3":"Gostos num só Reel","st.4":"Marcas e entidades clientes","rl.watch":"Ver no Instagram","rl.more":"Mais no Instagram","rl.yt":"Arquivo no YouTube",
+ "pf.eyebrow":"Portfólio","pf.title":"Reels que fizeram parar o scroll.","pf.lead":"Uma seleção do nosso trabalho mais recente para marcas, eventos e turismo no Alentejo.","st.1":"Vídeos institucionais e promocionais","st.2":"Reels produzidos","st.3":"Gostos num só Reel","st.4":"Marcas e entidades clientes","rl.watch":"Ver no Instagram","rl.more":"Mais no Instagram","rl.yt":"Arquivo no YouTube",
  "cat.all":"Todos","cat.tur":"Turismo e regiões","cat.evt":"Eventos","cat.brand":"Marcas e negócios","cat.mus":"Música",
  "pf.more":"Ver todos os vídeos","pf.less":"Mostrar menos",
  "air.eyebrow":"Filmagem aérea","air.title":"Visto de cima, tudo tem outro aspeto.",
@@ -667,7 +667,7 @@ es:{
  "svc.3t":"Creación de Reels","svc.3p":"Vídeos cortos con historia, pensados para captar la atención desde el primer segundo. Grande o pequeño, cada proyecto recibe la misma dedicación.",
  "svc.4tag":"Mensual","svc.4t":"Gestión de redes sociales","svc.4p":"Planificamos, creamos y publicamos Reels, Stories y posts que generan interacción real. Trabajamos con hoteles, restaurantes y entidades públicas y privadas.",
  "svc.4a":"Estrategia","svc.4b":"Contenido","svc.4c":"Publicación","svc.4d":"Informes",
- "pf.eyebrow":"Portafolio","pf.title":"Reels que detuvieron el scroll.","pf.lead":"Una selección de nuestro trabajo más reciente para marcas, eventos y turismo en el Alentejo.","st.3n":"14,8 mil","st.1":"Vídeos institucionales y promocionales","st.2":"Reels producidos","st.3":"Me gusta en un solo Reel","st.4":"Marcas y entidades clientes","rl.watch":"Ver en Instagram","rl.more":"Más en Instagram","rl.yt":"Archivo en YouTube",
+ "pf.eyebrow":"Portafolio","pf.title":"Reels que detuvieron el scroll.","pf.lead":"Una selección de nuestro trabajo más reciente para marcas, eventos y turismo en el Alentejo.","st.1":"Vídeos institucionales y promocionales","st.2":"Reels producidos","st.3":"Me gusta en un solo Reel","st.4":"Marcas y entidades clientes","rl.watch":"Ver en Instagram","rl.more":"Más en Instagram","rl.yt":"Archivo en YouTube",
  "cat.all":"Todos","cat.tur":"Turismo y regiones","cat.evt":"Eventos","cat.brand":"Marcas y negocios","cat.mus":"Música",
  "pf.more":"Ver todos los vídeos","pf.less":"Mostrar menos",
  "air.eyebrow":"Filmación aérea","air.title":"Desde arriba, todo se ve diferente.",
@@ -703,7 +703,7 @@ en:{
  "svc.3t":"Reels creation","svc.3p":"Short videos with a story, built to hold attention from the first second. Big or small, every project gets the same care.",
  "svc.4tag":"Monthly","svc.4t":"Social media management","svc.4p":"We plan, create and publish Reels, Stories and posts that drive real engagement, for hotels, restaurants and public and private organisations.",
  "svc.4a":"Strategy","svc.4b":"Content","svc.4c":"Publishing","svc.4d":"Reporting",
- "pf.eyebrow":"Work","pf.title":"Reels that stopped the scroll.","pf.lead":"A selection of our latest work for brands, events and tourism in the Alentejo.","st.3n":"14.8k","st.1":"Institutional and promotional films","st.2":"Reels produced","st.3":"Likes on a single Reel","st.4":"Client brands and organisations","rl.watch":"Watch on Instagram","rl.more":"More on Instagram","rl.yt":"YouTube archive",
+ "pf.eyebrow":"Work","pf.title":"Reels that stopped the scroll.","pf.lead":"A selection of our latest work for brands, events and tourism in the Alentejo.","st.1":"Institutional and promotional films","st.2":"Reels produced","st.3":"Likes on a single Reel","st.4":"Client brands and organisations","rl.watch":"Watch on Instagram","rl.more":"More on Instagram","rl.yt":"YouTube archive",
  "cat.all":"All","cat.tur":"Tourism & regions","cat.evt":"Events","cat.brand":"Brands & business","cat.mus":"Music",
  "pf.more":"See all videos","pf.less":"Show less",
  "air.eyebrow":"Aerial filming","air.title":"From above, everything looks different.",
@@ -737,6 +737,7 @@ function applyLang(l){
   $$("[data-ph]").forEach(el=>el.placeholder=t(el.dataset.ph));
   $$(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
   try{localStorage.setItem("ev-lang",lang)}catch(e){}
+  if(typeof setCnt==="function")setCnt();
 }
 
 (function(){const ul=h=>`<ul${h?' aria-hidden="true"':""}>`+CLIENTS.map(([f,n,u,ht])=>{const img=`<img src="c-${f}.png" alt="${h?"":n}" loading="lazy"${ht?` style="height:${ht}px"`:""}>`;return `<li>${u?`<a href="${u}" target="_blank" rel="noopener" ${h?'tabindex="-1"':""}>${img}</a>`:`<a>${img}</a>`}</li>`}).join("")+"</ul>";
@@ -799,6 +800,17 @@ $("#popGo").addEventListener("click",()=>{closePop();$("#contacto").scrollIntoVi
 (function(){const pf=document.getElementById("portfolio");let done=false;
   const load=()=>{if(done)return;done=true;const sc=document.createElement("script");sc.async=true;sc.src="https://www.instagram.com/embed.js";document.body.appendChild(sc);};
   if("IntersectionObserver" in window){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();o.disconnect();}},{rootMargin:"800px 0px"});o.observe(pf);}else load();})();
+
+/* Count-up numbers: final values are in the HTML; they animate from 0 when the band scrolls into view */
+const fmtCnt=(el,v)=>{const dec=+(el.dataset.dec||0),k=el.dataset.k;let s=v.toFixed(dec);
+  if(lang!=="en")s=s.replace(".",",");return (el.dataset.pre||"")+s+(k?(lang==="en"?"k":" mil"):"");};
+const setCnt=()=>$$(".cnt").forEach(el=>{if(!el._run)el.textContent=fmtCnt(el,+el.dataset.to);});
+(function(){const els=$$(".cnt");if(!els.length||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const run=el=>{const to=+el.dataset.to,dur=1600,t0=performance.now();el._run=true;
+    const step=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=fmtCnt(el,to*e);
+      if(p<1)requestAnimationFrame(step);else{el._run=false;el.textContent=fmtCnt(el,to);}};requestAnimationFrame(step);};
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){run(en.target);io.unobserve(en.target);}}),{threshold:.6});
+  els.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight)io.observe(el);});})();
 
 let start="";try{start=localStorage.getItem("ev-lang")||""}catch(e){}
 if(!start){const n=(navigator.language||"pt").slice(0,2);start=T[n]?n:"en";}
