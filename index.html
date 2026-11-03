@@ -192,16 +192,6 @@ section.alt{background:var(--char);border-block:1px solid var(--line)}
 .reel-fb .go svg{width:14px;height:14px}
 .pf-more{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
 
-/* Drone band */
-.aerial{position:relative;overflow:hidden;isolation:isolate}
-.aerial .bg{position:absolute;inset:0;z-index:-2;background:url("bg4.webp") center 60%/cover no-repeat}
-.aerial::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,11,12,.92) 0%,rgba(10,11,12,.6) 55%,rgba(10,11,12,.2) 100%)}
-.aerial .wrap{padding-block:clamp(90px,13vw,170px)}
-.aerial .in{max-width:600px;display:grid;gap:22px}
-.aerial h2{font-size:clamp(2rem,4.6vw,3.5rem)}
-.aerial p{color:rgba(238,241,242,.8);font-size:1.06rem}
-.specs{display:flex;flex-wrap:wrap;gap:12px 34px;padding-top:20px;border-top:1px solid rgba(238,241,242,.2);font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;color:var(--mute)}
-.specs b{display:block;color:var(--paper);font-weight:500;font-size:.95rem;margin-bottom:2px}
 
 /* Why + process */
 .why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
@@ -457,16 +447,6 @@ footer .flogo{height:46px;width:auto;opacity:.9}
     </div>
   </section>
 
-  <section class="aerial">
-    <div class="bg" role="img" aria-label="Drone pousado sobre rochas"></div>
-    <div class="wrap">
-      <div class="in reveal">
-        <span class="eyebrow" data-i="air.eyebrow">Filmagem aérea</span>
-        <h2 data-i="air.title">Visto de cima, tudo tem outro aspeto.</h2>
-        <p data-i="air.p">Hoje qualquer pessoa compra um drone. Nós sabemos voá-lo em segurança, com pilotos certificados pela EASA, seguro e planeamento de cada voo, para que só tenha de pensar no resultado.</p>
-      </div>
-    </div>
-  </section>
 
   <section class="band" id="sobre">
     <div class="wrap">
