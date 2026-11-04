@@ -91,8 +91,9 @@ p{margin:0}
 /* ---------- Hero ---------- */
 .hero{position:relative;overflow:hidden;isolation:isolate;display:grid;min-height:min(100svh,900px)}
 .hero .bg iframe{position:absolute;top:50%;left:50%;width:max(100%,177.78vh);height:max(100%,56.25vw);transform:translate(-50%,-50%);border:0;pointer-events:none}
-.hero .bg{overflow:hidden;position:absolute;inset:0;z-index:-2;background:url("bg2.webp") center/cover no-repeat;animation:drift 28s ease-in-out infinite alternate}
+.hero .bg{overflow:hidden;position:absolute;inset:0;z-index:-2;background:url("p-hero.webp") center 60%/cover no-repeat;animation:drift 28s ease-in-out infinite alternate}
 @keyframes drift{from{transform:scale(1.05) translate(0,0)}to{transform:scale(1.14) translate(-2%,-1.5%)}}
+@media (max-width:760px){.hero .bg{background-position:14% 40%}}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,11,12,.55) 0%,rgba(10,11,12,.25) 40%,rgba(10,11,12,.75) 80%,var(--ink) 100%)}
 .vf{position:absolute;inset:calc(92px + env(safe-area-inset-top,0px)) var(--gut-r) 28px var(--gut-l);pointer-events:none}
 .vf i{position:absolute;width:30px;height:30px;border:0 solid rgba(238,241,242,.55)}
@@ -261,7 +262,7 @@ footer .flogo{height:46px;width:auto;opacity:.9}
 /* Mid-page proposal pop-up */
 .pop{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) var(--gut-r) max(16px,env(safe-area-inset-bottom,0px)) var(--gut-l);background:rgba(5,6,7,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fade .35s ease}
 .pop .card2{position:relative;width:min(520px,100%);max-width:100%;background:var(--card);border:1px solid rgba(238,241,242,.16);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);animation:popin .5s cubic-bezier(.2,.8,.2,1)}
-.pop .ph2{position:relative;height:170px;background:url("bg2.webp") center 40%/cover}
+.pop .ph2{position:relative;height:170px;background:url("p-sunset.webp") center/cover}
 .pop .ph2::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,27,30,0) 30%,var(--card))}
 .pop .ph2 img{position:absolute;z-index:1;left:28px;bottom:14px;height:48px;width:auto}
 .pop .body{padding:6px 28px 28px;display:grid;gap:14px}
@@ -310,7 +311,7 @@ footer .flogo{height:46px;width:auto;opacity:.9}
 
 <main id="top">
   <section class="hero">
-    <div class="bg" role="img" aria-label="Vista aérea de uma ilha"></div>
+    <div class="bg" role="img" aria-label="Albufeira do Alqueva vista de drone"></div>
     <div class="wrap hero-inner">
       <img class="logo" src="logo.png" alt="Eagleview Productions" width="700" height="409">
       <h1 data-i="hero.title">Contamos a sua história, vista de cima.</h1>
