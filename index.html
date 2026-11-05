@@ -268,6 +268,14 @@ footer .flogo{height:46px;width:auto;opacity:.9}
 .lb .x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--paper);font-size:1.3rem;cursor:pointer}
 
 /* Mid-page proposal pop-up */
+.ck{position:fixed;z-index:65;left:max(16px,env(safe-area-inset-left,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));width:min(400px,calc(100% - 32px));background:var(--card);border:1px solid rgba(238,241,242,.16);border-radius:18px;padding:18px 20px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:grid;gap:14px;animation:fade .4s ease}
+.ck p{margin:0;font-size:.92rem;line-height:1.6;color:var(--mute)}
+.ck p b{color:var(--paper);font-weight:500;display:block;margin-bottom:2px}
+.ck .row{display:flex;gap:10px;flex-wrap:wrap}
+.ck .row .btn{padding:.6em 1.2em;font-size:.9rem}
+.cknote{color:var(--mute);font-size:.92rem;margin-top:10px}
+.cknote .ftck{color:var(--paper)}
+.ftck{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
 .pop{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) var(--gut-r) max(16px,env(safe-area-inset-bottom,0px)) var(--gut-l);background:rgba(5,6,7,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fade .35s ease}
 .pop .card2{position:relative;width:min(520px,100%);max-width:100%;background:var(--card);border:1px solid rgba(238,241,242,.16);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);animation:popin .5s cubic-bezier(.2,.8,.2,1)}
 .pop .ph2{position:relative;height:170px;background:url("p-sunset.webp") center/cover}
@@ -412,6 +420,7 @@ footer .flogo{height:46px;width:auto;opacity:.9}
       <div class="sec-head reveal">
         <h2 data-i="pf.title">Reels que fizeram parar o scroll.</h2>
         <p data-i="pf.lead">Uma seleção do nosso trabalho mais recente para marcas, eventos e turismo no Alentejo.</p>
+        <p class="cknote" id="ckNote" hidden><span data-i="ck.show">Os vídeos vêm do Instagram e só aparecem se aceitar os cookies dele.</span> <button class="ftck" type="button" id="ckShow" data-i="ck.showb">Mostrar vídeos</button></p>
       </div>
       <div class="reels">
         <div class="reel">
@@ -549,10 +558,14 @@ footer .flogo{height:46px;width:auto;opacity:.9}
   </section>
 </main>
 
+<div class="ck" id="ck" role="dialog" aria-live="polite" aria-label="Cookies" hidden>
+  <p><b data-i="ck.t">Cookies</b><span data-i="ck.p">Usamos apenas os cookies do Instagram, para mostrar os vídeos do nosso trabalho. Não usamos cookies de publicidade nem de estatísticas.</span></p>
+  <div class="row"><button class="btn btn-primary" type="button" id="ckYes" data-i="ck.yes">Aceitar</button><button class="btn btn-ghost" type="button" id="ckNo" data-i="ck.no">Só os essenciais</button></div>
+</div>
 <footer>
   <div class="wrap">
     <img class="flogo" src="logo.png" alt="Eagleview Productions" width="700" height="409">
-    <span>© 2026 Eagleview Productions · <span data-i="ft.rights">Todos os direitos reservados</span></span>
+    <span>© 2026 Eagleview Productions · <span data-i="ft.rights">Todos os direitos reservados</span> · <button class="ftck" type="button" id="ftCk" data-i="ck.link">Cookies</button></span>
     <div class="soc">
       <a href="https://www.instagram.com/eagleviewportugal" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
       <a href="https://www.youtube.com/@eagleviewproductions" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a>
@@ -640,6 +653,8 @@ pt:{
  "tst.1":"Quero agradecer à vossa equipa o profissionalismo e o empenho na divulgação da minha empresa, a Xarez. Desde que começámos a trabalhar convosco, o negócio ficou muito mais conhecido. Quando precisamos de divulgar algo à pressa, é feito de imediato e com qualidade de cinco estrelas. Já trabalhamos juntos há alguns anos e estou muito satisfeita com o serviço. Parabéns e obrigada!",
  "tst.2":"Decidi trabalhar com a Eagleview porque queria melhorar a imagem do Sahida e dar mais atenção às redes sociais. Sentimos logo uma grande diferença e gostámos muito do trabalho feito: a imagem, o conceito que foi criado e o acompanhamento.",
  "svc.5t":"Sites para restaurantes e alojamento local","svc.5p":"Sites simples e rápidos, feitos com a nossa fotografia e vídeo. Menu e reservas para restaurantes, e disponibilidade ligada ao Booking e ao Airbnb para alojamento local.","svc.5a":"Menu e reservas","svc.5b":"Calendário Booking e Airbnb","svc.5c":"PT · ES · EN","svc.5more":"Saber mais",
+ "ck.t":"Cookies","ck.p":"Usamos apenas os cookies do Instagram, para mostrar os vídeos do nosso trabalho. Não usamos cookies de publicidade nem de estatísticas.","ck.yes":"Aceitar","ck.no":"Só os essenciais","ck.link":"Cookies",
+ "ck.show":"Os vídeos vêm do Instagram e só aparecem se aceitar os cookies dele.","ck.showb":"Mostrar vídeos",
  "ab.title":"Sobre a Eagleview",
  "ab.p1":"Somos uma produtora pequena, sediada em Mourão. Criamos conteúdo desde 2018 para hotéis, restaurantes, marcas, eventos e câmaras municipais.",
  "ab.p2":"Começámos pelo drone e hoje fazemos também vídeo em terra, Reels e gestão de redes sociais. Vamos sempre ao local do cliente, nos distritos de Évora, Beja, Portalegre, Setúbal, Lisboa e Castelo Branco.",
@@ -668,6 +683,8 @@ es:{
  "tst.1":"Quiero agradecer a vuestro equipo la profesionalidad y el empeño en la difusión de mi empresa, Xarez. Desde que empezamos a trabajar con vosotros, el negocio es mucho más conocido. Cuando necesitamos difundir algo con prisa, se hace de inmediato y con una calidad de cinco estrellas. Llevamos varios años trabajando juntos y estoy muy satisfecha con el servicio. ¡Enhorabuena y gracias!",
  "tst.2":"Decidí trabajar con Eagleview porque quería mejorar la imagen de Sahida y dar más atención a las redes sociales. Notamos enseguida una gran diferencia y nos gustó mucho el trabajo realizado: la imagen, el concepto que se creó y el seguimiento.",
  "svc.5t":"Webs para restaurantes y alojamientos","svc.5p":"Webs sencillas y rápidas, hechas con nuestra fotografía y vídeo. Carta y reservas para restaurantes, y disponibilidad conectada con Booking y Airbnb para alojamientos turísticos.","svc.5a":"Carta y reservas","svc.5b":"Calendario Booking y Airbnb","svc.5c":"PT · ES · EN","svc.5more":"Saber más",
+ "ck.t":"Cookies","ck.p":"Solo usamos las cookies de Instagram, para mostrar los vídeos de nuestro trabajo. No usamos cookies de publicidad ni de estadísticas.","ck.yes":"Aceptar","ck.no":"Solo las esenciales","ck.link":"Cookies",
+ "ck.show":"Los vídeos vienen de Instagram y solo aparecen si acepta sus cookies.","ck.showb":"Mostrar vídeos",
  "ab.title":"Sobre Eagleview",
  "ab.p1":"Somos una productora pequeña con sede en Mourão, Portugal. Creamos contenido desde 2018 para hoteles, restaurantes, marcas, eventos y ayuntamientos.",
  "ab.p2":"Empezamos con el dron y hoy también hacemos vídeo en tierra, Reels y gestión de redes sociales. Siempre vamos al lugar del cliente, en los distritos de Évora, Beja, Portalegre, Setúbal, Lisboa y Castelo Branco.",
@@ -696,6 +713,8 @@ en:{
  "tst.1":"I want to thank your team for the professionalism and commitment you have put into promoting my business, Xarez. Since we started working with you, the business has become much better known. When we need to get something out quickly, it is done straight away and to five-star quality. We have been working together for a few years now and I am very happy with the service. Congratulations and thank you!",
  "tst.2":"I decided to work with Eagleview because I wanted to improve Sahida's image and give more attention to social media. We felt a big difference straight away and really liked the work: the look, the concept that was created and the ongoing support.",
  "svc.5t":"Websites for restaurants and holiday rentals","svc.5p":"Simple, fast websites built with our own photography and video. Menus and bookings for restaurants, and availability linked to Booking.com and Airbnb for holiday rentals.","svc.5a":"Menus and bookings","svc.5b":"Booking.com and Airbnb calendar","svc.5c":"PT · ES · EN","svc.5more":"Learn more",
+ "ck.t":"Cookies","ck.p":"We only use Instagram cookies, to show the videos of our work. We don't use advertising or analytics cookies.","ck.yes":"Accept","ck.no":"Essential only","ck.link":"Cookies",
+ "ck.show":"The videos come from Instagram and only appear if you accept its cookies.","ck.showb":"Show videos",
  "ab.title":"About Eagleview",
  "ab.p1":"We are a small production company based in Mourão, Portugal. We have been making content since 2018 for hotels, restaurants, brands, events and local councils.",
  "ab.p2":"We started with drones and now also film on the ground, make Reels and manage social media. We always go to the client, in the districts of Évora, Beja, Portalegre, Setúbal, Lisbon and Castelo Branco.",
@@ -776,9 +795,20 @@ pop.addEventListener("click",e=>{if(e.target===pop)closePop()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!pop.hidden)closePop()});
 $("#popGo").addEventListener("click",()=>{closePop();$("#contacto").scrollIntoView({behavior:reduce?"auto":"smooth"});setTimeout(()=>$("#f-name").focus({preventScroll:true}),reduce?0:700);});
 
-(function(){const pf=document.getElementById("portfolio");let done=false;
+/* Cookies: Instagram embeds (which set third-party cookies) only load after consent */
+(function(){const pf=document.getElementById("portfolio"),ck=document.getElementById("ck");let done=false,armed=false;
+  const get=()=>{try{return localStorage.getItem("ev-consent")}catch(e){return null}};
+  const set=v=>{try{localStorage.setItem("ev-consent",v)}catch(e){}};
   const load=()=>{if(done)return;done=true;const sc=document.createElement("script");sc.async=true;sc.src="https://www.instagram.com/embed.js";document.body.appendChild(sc);};
-  if("IntersectionObserver" in window){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();o.disconnect();}},{rootMargin:"800px 0px"});o.observe(pf);}else load();})();
+  const arm=()=>{if(armed||!pf)return;armed=true;if("IntersectionObserver" in window){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();o.disconnect();}},{rootMargin:"800px 0px"});o.observe(pf);}else load();};
+  const note=document.getElementById("ckNote");
+  const show=()=>{ck.hidden=false};
+  const yes=()=>{set("yes");ck.hidden=true;if(note)note.hidden=true;arm();};
+  document.getElementById("ckYes").addEventListener("click",yes);
+  document.getElementById("ckNo").addEventListener("click",()=>{set("no");ck.hidden=true;if(note)note.hidden=false;});
+  const sb=document.getElementById("ckShow");if(sb)sb.addEventListener("click",yes);
+  const ft=document.getElementById("ftCk");if(ft)ft.addEventListener("click",show);
+  const c=get();if(c==="yes")arm();else{if(note)note.hidden=false;if(c!=="no")setTimeout(show,900);}})();
 
 /* Count-up numbers: final values are in the HTML; they animate from 0 when the band scrolls into view */
 const fmtCnt=(el,v)=>{const dec=+(el.dataset.dec||0),k=el.dataset.k;let s=v.toFixed(dec);
