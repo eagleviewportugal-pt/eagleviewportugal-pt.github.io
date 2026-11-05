@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sites para restaurantes e alojamento local — Eagleview Productions</title>
+<meta name="description" content="Sites simples e rápidos para restaurantes e alojamento local, com menu, reservas e calendário ligado ao Booking e ao Airbnb. Fotografia e vídeo da Eagleview.">
+<link rel="canonical" href="https://eagleviewportugal.com/sites.html">
+<meta property="og:title" content="Sites para restaurantes e alojamento local — Eagleview">
+<meta property="og:image" content="https://eagleviewportugal.com/p-sites.webp">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap">
+<style>
+/* Layout: monochrome, photo-led. Full-bleed aerial hero with the logo, then bands that alternate photography and quiet type, like a film's title cards. */
+:root{
+  --ink:#0a0b0c;        /* page ground, cool black */
+  --char:#121416;       /* raised band */
+  --card:#181b1e;       /* cards */
+  --line:rgba(232,236,239,.10);
+  --paper:#eef1f2;      /* text, white of the logo */
+  --mute:#99a2a8;       /* secondary text */
+  --mist:#bcd3dc;       /* single cool accent, taken from the Alqueva water */
+  --f-display:"Jost","Futura","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:var(--f-body);
+  --gut-l:max(20px, env(safe-area-inset-left, 0px));
+  --gut-r:max(20px, env(safe-area-inset-right, 0px));
+  --max:1220px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--ink);color:var(--paper);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--f-display);font-weight:300;line-height:1.12;letter-spacing:-.005em;text-wrap:balance;margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--mist);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist)}
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--f-body);font-weight:500;font-size:.95rem;text-decoration:none;border-radius:999px;padding:.95em 1.6em;border:1px solid transparent;cursor:pointer;transition:transform .25s ease,background .25s ease,border-color .25s ease,color .25s ease}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--paper);color:var(--ink)}
+.btn-primary:hover{background:#fff;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(238,241,242,.35);color:var(--paper);background:rgba(10,11,12,.25);backdrop-filter:blur(6px)}
+.btn-ghost:hover{border-color:var(--paper)}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.hdr.solid{background:rgba(10,11,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mk{height:34px;width:auto}
+.brand .wm{height:20px;width:auto}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{text-decoration:none;font-size:.9rem;font-weight:500;color:rgba(238,241,242,.75);transition:color .2s}
+.nav a:hover{color:#fff}
+.tools{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid rgba(238,241,242,.22);border-radius:999px;padding:3px;background:rgba(10,11,12,.3)}
+.lang button{font-family:var(--f-body);font-size:.8rem;background:none;border:0;color:rgba(238,241,242,.7);padding:.45em .7em;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+.menu-btn{display:none;background:rgba(10,11,12,.3);border:1px solid rgba(238,241,242,.22);color:var(--paper);border-radius:12px;width:42px;height:42px;cursor:pointer;align-items:center;justify-content:center}
+.menu-btn svg{width:20px;height:20px}
+.hdr .cta-s{padding:.6em 1.15em;font-size:.85rem}
+@media (max-width:960px){
+  .nav{position:fixed;inset:calc(72px + env(safe-area-inset-top,0px)) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--ink);border-bottom:1px solid var(--line);padding:8px var(--gut-r) 22px var(--gut-l);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.25s ease}
+  .nav.open{transform:none;opacity:1;pointer-events:auto}
+  .nav a{padding:15px 0;border-bottom:1px solid var(--line);font-size:1.05rem;color:var(--paper)}
+  .menu-btn{display:inline-flex}
+  .hdr .cta-s{display:none}
+}
+@media (max-width:480px){.brand .wm{display:none}.brand .mk{height:38px}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;display:grid;min-height:min(100svh,900px)}
+.hero .bg iframe{position:absolute;top:50%;left:50%;width:max(100%,177.78vh);height:max(100%,56.25vw);transform:translate(-50%,-50%);border:0;pointer-events:none}
+.hero .bg{overflow:hidden;position:absolute;inset:0;z-index:-2;background:url("p-hero2.webp") center 55%/cover no-repeat;animation:drift 28s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.05) translate(0,0)}to{transform:scale(1.14) translate(-2%,-1.5%)}}
+@media (max-width:760px){.hero .bg{background-position:42% 50%}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,11,12,.55) 0%,rgba(10,11,12,.25) 40%,rgba(10,11,12,.75) 80%,var(--ink) 100%)}
+.vf{position:absolute;inset:calc(92px + env(safe-area-inset-top,0px)) var(--gut-r) 28px var(--gut-l);pointer-events:none}
+.vf i{position:absolute;width:30px;height:30px;border:0 solid rgba(238,241,242,.55)}
+.vf i:nth-child(1){top:0;left:0;border-top-width:1.5px;border-left-width:1.5px}
+.vf i:nth-child(2){top:0;right:0;border-top-width:1.5px;border-right-width:1.5px}
+.vf i:nth-child(3){bottom:0;left:0;border-bottom-width:1.5px;border-left-width:1.5px}
+.vf i:nth-child(4){bottom:0;right:0;border-bottom-width:1.5px;border-right-width:1.5px}
+.vf-top,.vf-bot{position:absolute;left:46px;right:46px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;color:rgba(238,241,242,.75)}
+.vf-top{top:7px}.vf-bot{bottom:7px}
+.rec{display:inline-flex;align-items:center;gap:.5em}
+.rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#e8483a;animation:blink 1.2s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-inner{align-self:center;justify-self:center;text-align:center;display:grid;justify-items:center;gap:26px;padding-block:calc(130px + env(safe-area-inset-top,0px)) 110px;max-width:900px}
+.hero .logo{width:min(440px,78vw);height:auto;filter:drop-shadow(0 6px 30px rgba(0,0,0,.45))}
+.hero h1{font-size:clamp(1.6rem,3.6vw,2.7rem)}
+.hero p.lead{font-size:clamp(1rem,1.5vw,1.15rem);color:rgba(238,241,242,.82);max-width:56ch}
+.hero .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.scroll-cue{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);width:22px;height:36px;border:1.5px solid rgba(238,241,242,.5);border-radius:12px}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--paper);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{60%{transform:translateY(10px);opacity:0}}
+@media (max-width:600px){.vf-top,.vf-bot{left:38px;right:38px;font-size:.6rem}.vf-bot span:nth-child(2){display:none}.scroll-cue{display:none}}
+
+/* ---------- Clients ---------- */
+.clients{padding-block:34px 40px;border-bottom:1px solid var(--line);overflow:hidden}
+.clients .lbl{font-size:.95rem;color:var(--mute);text-align:center;margin-bottom:24px;padding-inline:20px}
+.marquee{display:flex;width:max-content;animation:scroll 50s linear infinite}
+.marquee:hover{animation-play-state:paused}
+.marquee ul{display:flex;align-items:center;gap:64px;padding:0 32px;margin:0;list-style:none}
+.marquee a{display:block;opacity:.6;transition:opacity .25s}
+.marquee a:hover{opacity:1}
+.marquee img{height:52px;width:auto;max-width:none}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section.band{padding-block:clamp(76px,10vw,132px)}
+section.alt{background:var(--char);border-block:1px solid var(--line)}
+.sec-head{display:grid;gap:16px;margin-bottom:clamp(40px,6vw,64px);max-width:780px}
+.sec-head h2{font-size:clamp(1.9rem,4.2vw,3.2rem)}
+.sec-head p{color:var(--mute);font-size:1.06rem;max-width:60ch}
+
+/* Services: photo cards */
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.svc article{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0;transition:transform .35s,border-color .35s}
+.svc article:hover{transform:translateY(-4px);border-color:rgba(238,241,242,.25)}
+.svc .ph{position:relative;aspect-ratio:16/9;max-width:100%;overflow:hidden}
+.svc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.svc article:hover .ph img{transform:scale(1.05)}
+.svc .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(24,27,30,.9))}
+.svc .tag{position:absolute;z-index:1;top:16px;left:16px;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(10,11,12,.6);backdrop-filter:blur(6px);border:1px solid rgba(238,241,242,.2);border-radius:999px;padding:.4em .85em}
+.svc .tx{padding:6px clamp(22px,3vw,34px) clamp(24px,3vw,34px);display:grid;gap:14px;align-content:start}
+.svc h3{font-size:clamp(1.3rem,2.2vw,1.6rem)}
+.svc p{color:var(--mute)}
+.svc ul{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-size:.8rem;font-weight:600;padding:.42em .9em;border-radius:999px;border:1px solid var(--line);color:var(--paper)}
+@media (max-width:820px){.svc{grid-template-columns:1fr}}
+.svc article.wide{grid-column:1/-1;grid-template-columns:1.25fr 1fr;grid-template-rows:none}
+.svc article.wide .ph{aspect-ratio:auto;min-height:100%}
+.svc article.wide .ph::after{background:linear-gradient(90deg,transparent 60%,rgba(24,27,30,.9))}
+.svc article.wide .tx{padding:clamp(24px,3.4vw,40px);align-content:center}
+.svc .more{display:inline-flex;align-items:center;gap:.5em;color:var(--paper);text-decoration:none;font-weight:500;font-size:.95rem;margin-top:4px}
+.svc .more:hover{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:820px){.svc article.wide{grid-template-columns:1fr;grid-template-rows:auto 1fr}.svc article.wide .ph{aspect-ratio:16/9}.svc article.wide .ph::after{background:linear-gradient(180deg,transparent 50%,rgba(24,27,30,.9))}}
+
+
+/* Portfolio */
+.pf-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{font-family:var(--f-body);font-weight:600;font-size:.88rem;border:1px solid var(--line);background:transparent;color:var(--mute);padding:.6em 1.1em;border-radius:999px;cursor:pointer;transition:.2s}
+.chip:hover{color:var(--paper);border-color:rgba(238,241,242,.3)}
+.chip[aria-pressed="true"]{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.chip .n{font-family:var(--f-mono);font-size:.72rem;opacity:.6;margin-left:.4em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{position:relative;display:block;text-decoration:none;border-radius:16px;overflow:hidden;background:var(--card);aspect-ratio:16/9;max-width:100%;color:var(--paper);animation:rise .5s ease both}
+@keyframes rise{from{transform:translateY(10px);opacity:.4}}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .4s;filter:saturate(.9)}
+.card .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,12,0) 40%,rgba(10,11,12,.9) 100%);transition:background .4s}
+.card .meta{position:absolute;left:0;right:0;bottom:0;padding:16px 18px 15px;display:grid;gap:3px}
+.card .cat{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist)}
+.card .ttl{font-weight:700;font-size:.98rem;line-height:1.3}
+.card .play{position:absolute;top:50%;left:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;display:grid;place-items:center;background:rgba(238,241,242,.16);border:1px solid rgba(238,241,242,.45);backdrop-filter:blur(8px);opacity:0;transform:scale(.85);transition:.35s}
+.card .play svg{width:18px;height:18px;margin-left:3px}
+.card:hover img{transform:scale(1.06);filter:saturate(1.05)}
+.card:hover .play,.card:focus-visible .play{opacity:1;transform:none}
+@media (hover:none){.card .play{opacity:1;transform:none;width:46px;height:46px;margin:-23px 0 0 -23px}}
+.pf-more{display:flex;justify-content:center;margin-top:36px}
+
+/* Stats */
+.stats{border-bottom:1px solid var(--line)}
+.stats-in{display:grid;grid-template-columns:repeat(4,1fr);padding-block:clamp(34px,5vw,56px);gap:24px}
+.st{display:grid;gap:6px;min-width:0;padding-left:20px;border-left:1px solid var(--line)}
+.st b{min-height:1em;font-family:var(--f-display);font-weight:300;font-size:clamp(1.9rem,4vw,3rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.st span{color:var(--mute);font-size:.88rem}
+@media (max-width:820px){.stats-in{grid-template-columns:repeat(2,1fr);row-gap:30px}}
+
+/* Reels */
+.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(326px,100%),1fr));gap:22px;align-items:start}
+.reel{min-width:0;display:flex;justify-content:center}
+.reel .instagram-media{margin:0!important;width:100%!important;min-width:0!important;max-width:540px!important;border-radius:16px!important;border:1px solid var(--line)!important;background:var(--card)!important;box-shadow:none!important;padding:0!important}
+.reel iframe{border-radius:16px!important;background:var(--card)!important}
+.reel-fb{display:grid;align-content:end;gap:8px;aspect-ratio:9/14;max-width:100%;padding:22px;text-decoration:none;color:var(--paper);border-radius:16px;background:radial-gradient(120% 80% at 20% 10%,rgba(188,211,220,.18),transparent 60%),linear-gradient(170deg,#1d2125,#0f1113)}
+.reel-fb .ig{font-size:.85rem;color:var(--mist)}
+.reel-fb .rt{font-family:var(--f-display);font-weight:300;font-size:1.25rem;line-height:1.2}
+.reel-fb .go{display:inline-flex;align-items:center;gap:.5em;font-weight:700;font-size:.9rem;margin-top:6px}
+.reel-fb .go svg{width:14px;height:14px}
+.pf-more{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:36px}
+
+
+/* Why + process */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+.why article{display:grid;gap:12px;align-content:start;min-width:0;padding-top:24px;border-top:1px solid var(--line)}
+.why h3{font-size:1.2rem;font-weight:300}
+.why p{color:var(--mute)}
+@media (max-width:820px){.why{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0;margin:0}
+.steps li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:10px;align-content:start;min-width:0}
+.steps .num{font-family:var(--f-mono);font-size:.76rem;color:var(--mist);letter-spacing:.1em}
+.steps h3{font-size:1.08rem;font-weight:300}
+.steps p{color:var(--mute);font-size:.94rem}
+@media (max-width:960px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.gap-head{margin-top:clamp(70px,9vw,110px)}
+.sec-head.about{max-width:900px}
+.sec-head.about h2{font-size:clamp(2rem,4.8vw,3.6rem)}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.about .tx{display:grid;gap:18px;min-width:0}
+.about h2{font-size:clamp(1.9rem,4.2vw,3.2rem);margin-bottom:6px}
+.about p{color:var(--mute);font-size:1.06rem;max-width:58ch}
+.about .ph{aspect-ratio:4/3;max-width:100%;overflow:hidden;border-radius:22px;border:1px solid var(--line)}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,76px);align-items:start}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+.contact h2{font-size:clamp(2rem,5vw,3.5rem)}
+.c-left{display:grid;gap:26px;min-width:0}
+.c-left p{color:var(--mute);font-size:1.06rem}
+.c-links{display:grid;gap:10px}
+.c-row{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--card);min-width:0;text-decoration:none;transition:border-color .2s}
+a.c-row:hover{border-color:rgba(238,241,242,.3)}
+.c-row svg{width:20px;height:20px;color:var(--mist);flex:none}
+.c-row .v{flex:1;min-width:0;overflow-wrap:anywhere;font-weight:600}
+.c-row .v small{display:block;font-weight:500;color:var(--mute);font-size:.78rem}
+.copy{font-family:var(--f-body);font-size:.8rem;background:none;border:1px solid var(--line);color:var(--paper);border-radius:999px;padding:.45em .9em;cursor:pointer;flex:none}
+.copy:hover{border-color:var(--paper)}
+form.f{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3.4vw,38px);display:grid;gap:18px;min-width:0}
+.f .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:560px){.f .row{grid-template-columns:1fr}}
+.f label{display:grid;gap:8px;font-size:.82rem;font-weight:600;color:var(--mute);min-width:0}
+.f input,.f select,.f textarea{font:inherit;font-size:1rem;color:var(--paper);background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:.85em 1em;width:100%;transition:border-color .2s}
+.f textarea{min-height:130px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--mist)}
+.f .status{font-size:.9rem;color:var(--mist);min-height:1.4em}
+.f .btn{justify-self:start}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding-block:44px calc(40px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center;color:var(--mute);font-size:.85rem}
+footer .flogo{height:46px;width:auto;opacity:.9}
+.soc{display:flex;gap:10px}
+.soc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.2s}
+.soc a:hover{border-color:var(--paper)}
+.soc svg{width:18px;height:18px}
+
+/* Lightbox (live domain only) */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(5,6,7,.92);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) var(--gut-r) max(16px,env(safe-area-inset-bottom,0px)) var(--gut-l)}
+.lb .box{width:min(1100px,100%);aspect-ratio:16/9;max-width:100%;background:#000;border-radius:14px;overflow:hidden}
+.lb iframe{width:100%;height:100%;border:0}
+.lb .x{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--paper);font-size:1.3rem;cursor:pointer}
+
+/* Mid-page proposal pop-up */
+.pop{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) var(--gut-r) max(16px,env(safe-area-inset-bottom,0px)) var(--gut-l);background:rgba(5,6,7,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fade .35s ease}
+.pop .card2{position:relative;width:min(520px,100%);max-width:100%;background:var(--card);border:1px solid rgba(238,241,242,.16);border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55);animation:popin .5s cubic-bezier(.2,.8,.2,1)}
+.pop .ph2{position:relative;height:170px;background:url("p-sunset.webp") center/cover}
+.pop .ph2::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,27,30,0) 30%,var(--card))}
+.pop .ph2 img{position:absolute;z-index:1;left:28px;bottom:14px;height:48px;width:auto}
+.pop .body{padding:6px 28px 28px;display:grid;gap:14px}
+.pop h2{font-size:clamp(1.45rem,4.4vw,1.85rem)}
+.pop p{color:var(--mute)}
+.pop .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.pop .later{background:none;border:0;color:var(--mute);font:inherit;font-weight:600;cursor:pointer;padding:.9em .6em}
+.pop .later:hover{color:var(--paper)}
+.pop .x{position:absolute;z-index:2;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(238,241,242,.3);background:rgba(10,11,12,.5);color:var(--paper);font-size:1.2rem;line-height:1;cursor:pointer}
+@keyframes fade{from{opacity:0}}
+@keyframes popin{from{transform:translateY(24px) scale(.97);opacity:0}}
+@media (max-width:560px){.pop{place-items:end center}.pop .card2{border-radius:22px 22px 18px 18px}.pop .ph2{height:130px}.pop .body{padding:4px 22px 24px}}
+
+#testemunhos{padding-bottom:0}
+.tsts{max-width:1100px;margin:0 auto;display:grid;gap:clamp(40px,5vw,72px);grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.tst{margin:0;display:grid;gap:22px;align-content:start}
+.tst .q{font-family:var(--f-display);font-weight:300;font-size:clamp(1.1rem,1.7vw,1.4rem);line-height:1.55;margin:0;color:var(--paper)}
+.tst .q::before{content:"\201C";display:block;font-family:Georgia,"Times New Roman",serif;font-size:3.6rem;line-height:.5;margin-bottom:6px;color:var(--mute)}
+.tst .by{display:grid;gap:2px;font-size:.95rem}
+.tst .by b{font-weight:500;color:var(--paper)}
+.tst .by a{color:var(--mute);text-decoration:none}
+.tst .by a:hover{color:var(--paper)}
+.reveal{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
+.reveal.pre{transform:translateY(18px);opacity:.35}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal.pre{transform:none;opacity:1}}
+
+.pg-hero{padding-block:calc(72px + clamp(70px,10vw,130px)) clamp(40px,6vw,70px)}
+.pg-hero .in{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center}
+.pg-hero h1{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+.pg-hero p{color:var(--mute);font-size:clamp(1.02rem,1.4vw,1.15rem);line-height:1.7;max-width:56ch;margin:22px 0 30px}
+.pg-hero img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:18px;border:1px solid var(--line);display:block}
+@media (max-width:900px){.pg-hero .in{grid-template-columns:1fr}}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.three div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3vw,32px);display:grid;gap:12px;align-content:start;min-width:0}
+.three h3{font-size:1.35rem}.three p{color:var(--mute);margin:0;line-height:1.7}
+@media (max-width:900px){.three{grid-template-columns:1fr}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.two div{border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3vw,32px);min-width:0}
+.two h3{font-size:1.5rem;margin-bottom:14px}
+.two ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.two li{color:var(--mute);padding-left:22px;position:relative;line-height:1.55}
+.two li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--paper)}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.faq{max-width:820px;margin-top:30px;display:grid}
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq summary{cursor:pointer;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";color:var(--mute);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{color:var(--mute);line-height:1.7;margin:12px 0 0;max-width:65ch}
+.endcta{text-align:center;display:grid;justify-items:center;gap:18px}
+.endcta h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}.endcta p{color:var(--mute);margin:0}
+.src{color:var(--mute);font-size:.8rem;margin-top:26px}.src a{color:var(--mute)}
+.h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+</style>
+</head>
+<body>
+<header class="hdr solid" id="hdr">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Eagleview Productions">
+      <img class="mk" src="mark.png" alt="" width="166" height="220">
+      <img class="wm" src="wordmark.png" alt="Eagleview Productions" width="700" height="170">
+    </a>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary cta-s" href="index.html#contacto" data-i="nav.cta">Pedir proposta</a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="pg-hero">
+    <div class="wrap in">
+      <div class="reveal">
+        <h1 data-i="s.title">Sites para restaurantes e alojamento local</h1>
+        <p data-i="s.lead">As redes sociais trazem as pessoas. O site é onde decidem: ver o menu, as datas livres e como reservar. Fazemos sites simples, rápidos e com fotografia e vídeo nossos.</p>
+        <a class="btn btn-ghost" href="index.html" data-i="nav.home">Início</a>
+      </div>
+      <div class="reveal"><img src="p-sites.webp" alt="Exemplo de site para alojamento local e restaurante" width="1600" height="900"></div>
+    </div>
+  </section>
+  <section class="band alt">
+    <div class="wrap">
+      <h2 class="h2 reveal" data-i="w.title">Porque é que um site ainda conta</h2>
+      <div class="three">
+        <div class="reveal"><h3 data-i="w.1t">É onde o cliente confirma</h3><p data-i="w.1p">Num inquérito da Toast a clientes de restaurantes, 32% disseram consultar o site antes de ir.¹ Procuram o menu, o horário e os preços, que no Instagram se perdem entre publicações.</p></div>
+        <div class="reveal"><h3 data-i="w.2t">Reservas sem comissão</h3><p data-i="w.2p">Cada reserva feita no seu site, em vez de no Booking ou no Airbnb, é uma comissão que fica consigo. E o hóspede que gostou e quer voltar já sabe onde o encontrar.</p></div>
+        <div class="reveal"><h3 data-i="w.3t">Um espaço que é seu</h3><p data-i="w.3p">Uma conta de Instagram depende do algoritmo e das regras da plataforma. O site é seu, e é também uma das fontes que o Google e os assistentes de IA usam para responder a perguntas como “restaurante aberto ao domingo em Monsaraz”.</p></div>
+      </div>
+      <p class="src"><a href="https://pos.toasttab.com/blog/on-the-line/restaurant-reviews-and-ratings-data" target="_blank" rel="noopener" data-i="src">¹ Toast, “Restaurant reviews and ratings data”.</a></p>
+    </div>
+  </section>
+  <section class="band">
+    <div class="wrap">
+      <h2 class="h2 reveal" data-i="o.title">O que inclui</h2>
+      <div class="two">
+        <div class="reveal"><h3 data-i="o.r">Restaurantes</h3><ul><li data-i="o.r1">Menu fácil de atualizar</li><li data-i="o.r2">Horário, mapa e contactos</li><li data-i="o.r3">Reserva de mesa por pedido, ou ligação à plataforma que já usa</li><li data-i="o.r4">Fotografia e vídeo feitos por nós</li><li data-i="o.r5">Ligação ao perfil do Google</li></ul></div>
+        <div class="reveal"><h3 data-i="o.a">Alojamento local</h3><ul><li data-i="o.a1">Página da casa com fotografia e vídeo aéreo</li><li data-i="o.a2">Calendário de disponibilidade ligado ao Booking e ao Airbnb</li><li data-i="o.a3">Pedido de reserva direto, que chega por email</li><li data-i="o.a4">Ou reservas com pagamento, através do seu channel manager</li><li data-i="o.a5">Em português, espanhol e inglês</li></ul></div>
+      </div>
+    </div>
+  </section>
+  <section class="band alt">
+    <div class="wrap">
+      <h2 class="h2 reveal" data-i="q.title">Perguntas frequentes</h2>
+      <div class="faq">
+        <details class="reveal"><summary data-i="q.1q">O calendário fica ligado ao Booking e ao Airbnb?</summary><p data-i="q.1a">Sim. O site lê o calendário de cada plataforma e mostra os dias ocupados. A atualização não é instantânea, porque as plataformas sincronizam de tempos a tempos, por isso cada pedido de reserva deve ser confirmado antes de ser aceite.</p></details><details class="reveal"><summary data-i="q.2q">Posso receber pagamentos no site?</summary><p data-i="q.2a">Sim, se usar um channel manager como Smoobu, Lodgify ou Beds24. Integramos o sistema de reservas deles no site e são eles que tratam da sincronização com as plataformas.</p></details><details class="reveal"><summary data-i="q.3q">Há mensalidades?</summary><p data-i="q.3a">O alojamento do site não tem custos mensais. Paga apenas o domínio, uma vez por ano. Se quiser, as atualizações (menu, fotos, épocas) podem entrar no plano de redes sociais.</p></details><details class="reveal"><summary data-i="q.4q">Já tenho fotografias. Têm de ser vossas?</summary><p data-i="q.4a">Não. Mas a diferença entre um site comum e um que vende está quase sempre nas imagens, e é aí que entra o nosso trabalho de vídeo e drone.</p></details>
+      </div>
+    </div>
+  </section>
+  <section class="band">
+    <div class="wrap endcta reveal">
+      <h2 data-i="c.title">Tem um restaurante ou um alojamento?</h2>
+      <p data-i="c.p">Diga-nos qual é e o que tem hoje. Respondemos com uma proposta à medida.</p>
+      <a class="btn btn-primary" href="index.html#contacto" data-i="nav.cta">Pedir proposta</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="logo.png" alt="Eagleview Productions" width="700" height="409">
+    <span>© 2026 Eagleview Productions · <span data-i="ft.rights">Todos os direitos reservados</span></span>
+  </div>
+</footer>
+<script>const T={"pt": {"nav.home": "Início", "nav.cta": "Pedir proposta", "s.title": "Sites para restaurantes e alojamento local", "s.lead": "As redes sociais trazem as pessoas. O site é onde decidem: ver o menu, as datas livres e como reservar. Fazemos sites simples, rápidos e com fotografia e vídeo nossos.", "w.title": "Porque é que um site ainda conta", "w.1t": "É onde o cliente confirma", "w.1p": "Num inquérito da Toast a clientes de restaurantes, 32% disseram consultar o site antes de ir.¹ Procuram o menu, o horário e os preços, que no Instagram se perdem entre publicações.", "w.2t": "Reservas sem comissão", "w.2p": "Cada reserva feita no seu site, em vez de no Booking ou no Airbnb, é uma comissão que fica consigo. E o hóspede que gostou e quer voltar já sabe onde o encontrar.", "w.3t": "Um espaço que é seu", "w.3p": "Uma conta de Instagram depende do algoritmo e das regras da plataforma. O site é seu, e é também uma das fontes que o Google e os assistentes de IA usam para responder a perguntas como “restaurante aberto ao domingo em Monsaraz”.", "o.title": "O que inclui", "o.r": "Restaurantes", "o.r1": "Menu fácil de atualizar", "o.r2": "Horário, mapa e contactos", "o.r3": "Reserva de mesa por pedido, ou ligação à plataforma que já usa", "o.r4": "Fotografia e vídeo feitos por nós", "o.r5": "Ligação ao perfil do Google", "o.a": "Alojamento local", "o.a1": "Página da casa com fotografia e vídeo aéreo", "o.a2": "Calendário de disponibilidade ligado ao Booking e ao Airbnb", "o.a3": "Pedido de reserva direto, que chega por email", "o.a4": "Ou reservas com pagamento, através do seu channel manager", "o.a5": "Em português, espanhol e inglês", "q.title": "Perguntas frequentes", "q.1q": "O calendário fica ligado ao Booking e ao Airbnb?", "q.1a": "Sim. O site lê o calendário de cada plataforma e mostra os dias ocupados. A atualização não é instantânea, porque as plataformas sincronizam de tempos a tempos, por isso cada pedido de reserva deve ser confirmado antes de ser aceite.", "q.2q": "Posso receber pagamentos no site?", "q.2a": "Sim, se usar um channel manager como Smoobu, Lodgify ou Beds24. Integramos o sistema de reservas deles no site e são eles que tratam da sincronização com as plataformas.", "q.3q": "Há mensalidades?", "q.3a": "O alojamento do site não tem custos mensais. Paga apenas o domínio, uma vez por ano. Se quiser, as atualizações (menu, fotos, épocas) podem entrar no plano de redes sociais.", "q.4q": "Já tenho fotografias. Têm de ser vossas?", "q.4a": "Não. Mas a diferença entre um site comum e um que vende está quase sempre nas imagens, e é aí que entra o nosso trabalho de vídeo e drone.", "c.title": "Tem um restaurante ou um alojamento?", "c.p": "Diga-nos qual é e o que tem hoje. Respondemos com uma proposta à medida.", "src": "¹ Toast, “Restaurant reviews and ratings data”.", "ft.rights": "Todos os direitos reservados"}, "es": {"nav.home": "Inicio", "nav.cta": "Pedir presupuesto", "s.title": "Webs para restaurantes y alojamientos turísticos", "s.lead": "Las redes sociales atraen a la gente. La web es donde deciden: ver la carta, las fechas libres y cómo reservar. Hacemos webs sencillas, rápidas y con fotografía y vídeo propios.", "w.title": "Por qué una web sigue contando", "w.1t": "Es donde el cliente confirma", "w.1p": "En una encuesta de Toast a clientes de restaurantes, el 32% dijo consultar la web antes de ir.¹ Buscan la carta, el horario y los precios, que en Instagram se pierden entre publicaciones.", "w.2t": "Reservas sin comisión", "w.2p": "Cada reserva hecha en su web, en lugar de en Booking o Airbnb, es una comisión que se queda con usted. Y el huésped que quiere volver ya sabe dónde encontrarle.", "w.3t": "Un espacio propio", "w.3p": "Una cuenta de Instagram depende del algoritmo y de las reglas de la plataforma. La web es suya, y es también una de las fuentes que Google y los asistentes de IA usan para responder preguntas como “restaurante abierto el domingo en Monsaraz”.", "o.title": "Qué incluye", "o.r": "Restaurantes", "o.r1": "Carta fácil de actualizar", "o.r2": "Horario, mapa y contacto", "o.r3": "Reserva de mesa por solicitud, o enlace a la plataforma que ya usa", "o.r4": "Fotografía y vídeo hechos por nosotros", "o.r5": "Enlace al perfil de Google", "o.a": "Alojamiento turístico", "o.a1": "Página de la casa con fotografía y vídeo aéreo", "o.a2": "Calendario de disponibilidad conectado con Booking y Airbnb", "o.a3": "Solicitud de reserva directa, que llega por email", "o.a4": "O reservas con pago, a través de su channel manager", "o.a5": "En portugués, español e inglés", "q.title": "Preguntas frecuentes", "q.1q": "¿El calendario está conectado con Booking y Airbnb?", "q.1a": "Sí. La web lee el calendario de cada plataforma y muestra los días ocupados. La actualización no es instantánea, porque las plataformas sincronizan cada cierto tiempo, así que cada solicitud debe confirmarse antes de aceptarla.", "q.2q": "¿Puedo cobrar en la web?", "q.2a": "Sí, si usa un channel manager como Smoobu, Lodgify o Beds24. Integramos su sistema de reservas en la web y ellos se encargan de la sincronización con las plataformas.", "q.3q": "¿Hay cuotas mensuales?", "q.3a": "El alojamiento de la web no tiene coste mensual. Solo paga el dominio, una vez al año. Si quiere, las actualizaciones (carta, fotos, temporadas) pueden entrar en el plan de redes sociales.", "q.4q": "Ya tengo fotos. ¿Tienen que ser vuestras?", "q.4a": "No. Pero la diferencia entre una web corriente y una que vende está casi siempre en las imágenes, y ahí entra nuestro trabajo de vídeo y dron.", "c.title": "¿Tiene un restaurante o un alojamiento?", "c.p": "Cuéntenos cuál es y qué tiene hoy. Le respondemos con una propuesta a medida.", "src": "¹ Toast, “Restaurant reviews and ratings data”.", "ft.rights": "Todos los derechos reservados"}, "en": {"nav.home": "Home", "nav.cta": "Get a quote", "s.title": "Websites for restaurants and holiday rentals", "s.lead": "Social media brings people in. The website is where they decide: the menu, the free dates and how to book. We build simple, fast sites with our own photography and video.", "w.title": "Why a website still matters", "w.1t": "It is where guests check", "w.1p": "In a Toast survey of restaurant guests, 32% said they look at the website before visiting.¹ They want the menu, opening hours and prices, which get lost between posts on Instagram.", "w.2t": "Bookings without commission", "w.2p": "Every booking made on your own site instead of Booking.com or Airbnb is a commission you keep. And a guest who wants to come back knows where to find you.", "w.3t": "A place you own", "w.3p": "An Instagram account depends on the algorithm and the platform's rules. Your website is yours, and it is one of the sources Google and AI assistants use to answer questions like “restaurant open on Sunday in Monsaraz”.", "o.title": "What's included", "o.r": "Restaurants", "o.r1": "A menu that is easy to update", "o.r2": "Opening hours, map and contacts", "o.r3": "Table booking by request, or a link to the platform you already use", "o.r4": "Photography and video made by us", "o.r5": "Linked to your Google profile", "o.a": "Holiday rentals", "o.a1": "A page for the house with photography and aerial video", "o.a2": "Availability calendar linked to Booking.com and Airbnb", "o.a3": "Direct booking requests, delivered by email", "o.a4": "Or paid bookings, through your channel manager", "o.a5": "In Portuguese, Spanish and English", "q.title": "Questions", "q.1q": "Is the calendar linked to Booking.com and Airbnb?", "q.1a": "Yes. The site reads each platform's calendar and shows the booked days. It is not instant, because the platforms only sync every so often, so each booking request should be confirmed before you accept it.", "q.2q": "Can I take payments on the site?", "q.2a": "Yes, if you use a channel manager such as Smoobu, Lodgify or Beds24. We embed their booking system in the site and they handle the sync with the platforms.", "q.3q": "Are there monthly fees?", "q.3a": "Hosting the site has no monthly cost. You only pay for the domain, once a year. If you like, updates (menu, photos, seasons) can be part of a social media plan.", "q.4q": "I already have photos. Do they have to be yours?", "q.4a": "No. But the difference between an ordinary site and one that sells is nearly always the images, and that is where our video and drone work comes in.", "c.title": "Do you run a restaurant or a holiday rental?", "c.p": "Tell us which one and what you have today. We'll reply with a tailored proposal.", "src": "¹ Toast, “Restaurant reviews and ratings data”.", "ft.rights": "All rights reserved"}};
+let lang="pt";const $$=s=>[...document.querySelectorAll(s)];
+const t=k=>(T[lang]&&T[lang][k])||T.pt[k]||k;
+function applyLang(l){lang=T[l]?l:"pt";document.documentElement.lang=lang;
+ $$("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
+ $$(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+ try{localStorage.setItem("ev-lang",lang)}catch(e){}}
+$$(".lang button").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang)));
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+if("IntersectionObserver" in window&&!reduce){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.remove("pre");io.unobserve(en.target);}}),{rootMargin:"0px 0px -8% 0px"});
+ $$(".reveal").forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add("pre");io.observe(el);}});}
+let s="";try{s=localStorage.getItem("ev-lang")||""}catch(e){}
+if(!s){const n=(navigator.language||"pt").slice(0,2);s=T[n]?n:"en";}
+applyLang(s);</script>
+</body>
+</html>
