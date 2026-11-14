@@ -111,11 +111,11 @@ a{color:inherit}
 /* marquee */
 .mq{border-block:1px solid var(--line);padding:22px 0;overflow:hidden;display:flex;align-items:center;gap:28px}
 .mq .lbl{flex:none;padding-left:var(--gl)}
-.mq .track{display:flex;width:max-content;animation:mq 45s linear infinite}
+.mq .track{display:flex;width:max-content;animation:mq 45s linear infinite;will-change:transform;backface-visibility:hidden;transform:translate3d(0,0,0)}
 .mq ul{display:flex;align-items:center;gap:56px;list-style:none;margin:0;padding:0 28px}
-.mq li{flex:none}.mq img{height:44px;width:auto;max-width:none;opacity:.75;filter:grayscale(1) brightness(1.6)}
-.mq a:hover img{opacity:1;filter:none}
-@keyframes mq{to{transform:translateX(-50%)}}
+.mq li{flex:none}.mq img{height:44px;width:auto;max-width:none;display:block}
+.mq a:hover img{opacity:.8}
+@keyframes mq{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @media (max-width:700px){.mq .lbl{display:none}}
 
 /* manifesto, word by word */
@@ -501,7 +501,7 @@ show(0);let tick=reduce?null:setInterval(()=>show(cur+1),5500);
 requestAnimationFrame(()=>setTimeout(()=>document.body.classList.add("ready"),120));
 
 /* marquee */
-(function(){const ul=h=>`<ul${h?' aria-hidden="true"':""}>`+CLIENTS.map(([f,n,u,ht])=>{const img=`<img src="c-${f}.png" alt="${h?"":n}"${ht?` style="height:${Math.round(ht*.7)}px"`:""}>`;return `<li>${u?`<a href="${u}" target="_blank" rel="noopener" ${h?'tabindex="-1"':""}>${img}</a>`:img}</li>`}).join("")+"</ul>";$("#marquee").innerHTML=ul(false)+ul(true);})();
+(function(){const D={"delgados":[295,300],"sahida":[300,117],"xarez":[186,171],"starman":[300,155],"watersports":[300,120],"beachclub":[300,124],"reguengos":[300,107],"sharish":[181,116],"visitmourao":[300,199],"veligandu":[300,194],"alquevagin":[300,175],"abegoaria":[300,242],"mourao":[300,183]};const ul=h=>`<ul${h?' aria-hidden="true"':""}>`+CLIENTS.map(([f,n,u,ht])=>{const img=`<img src="cg-${f}.png" width="${Math.round(D[f][0]*(ht?ht*.7:44)/D[f][1])}" height="${ht?Math.round(ht*.7):44}" alt="${h?"":n}"${ht?` style="height:${Math.round(ht*.7)}px"`:""}>`;return `<li>${u?`<a href="${u}" target="_blank" rel="noopener" ${h?'tabindex="-1"':""}>${img}</a>`:img}</li>`}).join("")+"</ul>";$("#marquee").innerHTML=ul(false)+ul(true);})();
 
 /* manifesto words light up with scroll */
 function lightWords(){const p=$("#man");if(!p)return;const r=p.getBoundingClientRect(),vh=innerHeight;
