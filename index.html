@@ -113,7 +113,7 @@ a{color:inherit}
 .mq .lbl{flex:none;padding-left:var(--gl)}
 .mq .track{display:flex;width:max-content;animation:mq 45s linear infinite}
 .mq ul{display:flex;align-items:center;gap:56px;list-style:none;margin:0;padding:0 28px}
-.mq img{height:44px;width:auto;opacity:.75;filter:grayscale(1) brightness(1.6)}
+.mq li{flex:none}.mq img{height:44px;width:auto;max-width:none;opacity:.75;filter:grayscale(1) brightness(1.6)}
 .mq a:hover img{opacity:1;filter:none}
 @keyframes mq{to{transform:translateX(-50%)}}
 @media (max-width:700px){.mq .lbl{display:none}}
@@ -384,7 +384,7 @@ pt:{
  "hero.lead":"Produtora de vídeo no Alentejo. Vídeos promocionais, filmagem aérea, Reels e redes sociais para hotéis, restaurantes, marcas e municípios.",
  "hero.work":"Ver trabalho","hero.scroll":"Desliza",
  "clients.lbl":"Alguns clientes",
- "man":"Filmamos de cima e de perto. Do Alqueva a Lisboa, contamos a história de quem nos chama, para ser vista no ecrã onde as pessoas estão.",
+ "man":"Filmamos do céu. Trabalhamos ao seu lado. Agência criativa e de marketing digital: vídeo, redes sociais e sites, em todo o país.",
  "st.1":"Vídeos institucionais e promocionais","st.2":"Reels produzidos","st.3":"Gostos num só Reel","st.4":"Marcas e entidades clientes",
  "svc.title":"O que fazemos",
  "svc.1t":"Produção de vídeo","svc.1p":"Vídeos promocionais e institucionais, cobertura de eventos e imobiliário. Gravação, edição, cor e música.",
@@ -416,7 +416,7 @@ es:{
  "hero.lead":"Productora de vídeo en el Alentejo. Vídeos promocionales, filmación aérea, Reels y redes sociales para hoteles, restaurantes, marcas y ayuntamientos.",
  "hero.work":"Ver trabajo","hero.scroll":"Desliza",
  "clients.lbl":"Algunos clientes",
- "man":"Filmamos desde arriba y de cerca. Del Alqueva a Lisboa, contamos la historia de quien nos llama, para que se vea en la pantalla donde está la gente.",
+ "man":"Grabamos desde el cielo. Trabajamos a su lado. Agencia creativa y de marketing digital: vídeo, redes sociales y webs, en todo Portugal.",
  "st.1":"Vídeos institucionales y promocionales","st.2":"Reels producidos","st.3":"Me gusta en un solo Reel","st.4":"Marcas y entidades clientes",
  "svc.title":"Qué hacemos",
  "svc.1t":"Producción de vídeo","svc.1p":"Vídeos promocionales e institucionales, eventos e inmobiliaria. Grabación, edición, color y música.",
@@ -448,7 +448,7 @@ en:{
  "hero.lead":"Video production in the Alentejo. Promotional films, aerial filming, Reels and social media for hotels, restaurants, brands and local councils.",
  "hero.work":"See our work","hero.scroll":"Scroll",
  "clients.lbl":"Some clients",
- "man":"We film from above and up close. From the Alqueva to Lisbon, we tell the story of whoever calls us, made to be seen on the screen where people are.",
+ "man":"We film from the sky. We work by your side. A creative and digital marketing agency: video, social media and websites, all over Portugal.",
  "st.1":"Institutional and promotional films","st.2":"Reels produced","st.3":"Likes on a single Reel","st.4":"Client brands and organisations",
  "svc.title":"What we do",
  "svc.1t":"Video production","svc.1p":"Promotional and institutional films, events and real estate. Filming, editing, colour and music.",
@@ -481,7 +481,7 @@ const t=k=>(T[lang]&&T[lang][k])||T.pt[k]||k;
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function wrapWords(){const p=$("#man");const txt=p.textContent.trim().split(/\s+/);
-  p.innerHTML=txt.map((w,i)=>`<w class="${i<6?'acc':''}">${w}</w>`).join(" ");lightWords();}
+  let c=0;const k=txt.findIndex(w=>/\.$/.test(w)&&++c==2);p.innerHTML=txt.map((w,i)=>`<w class="${i<=k?'acc':''}">${w}</w>`).join(" ");lightWords();}
 function applyLang(l){lang=T[l]?l:"pt";document.documentElement.lang=lang;
   $$("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
   $$("[data-ph]").forEach(el=>el.placeholder=t(el.dataset.ph));
@@ -501,7 +501,7 @@ show(0);let tick=reduce?null:setInterval(()=>show(cur+1),5500);
 requestAnimationFrame(()=>setTimeout(()=>document.body.classList.add("ready"),120));
 
 /* marquee */
-(function(){const ul=h=>`<ul${h?' aria-hidden="true"':""}>`+CLIENTS.map(([f,n,u,ht])=>{const img=`<img src="c-${f}.png" alt="${h?"":n}" loading="lazy"${ht?` style="height:${Math.round(ht*.7)}px"`:""}>`;return `<li>${u?`<a href="${u}" target="_blank" rel="noopener" ${h?'tabindex="-1"':""}>${img}</a>`:img}</li>`}).join("")+"</ul>";$("#marquee").innerHTML=ul(false)+ul(true);})();
+(function(){const ul=h=>`<ul${h?' aria-hidden="true"':""}>`+CLIENTS.map(([f,n,u,ht])=>{const img=`<img src="c-${f}.png" alt="${h?"":n}"${ht?` style="height:${Math.round(ht*.7)}px"`:""}>`;return `<li>${u?`<a href="${u}" target="_blank" rel="noopener" ${h?'tabindex="-1"':""}>${img}</a>`:img}</li>`}).join("")+"</ul>";$("#marquee").innerHTML=ul(false)+ul(true);})();
 
 /* manifesto words light up with scroll */
 function lightWords(){const p=$("#man");if(!p)return;const r=p.getBoundingClientRect(),vh=innerHeight;
