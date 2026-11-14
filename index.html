@@ -199,8 +199,9 @@ a{color:inherit}
 .about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px);align-items:center}
 .about .ph{border-radius:18px;overflow:hidden;aspect-ratio:4/5}
 .about .ph img{width:100%;height:100%;object-fit:cover}
+.about .me{margin:0;justify-self:end;width:100%;max-width:440px}.about .me img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:18px}.about .me figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-size:.95rem;color:rgba(240,238,232,.6)}.about .me b{color:var(--fg,#f0eee8);font-weight:500}
 .about p{color:rgba(240,238,232,.82);font-size:1.08rem;max-width:56ch;margin:0 0 16px}
-@media (max-width:860px){.about{grid-template-columns:1fr}.about .ph{aspect-ratio:16/10}}
+@media (max-width:860px){.about{grid-template-columns:1fr}.about .ph{aspect-ratio:16/10}.about .me{justify-self:start;max-width:360px}}
 
 /* contact */
 .contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(30px,6vw,80px)}
@@ -331,7 +332,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
   <section class="sec wrap" id="sobre">
     <div class="about">
       <div class="rv"><h2 class="h2" data-i="ab.title" style="margin-bottom:30px">Sobre</h2><p data-i="ab.p1"></p><p data-i="ab.p2"></p><p data-i="ab.p3"></p></div>
-      <div class="ph rv"><img src="house.webp" alt="Casa junto ao Alqueva vista de drone" loading="lazy"></div>
+      <figure class="me rv"><img src="marco.webp" width="880" height="1100" alt="Marco Fernandes, fundador da Eagleview" loading="lazy"><figcaption><b>Marco Fernandes</b><span data-i="ab.role">Fundador</span></figcaption></figure>
     </div>
   </section>
 
@@ -399,9 +400,10 @@ pt:{
  "tst.1":"Quero agradecer à vossa equipa o profissionalismo e o empenho na divulgação da minha empresa, a Xarez. Desde que começámos a trabalhar convosco, o negócio ficou muito mais conhecido. Quando precisamos de divulgar algo à pressa, é feito de imediato e com qualidade de cinco estrelas. Já trabalhamos juntos há alguns anos e estou muito satisfeita com o serviço. Parabéns e obrigada!",
  "tst.2":"Decidi trabalhar com a Eagleview porque queria melhorar a imagem do Sahida e dar mais atenção às redes sociais. Sentimos logo uma grande diferença e gostámos muito do trabalho feito: a imagem, o conceito que foi criado e o acompanhamento.",
  "ab.title":"Sobre",
- "ab.p1":"Somos uma produtora pequena, sediada em Mourão. Criamos conteúdo desde 2018 para hotéis, restaurantes, marcas, eventos e câmaras municipais.",
+ "ab.role":"Fundador",
+ "ab.p1":"Somos uma agência criativa e de marketing digital, sediada em Mourão. Criamos conteúdo desde 2018 para hotéis, restaurantes, marcas, eventos e câmaras municipais.",
  "ab.p2":"Começámos pelo drone e hoje fazemos também vídeo em terra, Reels, redes sociais e sites. Vamos sempre ao local do cliente, em todo o país.",
- "ab.p3":"Não vai encontrar fotografias nossas neste site. Preferimos mostrar o trabalho.",
+ "ab.p3":"Por trás da câmara está o Marco Fernandes, fundador da Eagleview. É ele que pilota o drone, filma, edita e acompanha cada cliente, do primeiro contacto à publicação.",
  "ct.title":"Vamos falar","ct.lead":"Diga-nos o que precisa (vídeo, drone, redes sociais ou um site), para quando e onde. Normalmente respondemos no mesmo dia útil.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nome","f.svc":"Serviço","f.other":"Outro","f.msg":"Mensagem","f.ph":"O que precisa, datas e local.","f.send":"Enviar pedido",
@@ -431,9 +433,10 @@ es:{
  "tst.1":"Quiero agradecer a vuestro equipo la profesionalidad y el empeño en la difusión de mi empresa, Xarez. Desde que empezamos a trabajar con vosotros, el negocio es mucho más conocido. Cuando necesitamos difundir algo con prisa, se hace de inmediato y con una calidad de cinco estrellas. Llevamos varios años trabajando juntos y estoy muy satisfecha con el servicio. ¡Enhorabuena y gracias!",
  "tst.2":"Decidí trabajar con Eagleview porque quería mejorar la imagen de Sahida y dar más atención a las redes sociales. Notamos enseguida una gran diferencia y nos gustó mucho el trabajo realizado: la imagen, el concepto que se creó y el seguimiento.",
  "ab.title":"Nosotros",
- "ab.p1":"Somos una productora pequeña con sede en Mourão, Portugal. Creamos contenido desde 2018 para hoteles, restaurantes, marcas, eventos y ayuntamientos.",
+ "ab.role":"Fundador",
+ "ab.p1":"Somos una agencia creativa y de marketing digital con sede en Mourão, Portugal. Creamos contenido desde 2018 para hoteles, restaurantes, marcas, eventos y ayuntamientos.",
  "ab.p2":"Empezamos con el dron y hoy también hacemos vídeo en tierra, Reels, redes sociales y webs. Siempre vamos al lugar del cliente, en todo Portugal.",
- "ab.p3":"No encontrará fotos nuestras en esta web. Preferimos mostrar el trabajo.",
+ "ab.p3":"Detrás de la cámara está Marco Fernandes, fundador de Eagleview. Es él quien pilota el dron, graba, edita y acompaña a cada cliente, del primer contacto a la publicación.",
  "ct.title":"Hablemos","ct.lead":"Cuéntenos qué necesita (vídeo, dron, redes sociales o una web), para cuándo y dónde. Normalmente respondemos el mismo día laborable.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nombre","f.svc":"Servicio","f.other":"Otro","f.msg":"Mensaje","f.ph":"Qué necesita, fechas y lugar.","f.send":"Enviar solicitud",
@@ -463,9 +466,10 @@ en:{
  "tst.1":"I want to thank your team for the professionalism and commitment you have put into promoting my business, Xarez. Since we started working with you, the business has become much better known. When we need to get something out quickly, it is done straight away and to five-star quality. We have been working together for a few years now and I am very happy with the service. Congratulations and thank you!",
  "tst.2":"I decided to work with Eagleview because I wanted to improve Sahida's image and give more attention to social media. We felt a big difference straight away and really liked the work: the look, the concept that was created and the ongoing support.",
  "ab.title":"About",
- "ab.p1":"We are a small production company based in Mourão, Portugal. We have been making content since 2018 for hotels, restaurants, brands, events and local councils.",
+ "ab.role":"Founder",
+ "ab.p1":"We are a creative and digital marketing agency based in Mourão, Portugal. We have been making content since 2018 for hotels, restaurants, brands, events and local councils.",
  "ab.p2":"We started with drones and now also film on the ground, make Reels, manage social media and build websites. We always go to the client, anywhere in Portugal.",
- "ab.p3":"You won't find photos of us on this site. We would rather show the work.",
+ "ab.p3":"Behind the camera is Marco Fernandes, founder of Eagleview. He flies the drone, films, edits and stays with each client from the first call to publishing.",
  "ct.title":"Let's talk","ct.lead":"Tell us what you need (video, drone, social media or a website), when and where. We usually reply the same working day.",
  "ct.copy":"Copy","ct.copied":"Copied",
  "f.name":"Name","f.svc":"Service","f.other":"Other","f.msg":"Message","f.ph":"What you need, dates and location.","f.send":"Send request",
