@@ -271,7 +271,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 <main id="top">
   <section class="hero" aria-label="Eagleview">
     <div class="slides" id="slides" role="img" aria-label="Imagens aéreas da Eagleview"></div>
-    <video class="hv" id="hv" muted playsinline loop preload="none" poster="hero-poster.webp" aria-hidden="true"></video>
+    <video class="hv" id="hv" muted playsinline loop preload="none" poster="hero-poster2.webp" aria-hidden="true"></video>
     <div class="loc" aria-live="polite"><span id="locTxt">Alqueva</span><span class="dots" id="dots"></span></div>
     <div class="wrap">
       <h1 class="big"><span><i data-i="hero.l1">Vídeo</i></span><span><i data-i="hero.l2">Drone</i></span><span><i data-i="hero.l3">Redes</i></span></h1>
@@ -506,7 +506,7 @@ SLIDES.forEach(([src,,pos],i)=>{const d=document.createElement("div");d.classNam
 let cur=-1;function show(i){const s=$$(".slide"),b=$$("#dots b");cur=i%s.length;s.forEach((e,j)=>e.classList.toggle("on",j===cur));b.forEach((e,j)=>e.classList.toggle("on",j===cur));$("#locTxt").textContent=SLIDES[cur][1];}
 show(0);let tick=reduce?null:setInterval(()=>show(cur+1),5500);
 (function(){const v=$("#hv"),c=navigator.connection;if(reduce||(c&&c.saveData)||!v.canPlayType("video/mp4"))return;
-  v.src=innerWidth<760?"hero-m.mp4":"hero.mp4";
+  v.src=innerWidth<760?"hero-loop-m.mp4":"hero-loop.mp4";
   v.addEventListener("playing",()=>{v.classList.add("on");$(".hero").classList.add("vid");clearInterval(tick);$("#locTxt").textContent="Aldeia da Luz · Alentejo";$("#dots").hidden=true;},{once:true});
   const p=v.play();if(p&&p.catch)p.catch(()=>{});})();
 requestAnimationFrame(()=>setTimeout(()=>document.body.classList.add("ready"),120));
