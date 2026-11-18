@@ -110,7 +110,8 @@ a{color:inherit}
 
 /* marquee */
 .mq{border-block:1px solid var(--line);padding:22px 0;overflow:hidden;display:flex;align-items:center;gap:28px}
-.mq{position:relative}.mq .lbl{flex:none;padding-left:var(--gl);padding-right:28px;position:relative;z-index:2;background:var(--ink);box-shadow:24px 0 24px 0 var(--ink);align-self:stretch;display:flex;align-items:center}
+.mq{position:relative}.mq .lbl{flex:none;padding-left:var(--gl);padding-right:28px;position:relative;z-index:2;align-self:stretch;display:flex;align-items:center}
+.mq .mqv{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 90px,#000 calc(100% - 90px),transparent);mask-image:linear-gradient(90deg,transparent,#000 90px,#000 calc(100% - 90px),transparent)}
 .mq .track{display:flex;width:max-content;animation:mq 45s linear infinite;will-change:transform;backface-visibility:hidden;transform:translate3d(0,0,0)}
 .mq ul{display:flex;align-items:center;gap:56px;list-style:none;margin:0;padding:0 28px}
 .mq li{flex:none}.mq img{height:44px;width:auto;max-width:none;display:block}
@@ -293,7 +294,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
     </div>
   </section>
 
-  <div class="mq" aria-label="Clientes"><span class="lbl" data-i="clients.lbl">Alguns clientes</span><div class="track" id="marquee"></div></div>
+  <div class="mq" aria-label="Clientes"><span class="lbl" data-i="clients.lbl">Alguns clientes</span><div class="mqv"><div class="track" id="marquee"></div></div></div>
 
   <section class="man wrap" aria-label="Manifesto"><p id="man" data-i="man">Filmamos de cima e de perto.</p></section>
 
