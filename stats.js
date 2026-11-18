@@ -1,6 +1,6 @@
 /* Statistics (Microsoft Clarity): loaded only for visitors who accepted the cookie banner. */
 (function(){
-  var ID=""; // Clarity project ID, from clarity.microsoft.com > Settings > Overview
+  var ID="zfpgvzgbez"; // Clarity project ID, from clarity.microsoft.com > Settings > Overview
   window.evStats=function(on){
     if(!ID)return;
     if(on===false){if(window.clarity)window.clarity("consent",false);return;}
