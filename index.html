@@ -10,7 +10,7 @@
 <meta property="og:site_name" content="Eagleview Productions">
 <meta property="og:url" content="https://eagleviewportugal.com/">
 <meta property="og:title" content="Eagleview Portugal — Vídeo, drone e redes sociais">
-<meta property="og:description" content="Vídeos promocionais, Reels e gestão de redes sociais para hotéis, restaurantes, marcas e municípios. Sediados em Mourão, no Alentejo.">
+<meta property="og:description" content="Vídeos promocionais, Reels e gestão de redes sociais para hotéis, restaurantes, marcas e municípios. Sediados em Mourão, no Alentejo, a trabalhar em todo o Portugal.">
 <meta property="og:image" content="https://eagleviewportugal.com/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -243,6 +243,16 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 .ck{position:fixed;z-index:65;left:var(--gl);bottom:max(16px,env(safe-area-inset-bottom,0px));width:min(400px,calc(100% - 40px));background:var(--card);border:1px solid rgba(240,238,232,.16);border-radius:18px;padding:18px 20px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:grid;gap:14px}
 .ck p{margin:0;font-size:.92rem;color:var(--mute)}
 .ck .r{display:flex;gap:10px;flex-wrap:wrap}.ck .btn{padding:.6em 1.2em;font-size:.9rem}
+
+/* audit fixes */
+.st b{white-space:nowrap}.st b small{font-size:.42em;font-weight:600;letter-spacing:0;margin-left:.2em}
+.reel-fb{isolation:isolate}
+.reel-fb .cv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.reel-fb::before{background:linear-gradient(180deg,rgba(11,12,13,.1) 30%,rgba(11,12,13,.92))}
+.mail.tel{margin-top:14px}.mail.tel a{color:inherit;text-decoration:none}
+.fnote{margin:0;color:var(--mute);font-size:.85rem}.fnote a{color:var(--paper)}
+@media (max-width:960px){.lang button{min-width:38px;min-height:38px}}
+@media (min-width:961px){.ck{left:auto;right:var(--gr);bottom:auto;top:calc(88px + env(safe-area-inset-top,0px))}}
 </style>
 </head>
 <body>
@@ -277,7 +287,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
     <div class="wrap">
       <h1 class="big"><span><i data-i="hero.l1">Vídeo</i></span><span><i data-i="hero.l2">Drone</i></span><span><i data-i="hero.l3">Redes</i></span></h1>
       <div class="hero-row">
-        <p data-i="hero.lead">Produtora de vídeo no Alentejo.</p>
+        <p data-i="hero.lead">Agência criativa e de marketing digital do Alentejo. Vídeo, drone, redes sociais e sites, no Alentejo e em todo o Portugal.</p>
         <div class="acts"><a class="btn btn-acc" href="#trabalho" data-i="hero.work">Ver trabalho</a><a class="btn btn-line" href="#contacto" data-i="nav.cta">Pedir proposta</a></div>
       </div>
     </div>
@@ -292,17 +302,17 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
       <div class="st rv"><b class="cnt" data-to="100" data-pre="+">+100</b><span data-i="st.1">Vídeos institucionais e promocionais</span></div>
       <div class="st rv"><b class="cnt" data-to="500" data-pre="+">+500</b><span data-i="st.2">Reels produzidos</span></div>
       <div class="st rv"><b class="cnt" data-to="15" data-pre="+">+15</b><span data-i="st.4">Marcas e entidades clientes</span></div>
-      <div class="st rv"><b class="cnt" data-to="51.4" data-dec="1" data-k="1" data-pre="+">+51,4 mil</b><span data-i="st.3">Gostos num só Reel</span></div>
+      <div class="st rv"><b class="cnt" data-to="51.4" data-dec="1" data-k="1" data-pre="+">+51,4<small>mil</small></b><span data-i="st.3">Gostos nos nossos Reels</span></div>
     </div>
   </section>
 
   <section class="sec wrap" id="servicos">
     <div class="head"><h2 class="h2 rv" data-i="svc.title">O que fazemos</h2></div>
     <ul class="svc">
-      <li class="rv" data-img="svc-video.webp"><div class="row"><span class="n">01</span><h3 data-i="svc.1t">Produção de vídeo</h3><p data-i="svc.1p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></li>
-      <li class="rv" data-img="balloons.webp"><div class="row"><span class="n">02</span><h3 data-i="svc.2t">Drone</h3><p data-i="svc.2p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></li>
-      <li class="rv" data-img="torre.webp"><div class="row"><span class="n">03</span><h3 data-i="svc.3t">Reels</h3><p data-i="svc.3p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></li>
-      <li class="rv" data-img="lisboa.webp"><div class="row"><span class="n">04</span><h3 data-i="svc.4t">Redes sociais</h3><p data-i="svc.4p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></li>
+      <li class="rv" data-img="svc-video.webp"><a href="#contacto" data-svc="0"><span class="n">01</span><h3 data-i="svc.1t">Produção de vídeo</h3><p data-i="svc.1p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li class="rv" data-img="balloons.webp"><a href="#contacto" data-svc="1"><span class="n">02</span><h3 data-i="svc.2t">Drone</h3><p data-i="svc.2p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li class="rv" data-img="torre.webp"><a href="#contacto" data-svc="2"><span class="n">03</span><h3 data-i="svc.3t">Reels</h3><p data-i="svc.3p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li class="rv" data-img="lisboa.webp"><a href="#contacto" data-svc="3"><span class="n">04</span><h3 data-i="svc.4t">Redes sociais</h3><p data-i="svc.4p"></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
       <li class="rv" data-img="p-sites.webp"><a href="sites.html"><span class="n">05</span><h3 data-i="svc.5t">Sites</h3><p><span data-i="svc.5p"></span> <span class="more" data-i="svc.5more">Saber mais</span></p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
     </ul>
   </section>
@@ -310,14 +320,14 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 
   <section class="gal sec" aria-label="Galeria">
     <div class="ghost" aria-hidden="true">Eagleview</div>
-    <div class="wrap head"><h2 class="h2 rv" data-i="gal.title">Visto de cima</h2><span class="lbl" data-i="gal.lead">Arrasta para o lado.</span></div>
+    <div class="wrap head"><h2 class="h2 rv" data-i="gal.title">Visto de cima</h2><span class="lbl" data-i="gal.lead">Arraste para o lado.</span></div>
     <div class="strip" id="strip"><figure class="shot tall"><div class="im"><img src="balloons.webp" alt="Mourão visto de drone" loading="lazy"></div><figcaption><b>Mourão</b><span></span></figcaption></figure><figure class="shot"><div class="im"><img src="covilha.webp" alt="Covilhã visto de drone" loading="lazy"></div><figcaption><b>Covilhã</b><span></span></figcaption></figure><figure class="shot tall"><div class="im"><img src="ponte25.webp" alt="Ponte 25 de Abril, Lisboa visto de drone" loading="lazy"></div><figcaption><b>Ponte 25 de Abril, Lisboa</b><span></span></figcaption></figure><figure class="shot"><div class="im"><img src="rocha.webp" alt="Praia da Rocha, Portimão visto de drone" loading="lazy"></div><figcaption><b>Praia da Rocha, Portimão</b><span></span></figcaption></figure><figure class="shot"><div class="im"><img src="castelo-mourao.webp" alt="Castelo de Mourão visto de drone" loading="lazy"></div><figcaption><b>Castelo de Mourão</b><span></span></figcaption></figure><figure class="shot"><div class="im"><img src="monsaraz.webp" alt="Monsaraz visto de drone" loading="lazy"></div><figcaption><b>Monsaraz</b><span></span></figcaption></figure><figure class="shot tall"><div class="im"><img src="torre.webp" alt="Torre, Serra da Estrela visto de drone" loading="lazy"></div><figcaption><b>Torre, Serra da Estrela</b><span></span></figcaption></figure><figure class="shot"><div class="im"><img src="lisboa.webp" alt="Praça do Comércio, Lisboa visto de drone" loading="lazy"></div><figcaption><b>Praça do Comércio, Lisboa</b><span></span></figcaption></figure><figure class="shot"><div class="im"><img src="farol.webp" alt="Portimão visto de drone" loading="lazy"></div><figcaption><b>Portimão</b><span></span></figcaption></figure><figure class="shot tall"><div class="im"><img src="ponte-alqueva.webp" alt="Mourão visto de drone" loading="lazy"></div><figcaption><b>Mourão</b><span></span></figcaption></figure><figure class="shot tall"><div class="im"><img src="serra.webp" alt="Serra da Estrela visto de drone" loading="lazy"></div><figcaption><b>Serra da Estrela</b><span></span></figcaption></figure><figure class="shot"><div class="im"><img src="centum.webp" alt="Centum Cellas, Belmonte visto de drone" loading="lazy"></div><figcaption><b>Centum Cellas, Belmonte</b><span></span></figcaption></figure></div>
   </section>
 
   <section class="sec wrap" id="trabalho">
     <div class="head"><h2 class="h2 rv" data-i="pf.title">Trabalho recente</h2><p class="lbl" data-i="pf.lead" style="max-width:36ch;margin:0"></p></div>
     <p class="cknote" id="ckNote" hidden><span data-i="ck.show"></span> <button class="linkbtn" type="button" id="ckShow" data-i="ck.showb">Mostrar vídeos</button></p>
-    <div class="reels"><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHyjYRRN7Hv/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DHyjYRRN7Hv/" target="_blank" rel="noopener"><span class="ig">@visitmourao</span><span class="rt">Passadiço da Luz</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-passadico-da-luz.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Da-272otF2p/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/Da-272otF2p/" target="_blank" rel="noopener"><span class="ig">@alqueva.vibes</span><span class="rt">Alqueva Vibes</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-alqueva-vibes.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DURIVVYjN-s/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DURIVVYjN-s/" target="_blank" rel="noopener"><span class="ig">@eagleviewportugal</span><span class="rt">Festas de Mourão 2026</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-festas-de-mourao-2026.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaDd6GzMjqE/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DaDd6GzMjqE/" target="_blank" rel="noopener"><span class="ig">@beachclubmourao</span><span class="rt">Beach Club Mourão</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-beach-club-mourao.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKhZNGztww9/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DKhZNGztww9/" target="_blank" rel="noopener"><span class="ig">@eagleviewportugal</span><span class="rt">Sharish Gin — Casa Cheia</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-sharish-gin-casa-cheia.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSGBgEwDAZ6/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DSGBgEwDAZ6/" target="_blank" rel="noopener"><span class="ig">@eagleviewportugal</span><span class="rt">Natal em Mourão</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-natal-em-mourao.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div></div>
+    <div class="reels"><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DHyjYRRN7Hv/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DHyjYRRN7Hv/" target="_blank" rel="noopener"><img class="cv" src="hero-poster2.webp" alt="" loading="lazy"><span class="ig">@visitmourao</span><span class="rt">Passadiço da Luz</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-passadico-da-luz.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Da-272otF2p/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/Da-272otF2p/" target="_blank" rel="noopener"><img class="cv" src="p-hero2.webp" alt="" loading="lazy"><span class="ig">@alqueva.vibes</span><span class="rt">Alqueva Vibes</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-alqueva-vibes.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DURIVVYjN-s/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DURIVVYjN-s/" target="_blank" rel="noopener"><img class="cv" src="castelo-mourao.webp" alt="" loading="lazy"><span class="ig">@eagleviewportugal</span><span class="rt">Festas de Mourão 2026</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-festas-de-mourao-2026.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DaDd6GzMjqE/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DaDd6GzMjqE/" target="_blank" rel="noopener"><img class="cv" src="sunset-bar.webp" alt="" loading="lazy"><span class="ig">@beachclubmourao</span><span class="rt">Beach Club Mourão</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-beach-club-mourao.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DKhZNGztww9/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DKhZNGztww9/" target="_blank" rel="noopener"><img class="cv" src="monsaraz.webp" alt="" loading="lazy"><span class="ig">@eagleviewportugal</span><span class="rt">Sharish Gin — Casa Cheia</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-sharish-gin-casa-cheia.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div><div class="reel rv"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DSGBgEwDAZ6/" data-instgrm-version="14"><a class="reel-fb" href="https://www.instagram.com/reel/DSGBgEwDAZ6/" target="_blank" rel="noopener"><img class="cv" src="p-about.webp" alt="" loading="lazy"><span class="ig">@eagleviewportugal</span><span class="rt">Natal em Mourão</span><span class="go"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19 12z"/></svg><span data-i="rl.watch">Ver no Instagram</span></span></a></blockquote><a class="reel-more" href="trabalho-natal-em-mourao.html"><span data-i="rl.about">Sobre este trabalho</span> →</a></div></div>
     <div class="pf-more"><a class="btn btn-line" href="https://www.instagram.com/eagleviewportugal" target="_blank" rel="noopener" data-i="rl.more">Mais no Instagram</a><a class="btn btn-line" href="https://www.youtube.com/@eagleviewproductions" target="_blank" rel="noopener" data-i="rl.yt">YouTube</a></div>
   </section>
 
@@ -350,6 +360,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
         <h2 class="h2" data-i="ct.title">Vamos falar</h2>
         <p class="lead" data-i="ct.lead"></p>
         <div class="mail"><span id="mail">hello@eagleviewportugal.com</span><button class="copy" type="button" id="copyMail" data-i="ct.copy">Copiar</button></div>
+        <div class="mail tel"><span id="tel" hidden></span><button class="copy" type="button" id="showTel" data-i="ct.tel">Mostrar telefone</button></div>
         <div class="soc"><a href="https://www.instagram.com/eagleviewportugal" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/eagleviewportugal" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/@eagleviewproductions" target="_blank" rel="noopener">YouTube</a></div>
       </div>
       <form class="f rv" id="form" novalidate>
@@ -362,6 +373,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
         </label>
         <label for="f-msg"><span data-i="f.msg">Mensagem</span><textarea id="f-msg" name="message" required data-ph="f.ph"></textarea></label>
         <input type="checkbox" name="botcheck" id="f-bot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <p class="fnote"><span data-i="f.note"></span> <a href="privacidade.html" data-i="f.priv">Política de privacidade</a></p>
         <p class="status" id="status" role="status" aria-live="polite"></p>
         <button class="btn btn-acc" type="submit"><span data-i="f.send">Enviar pedido</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       </form>
@@ -374,7 +386,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
     <img class="flogo" src="logo.png" alt="Eagleview Productions" width="700" height="409">
     <div class="frow">
       <span>© 2026 Eagleview Productions · Mourão, Alentejo · <span data-i="ft.rights"></span></span>
-      <div class="l"><a href="sites.html" data-i="svc.5t">Sites</a><button type="button" id="ftCk" data-i="ck.link">Cookies</button><a href="#top" data-i="ft.top">Voltar ao topo</a></div>
+      <div class="l"><a href="sites.html" data-i="svc.5t">Sites</a><a href="privacidade.html" data-i="ft.priv">Privacidade</a><button type="button" id="ftCk" data-i="ck.link">Cookies</button><a href="#top" data-i="ft.top">Voltar ao topo</a></div>
     </div>
   </div>
 </footer>
@@ -388,12 +400,13 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 (function(){
 const T={
 pt:{
+ "t.title":"Eagleview Portugal · Produção de vídeo, drone e redes sociais","ct.tel":"Mostrar telefone","f.note":"Usamos os seus dados só para responder a este pedido.","f.priv":"Política de privacidade","ft.priv":"Privacidade",
  "nav.services":"Serviços","nav.work":"Trabalho","nav.about":"Sobre","nav.faq":"Perguntas","nav.contact":"Contacto","nav.cta":"Pedir proposta",
  "hero.l1":"Vídeo","hero.l2":"Drone","hero.l3":"Redes",
- "hero.lead":"Agência criativa e de marketing digital com base no Alentejo. Vídeo, filmagem aérea, redes sociais e sites para hotéis, restaurantes, marcas e municípios, em todo o país.",
- "hero.work":"Ver trabalho","hero.scroll":"Desliza",
+ "hero.lead":"Agência criativa e de marketing digital do Alentejo. Vídeo, drone, redes sociais e sites para hotéis, restaurantes, marcas e municípios, no Alentejo e em todo o Portugal.",
+ "hero.work":"Ver trabalho","hero.scroll":"Deslize",
  "clients.lbl":"Alguns clientes",
- "man":"Filmamos do céu. Trabalhamos ao seu lado. Agência criativa e de marketing digital: vídeo, redes sociais e sites, em todo o país.",
+ "man":"Filmamos do céu. Trabalhamos ao seu lado. Agência criativa e de marketing digital do Alentejo: vídeo, redes sociais e sites, em todo o Portugal.",
  "st.1":"Vídeos institucionais e promocionais","st.2":"Reels produzidos","st.3":"Gostos nos nossos Reels","st.4":"Marcas e entidades clientes",
  "svc.title":"O que fazemos",
  "svc.1t":"Produção de vídeo","svc.1p":"Vídeos promocionais e institucionais, cobertura de eventos e imobiliário. Gravação, edição, cor e música.",
@@ -401,7 +414,7 @@ pt:{
  "svc.3t":"Reels","svc.3p":"Vídeos curtos para Instagram, TikTok e YouTube Shorts, pensados para o telemóvel.",
  "svc.4t":"Redes sociais","svc.4p":"Calendário, gravação, publicação e um relatório todos os meses.",
  "svc.5t":"Sites","svc.5p":"Sites para restaurantes e alojamento local, com a nossa imagem e vídeo.","svc.5more":"Saber mais",
- "gal.title":"Visto de cima","gal.lead":"Arrasta para o lado.",
+ "gal.title":"Visto de cima","gal.lead":"Arraste para o lado.",
  "pf.title":"Trabalho recente","pf.lead":"Alguns dos Reels que fizemos para clientes e para a nossa conta.",
  "rl.watch":"Ver no Instagram","rl.more":"Mais no Instagram","rl.yt":"YouTube","rl.about":"Sobre este trabalho",
  "tst.title":"O que dizem",
@@ -410,9 +423,9 @@ pt:{
  "ab.title":"Sobre",
  "ab.role":"Fundador",
  "ab.p1":"Somos uma agência criativa e de marketing digital, sediada em Mourão. Criamos conteúdo desde 2018 para hotéis, restaurantes, marcas, eventos e câmaras municipais.",
- "ab.p2":"Começámos pelo drone e hoje fazemos também vídeo em terra, Reels, redes sociais e sites. Vamos sempre ao local do cliente, em todo o país.",
- "ab.bh":"Marco Fernandes, founder",
- "ab.b1":"O Marco tem 20 anos de experiência a liderar equipas e operações de cliente para marcas como American Express, Air France, YouTube Premium e Amazon, entre Portugal, Inglaterra, México e Estados Unidos. Hoje é também Senior Manager na Navan, uma tecnológica global de viagens.",
+ "ab.p2":"Começámos pelo drone e hoje fazemos também vídeo em terra, Reels, redes sociais e sites. Vamos sempre ao local do cliente, no Alentejo e em todo o Portugal.",
+ "ab.bh":"Marco Fernandes, fundador",
+ "ab.b1":"O Marco tem 20 anos de experiência a liderar equipas e operações de cliente para marcas como American Express, Air France, YouTube Premium e Amazon, entre Portugal, Inglaterra, México e Estados Unidos.",
  "ab.b2":"Em 2018 levou essa experiência para a imagem e criou a Eagleview. Junta o olhar criativo à disciplina de quem gere grandes operações: ouve o cliente, pensa a história e entrega no prazo.",
  "ct.title":"Vamos falar","ct.lead":"Diga-nos o que precisa (vídeo, drone, redes sociais ou um site), para quando e onde. Normalmente respondemos no mesmo dia útil.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
@@ -423,12 +436,13 @@ pt:{
  "ft.rights":"Todos os direitos reservados","ft.top":"Voltar ao topo"
 },
 es:{
+ "t.title":"Eagleview Portugal · Producción de vídeo, dron y redes sociales","ct.tel":"Mostrar teléfono","f.note":"Usamos sus datos solo para responder a esta solicitud.","f.priv":"Política de privacidad","ft.priv":"Privacidad",
  "nav.services":"Servicios","nav.work":"Trabajo","nav.about":"Nosotros","nav.faq":"Preguntas","nav.contact":"Contacto","nav.cta":"Pedir presupuesto",
  "hero.l1":"Vídeo","hero.l2":"Dron","hero.l3":"Redes",
- "hero.lead":"Agencia creativa y de marketing digital con base en el Alentejo. Vídeo, filmación aérea, redes sociales y webs para hoteles, restaurantes, marcas y ayuntamientos, en todo Portugal.",
- "hero.work":"Ver trabajo","hero.scroll":"Desliza",
+ "hero.lead":"Agencia creativa y de marketing digital del Alentejo. Vídeo, dron, redes sociales y webs para hoteles, restaurantes, marcas y ayuntamientos, en el Alentejo y en todo Portugal.",
+ "hero.work":"Ver trabajo","hero.scroll":"Deslize",
  "clients.lbl":"Algunos clientes",
- "man":"Grabamos desde el cielo. Trabajamos a su lado. Agencia creativa y de marketing digital: vídeo, redes sociales y webs, en todo Portugal.",
+ "man":"Grabamos desde el cielo. Trabajamos a su lado. Agencia creativa y de marketing digital del Alentejo: vídeo, redes sociales y webs, en todo Portugal.",
  "st.1":"Vídeos institucionales y promocionales","st.2":"Reels producidos","st.3":"Me gusta en nuestros Reels","st.4":"Marcas y entidades clientes",
  "svc.title":"Qué hacemos",
  "svc.1t":"Producción de vídeo","svc.1p":"Vídeos promocionales e institucionales, eventos e inmobiliaria. Grabación, edición, color y música.",
@@ -436,7 +450,7 @@ es:{
  "svc.3t":"Reels","svc.3p":"Vídeos cortos para Instagram, TikTok y YouTube Shorts, pensados para el móvil.",
  "svc.4t":"Redes sociales","svc.4p":"Calendario, grabación, publicación y un informe cada mes.",
  "svc.5t":"Webs","svc.5p":"Webs para restaurantes y alojamientos turísticos, con nuestra imagen y vídeo.","svc.5more":"Saber más",
- "gal.title":"Visto desde arriba","gal.lead":"Desliza hacia el lado.",
+ "gal.title":"Visto desde arriba","gal.lead":"Deslice hacia el lado.",
  "pf.title":"Trabajo reciente","pf.lead":"Algunos de los Reels que hemos hecho para clientes y para nuestra cuenta.",
  "rl.watch":"Ver en Instagram","rl.more":"Más en Instagram","rl.yt":"YouTube","rl.about":"Sobre este trabajo",
  "tst.title":"Lo que dicen",
@@ -445,9 +459,9 @@ es:{
  "ab.title":"Nosotros",
  "ab.role":"Fundador",
  "ab.p1":"Somos una agencia creativa y de marketing digital con sede en Mourão, Portugal. Creamos contenido desde 2018 para hoteles, restaurantes, marcas, eventos y ayuntamientos.",
- "ab.p2":"Empezamos con el dron y hoy también hacemos vídeo en tierra, Reels, redes sociales y webs. Siempre vamos al lugar del cliente, en todo Portugal.",
- "ab.bh":"Marco Fernandes, founder",
- "ab.b1":"Marco tiene 20 años de experiencia liderando equipos y operaciones de cliente para marcas como American Express, Air France, YouTube Premium y Amazon, entre Portugal, Inglaterra, México y Estados Unidos. Hoy es también Senior Manager en Navan, una tecnológica global de viajes.",
+ "ab.p2":"Empezamos con el dron y hoy también hacemos vídeo en tierra, Reels, redes sociales y webs. Siempre vamos al lugar del cliente, en el Alentejo y en todo Portugal.",
+ "ab.bh":"Marco Fernandes, fundador",
+ "ab.b1":"Marco tiene 20 años de experiencia liderando equipos y operaciones de cliente para marcas como American Express, Air France, YouTube Premium y Amazon, entre Portugal, Inglaterra, México y Estados Unidos.",
  "ab.b2":"En 2018 llevó esa experiencia a la imagen y creó Eagleview. Une la mirada creativa a la disciplina de quien gestiona grandes operaciones: escucha al cliente, piensa la historia y entrega a tiempo.",
  "ct.title":"Hablemos","ct.lead":"Cuéntenos qué necesita (vídeo, dron, redes sociales o una web), para cuándo y dónde. Normalmente respondemos el mismo día laborable.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
@@ -458,12 +472,13 @@ es:{
  "ft.rights":"Todos los derechos reservados","ft.top":"Volver arriba"
 },
 en:{
+ "t.title":"Eagleview Portugal · Video production, drone and social media","ct.tel":"Show phone number","f.note":"We only use your details to reply to this request.","f.priv":"Privacy policy","ft.priv":"Privacy",
  "nav.services":"Services","nav.work":"Work","nav.about":"About","nav.faq":"FAQ","nav.contact":"Contact","nav.cta":"Get a quote",
  "hero.l1":"Video","hero.l2":"Drone","hero.l3":"Social",
- "hero.lead":"A creative and digital marketing agency based in the Alentejo. Video, aerial filming, social media and websites for hotels, restaurants, brands and local councils, all over Portugal.",
+ "hero.lead":"A creative and digital marketing agency from the Alentejo. Video, drone, social media and websites for hotels, restaurants, brands and local councils, in the Alentejo and all over Portugal.",
  "hero.work":"See our work","hero.scroll":"Scroll",
  "clients.lbl":"Some clients",
- "man":"We film from the sky. We work by your side. A creative and digital marketing agency: video, social media and websites, all over Portugal.",
+ "man":"We film from the sky. We work by your side. A creative and digital marketing agency from the Alentejo: video, social media and websites, all over Portugal.",
  "st.1":"Institutional and promotional films","st.2":"Reels produced","st.3":"Likes on our Reels","st.4":"Client brands and organisations",
  "svc.title":"What we do",
  "svc.1t":"Video production","svc.1p":"Promotional and institutional films, events and real estate. Filming, editing, colour and music.",
@@ -480,9 +495,9 @@ en:{
  "ab.title":"About",
  "ab.role":"Founder",
  "ab.p1":"We are a creative and digital marketing agency based in Mourão, Portugal. We have been making content since 2018 for hotels, restaurants, brands, events and local councils.",
- "ab.p2":"We started with drones and now also film on the ground, make Reels, manage social media and build websites. We always go to the client, anywhere in Portugal.",
+ "ab.p2":"We started with drones and now also film on the ground, make Reels, manage social media and build websites. We always go to the client, in the Alentejo and anywhere in Portugal.",
  "ab.bh":"Marco Fernandes, founder",
- "ab.b1":"Marco has 20 years of experience leading customer teams and operations for brands such as American Express, Air France, YouTube Premium and Amazon, across Portugal, England, Mexico and the United States. Today he is also a Senior Manager at Navan, a global travel tech company.",
+ "ab.b1":"Marco has 20 years of experience leading customer teams and operations for brands such as American Express, Air France, YouTube Premium and Amazon, across Portugal, England, Mexico and the United States.",
  "ab.b2":"In 2018 he brought that experience to the image and founded Eagleview. He pairs a creative eye with the discipline of someone who runs large operations: he listens to the client, shapes the story and delivers on time.",
  "ct.title":"Let's talk","ct.lead":"Tell us what you need (video, drone, social media or a website), when and where. We usually reply the same working day.",
  "ct.copy":"Copy","ct.copied":"Copied",
@@ -500,7 +515,7 @@ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function wrapWords(){const p=$("#man");const txt=p.textContent.trim().split(/\s+/);
   let c=0;const k=txt.findIndex(w=>/\.$/.test(w)&&++c==2);p.innerHTML=txt.map((w,i)=>`<w class="${i<=k?'acc':''}">${w}</w>`).join(" ");lightWords();}
-function applyLang(l){lang=T[l]?l:"pt";document.documentElement.lang=lang;
+function applyLang(l){lang=T[l]?l:"pt";document.documentElement.lang=lang;document.title=t("t.title");
   $$("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
   $$("[data-ph]").forEach(el=>el.placeholder=t(el.dataset.ph));
   $$(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
@@ -550,13 +565,19 @@ addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;});
 if("IntersectionObserver" in window&&!reduce){const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}}),{rootMargin:"0px 0px -8% 0px"});$$(".rv").forEach(el=>io.observe(el));}else $$(".rv").forEach(el=>el.classList.add("in"));
 
 /* count-up */
-const fmtCnt=(el,v)=>{const dec=+(el.dataset.dec||0),k=el.dataset.k;let s=v.toFixed(dec);if(lang!=="en")s=s.replace(".",",");return (el.dataset.pre||"")+s+(k?(lang==="en"?"k":" mil"):"");};
-function setCnt(){$$(".cnt").forEach(el=>{if(!el._run)el.textContent=fmtCnt(el,+el.dataset.to);});}
+const fmtCnt=(el,v)=>{const dec=+(el.dataset.dec||0),k=el.dataset.k;let s=v.toFixed(dec);if(lang!=="en")s=s.replace(".",",");return (el.dataset.pre||"")+s+(k?(lang==="en"?"k":"<small>mil</small>"):"");};
+function setCnt(){$$(".cnt").forEach(el=>{if(!el._run)el.innerHTML=fmtCnt(el,+el.dataset.to);});}
 if("IntersectionObserver" in window&&!reduce){const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const el=en.target,to=+el.dataset.to,t0=performance.now();el._run=true;
-  const step=now=>{const p=Math.min(1,(now-t0)/1600),e=1-Math.pow(1-p,3);el.textContent=fmtCnt(el,to*e);if(p<1)requestAnimationFrame(step);else{el._run=false;el.textContent=fmtCnt(el,to);}};requestAnimationFrame(step);io.unobserve(el);}),{threshold:.6});$$(".cnt").forEach(el=>io.observe(el));}
+  const step=now=>{const p=Math.min(1,(now-t0)/1600),e=1-Math.pow(1-p,3);el.innerHTML=fmtCnt(el,to*e);if(p<1)requestAnimationFrame(step);else{el._run=false;el.innerHTML=fmtCnt(el,to);}};requestAnimationFrame(step);io.unobserve(el);}),{threshold:.6});$$(".cnt").forEach(el=>io.observe(el));}
 
 /* copy email */
 $("#copyMail").addEventListener("click",async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText("hello@eagleviewportugal.com");b.textContent=t("ct.copied");setTimeout(()=>b.textContent=t("ct.copy"),1800);}catch(err){const r=document.createRange();r.selectNodeContents($("#mail"));const s=getSelection();s.removeAllRanges();s.addRange(r);}});
+
+
+/* phone is only written into the page on request, to keep it away from scrapers */
+$("#showTel").addEventListener("click",e=>{const n=["918","999","734"],el=$("#tel");el.innerHTML=`<a href="tel:+351${n.join("")}">${n.join(" ")}</a>`;el.hidden=false;e.currentTarget.remove();});
+/* service rows open the form with that service already chosen */
+$$(".svc a[data-svc]").forEach(a=>a.addEventListener("click",()=>{$("#f-svc").selectedIndex=+a.dataset.svc;}));
 
 /* form → Web3Forms */
 $("#form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTarget,st=$("#status");
