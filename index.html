@@ -255,6 +255,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#servicos" data-i="nav.services">Serviços</a>
       <a href="#trabalho" data-i="nav.work">Trabalho</a>
+      <a href="#faq" data-i="nav.faq">Perguntas</a>
       <a href="#sobre" data-i="nav.about">Sobre</a>
       <a href="#contacto" data-i="nav.contact">Contacto</a>
     </nav>
@@ -330,6 +331,12 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
     </div>
   </section>
 
+  <section class="sec wrap" id="faq" style="border-top:1px solid var(--line)">
+    <div class="head"><h2 class="h2 rv" id="faqTitle">Perguntas</h2><p class="lbl" id="faqLead" style="max-width:40ch;margin:0"></p></div>
+    <div class="faq-tabs" id="faqTabs" role="tablist"></div>
+    <div class="faq-list" id="faqList"></div>
+  </section>
+
   <section class="sec wrap" id="sobre">
     <div class="about">
       <div class="rv"><h2 class="h2" data-i="ab.title" style="margin-bottom:30px">Sobre</h2><p data-i="ab.p1"></p><p data-i="ab.p2"></p><div class="bio"><h3 data-i="ab.bh"></h3><p data-i="ab.b1"></p><p data-i="ab.b2"></p></div></div>
@@ -381,7 +388,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 (function(){
 const T={
 pt:{
- "nav.services":"Serviços","nav.work":"Trabalho","nav.about":"Sobre","nav.contact":"Contacto","nav.cta":"Pedir proposta",
+ "nav.services":"Serviços","nav.work":"Trabalho","nav.about":"Sobre","nav.faq":"Perguntas","nav.contact":"Contacto","nav.cta":"Pedir proposta",
  "hero.l1":"Vídeo","hero.l2":"Drone","hero.l3":"Redes",
  "hero.lead":"Agência criativa e de marketing digital com base no Alentejo. Vídeo, filmagem aérea, redes sociais e sites para hotéis, restaurantes, marcas e municípios, em todo o país.",
  "hero.work":"Ver trabalho","hero.scroll":"Desliza",
@@ -416,7 +423,7 @@ pt:{
  "ft.rights":"Todos os direitos reservados","ft.top":"Voltar ao topo"
 },
 es:{
- "nav.services":"Servicios","nav.work":"Trabajo","nav.about":"Nosotros","nav.contact":"Contacto","nav.cta":"Pedir presupuesto",
+ "nav.services":"Servicios","nav.work":"Trabajo","nav.about":"Nosotros","nav.faq":"Preguntas","nav.contact":"Contacto","nav.cta":"Pedir presupuesto",
  "hero.l1":"Vídeo","hero.l2":"Dron","hero.l3":"Redes",
  "hero.lead":"Agencia creativa y de marketing digital con base en el Alentejo. Vídeo, filmación aérea, redes sociales y webs para hoteles, restaurantes, marcas y ayuntamientos, en todo Portugal.",
  "hero.work":"Ver trabajo","hero.scroll":"Desliza",
@@ -451,7 +458,7 @@ es:{
  "ft.rights":"Todos los derechos reservados","ft.top":"Volver arriba"
 },
 en:{
- "nav.services":"Services","nav.work":"Work","nav.about":"About","nav.contact":"Contact","nav.cta":"Get a quote",
+ "nav.services":"Services","nav.work":"Work","nav.about":"About","nav.faq":"FAQ","nav.contact":"Contact","nav.cta":"Get a quote",
  "hero.l1":"Video","hero.l2":"Drone","hero.l3":"Social",
  "hero.lead":"A creative and digital marketing agency based in the Alentejo. Video, aerial filming, social media and websites for hotels, restaurants, brands and local councils, all over Portugal.",
  "hero.work":"See our work","hero.scroll":"Scroll",
@@ -576,5 +583,111 @@ if(!s0){const n=(navigator.language||"pt").slice(0,2);s0=T[n]?n:"en";}
 applyLang(s0);
 })();
 </script>
+<style>
+.faq-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.faq-tabs button{font:500 .95rem var(--f);color:var(--paper);background:transparent;border:1px solid rgba(240,238,232,.3);border-radius:999px;padding:.7em 1.3em;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.faq-tabs button[aria-selected="true"]{background:var(--acc);border-color:var(--acc);color:#0b0c0d}
+.faq-list{border-top:1px solid var(--line)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-weight:500;font-size:clamp(1.05rem,1.6vw,1.3rem)}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary i{flex:none;width:34px;height:34px;border:1px solid rgba(240,238,232,.3);border-radius:50%;position:relative;transition:transform .3s,background .3s}
+.faq-list summary i:before,.faq-list summary i:after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+.faq-list summary i:after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-list details[open] summary i{transform:rotate(45deg);background:var(--acc);border-color:var(--acc);color:#0b0c0d}
+.faq-list details[open] summary{color:var(--acc)}
+.faq-list .a{color:var(--mute);max-width:72ch;padding:0 0 26px;margin:0;line-height:1.7}
+</style>
+<script>
+(function(){
+var F={
+pt:{title:"Perguntas",lead:"As dúvidas que nos põem mais vezes, respondidas sem rodeios.",cats:[
+["Redes sociais",[
+["Porque é que o meu negócio precisa de redes sociais?","Antes de reservar uma mesa ou um quarto, quase toda a gente vai ver o Instagram ou o Facebook. Uma página parada há meses parece um negócio fechado; uma página com movimento mostra que estão abertos, o que há de novo e como é o ambiente."],
+["Se sou eu que filmo, porque não publico eu?","Filmar demora segundos. O que leva tempo é o resto: escolher o que mostrar, cortar e montar os vídeos, legendar, escrever textos que façam vontade de vir, publicar à hora certa e manter o ritmo todas as semanas, incluindo as mais cheias. É aí que a maioria das páginas para. Connosco gastam uns minutos a filmar a partir de um guião simples; o plano, a edição, os textos e o agendamento são nossos, e nada sai sem a vossa aprovação."],
+["Não tenho tempo nem jeito para filmar.","Todos os meses mandamos um guião com ideias concretas: três vídeos de 10 segundos, por exemplo, o prato do dia, a sala cheia, a vista ao fim da tarde. E em Mourão, Reguengos de Monsaraz, Monsaraz, Montijo e Alcochete podemos fazer uma sessão de captação que dá material para vários meses."],
+["O boca a boca chega-me.","O boca a boca continua a ser o melhor que há. As redes são o sítio onde esse boca a boca vai confirmar: quem ouve falar de vocês procura-vos no telemóvel antes de vir."],
+["Em quanto tempo vejo resultados?","As redes sociais não enchem a casa no primeiro mês. Os primeiros dois ou três meses servem para criar ritmo e uma imagem consistente; é por isso que os planos têm um período mínimo de três meses."],
+["Posso ver tudo antes de ser publicado?","Sim, sempre. O plano do mês e cada publicação são aprovados por vocês antes de serem agendados."]]],
+["Sites",[
+["Já tenho Facebook e Instagram. Para que preciso de um site?","As redes não são vossas: é o algoritmo que decide quem vê cada publicação. O site é o vosso endereço próprio. Aparece no Google, tem a ementa ou os quartos sempre à mão, o horário, o mapa e um pedido de reserva que vos chega diretamente."],
+["Estamos no Booking. Não chega?","O Booking traz hóspedes, e continua a fazer sentido estar lá, mas fica com uma comissão de cada reserva. Com um site com reserva direta, quem já vos conhece, quem volta ou quem vos encontra no Google pode reservar convosco, sem intermediários."],
+["Um site não é caro e difícil de manter?","Os sites têm preço fixo por pacote, com domínio e alojamento do primeiro ano incluídos. Se não quiserem tratar de nada, há uma manutenção mensal em que atualizamos a ementa, os preços, os horários e as fotografias por vocês."],
+["Como sei se vou gostar?","Antes de decidirem, mostramos uma demonstração feita com a informação do vosso negócio. Só avançamos se fizer sentido para vocês."],
+["O site fica em meu nome?","Sim. O domínio é registado em nome do negócio; nós tratamos da parte técnica."],
+["Funciona no telemóvel e noutras línguas?","Sim. Os sites são pensados primeiro para o telemóvel, que é onde a maioria das pessoas vos procura, e podem ter português, inglês e espanhol."]]],
+["Vídeo e drone",[
+["Porquê um vídeo profissional se posso filmar com o telemóvel?","O telemóvel é ótimo para o dia a dia das redes. Um vídeo profissional é o cartão de visita: imagens de drone, boa luz e som, edição, cor e música. É o vídeo que fica no site, no Booking e nos anúncios durante anos."],
+["Vale o investimento?","Um bom vídeo é usado durante muito tempo e em muitos sítios: site, redes sociais, plataformas de reserva e anúncios. Da mesma gravação fazemos também versões curtas para Reels."],
+["Filmar com drone é legal?","Sim. Os nossos pilotos são certificados pela EASA e tratamos das autorizações de voo necessárias."],
+["Onde trabalham?","Estamos entre o Alentejo e a margem sul do Tejo e trabalhamos em todo o país. Fora destas zonas, a deslocação é orçamentada à parte."]]],
+["Como trabalhamos",[
+["Têm de vir cá para trabalharmos juntos?","Não necessariamente. Grande parte do trabalho é feito à distância: conversas por telefone ou videochamada, propostas e aprovações por email. Só nos deslocamos quando é preciso filmar."],
+["Há fidelização?","Os planos mensais têm um período mínimo de três meses; depois, renovam mês a mês. Os sites e os vídeos são trabalhos com preço fechado."],
+["Como começamos?","Mandem-nos uma mensagem pelo formulário abaixo ou para hello@eagleviewportugal.com. Respondemos com uma proposta à medida do vosso negócio."]]]]},
+es:{title:"Preguntas",lead:"Las dudas que más nos plantean, respondidas sin rodeos.",cats:[
+["Redes sociales",[
+["¿Por qué mi negocio necesita redes sociales?","Antes de reservar mesa o habitación, casi todo el mundo mira el Instagram o el Facebook. Una página parada desde hace meses parece un negocio cerrado; una página con movimiento muestra que estáis abiertos, qué hay de nuevo y cómo es el ambiente."],
+["Si grabo yo, ¿por qué no publico yo?","Grabar lleva segundos. Lo que lleva tiempo es todo lo demás: elegir qué mostrar, cortar y montar los vídeos, subtitular, escribir textos que den ganas de venir, publicar a la hora adecuada y mantener el ritmo cada semana, también las de más trabajo. Ahí es donde se paran la mayoría de las páginas. Con nosotros dedicáis unos minutos a grabar a partir de un guion sencillo; el plan, la edición, los textos y la programación son cosa nuestra, y nada se publica sin vuestra aprobación."],
+["No tengo tiempo ni maña para grabar.","Cada mes enviamos un guion con ideas concretas: tres vídeos de 10 segundos, por ejemplo, el plato del día, el salón lleno, la vista al atardecer. Y en Mourão, Reguengos de Monsaraz, Monsaraz, Montijo y Alcochete podemos hacer una sesión de grabación que da material para varios meses."],
+["Me basta con el boca a boca.","El boca a boca sigue siendo lo mejor. Las redes son donde ese boca a boca va a confirmar: quien oye hablar de vosotros os busca en el móvil antes de venir."],
+["¿En cuánto tiempo veo resultados?","Las redes no llenan el local el primer mes. Los dos o tres primeros meses sirven para crear ritmo y una imagen coherente; por eso los planes tienen un periodo mínimo de tres meses."],
+["¿Puedo verlo todo antes de publicar?","Sí, siempre. El plan del mes y cada publicación se aprueban antes de programarse."]]],
+["Webs",[
+["Ya tengo Facebook e Instagram. ¿Para qué una web?","Las redes no son vuestras: el algoritmo decide quién ve cada publicación. La web es vuestra dirección propia. Sale en Google, tiene la carta o las habitaciones siempre a mano, el horario, el mapa y una solicitud de reserva que os llega directamente."],
+["Estamos en Booking. ¿No basta?","Booking trae huéspedes, y sigue teniendo sentido estar ahí, pero se queda con una comisión de cada reserva. Con una web con reserva directa, quien ya os conoce, quien repite o quien os encuentra en Google puede reservar con vosotros, sin intermediarios."],
+["¿Una web no es cara y difícil de mantener?","Las webs tienen precio cerrado por paquete, con dominio y alojamiento del primer año incluidos. Si no queréis ocuparos de nada, hay un mantenimiento mensual en el que actualizamos la carta, los precios, los horarios y las fotos."],
+["¿Cómo sé si me va a gustar?","Antes de decidir, os enseñamos una demostración hecha con la información de vuestro negocio. Solo seguimos si os convence."],
+["¿La web queda a mi nombre?","Sí. El dominio se registra a nombre del negocio; nosotros nos ocupamos de la parte técnica."],
+["¿Funciona en el móvil y en otros idiomas?","Sí. Las webs se piensan primero para el móvil, que es donde la mayoría os busca, y pueden estar en portugués, inglés y español."]]],
+["Vídeo y dron",[
+["¿Por qué un vídeo profesional si puedo grabar con el móvil?","El móvil va muy bien para el día a día de las redes. Un vídeo profesional es la tarjeta de presentación: planos de dron, buena luz y sonido, edición, color y música. Es el vídeo que se queda en la web, en Booking y en los anuncios durante años."],
+["¿Merece la pena la inversión?","Un buen vídeo se usa durante mucho tiempo y en muchos sitios: web, redes, plataformas de reserva y anuncios. De la misma grabación sacamos también versiones cortas para Reels."],
+["¿Es legal grabar con dron?","Sí. Nuestros pilotos están certificados por la EASA y gestionamos las autorizaciones de vuelo necesarias."],
+["¿Dónde trabajáis?","Estamos entre el Alentejo y la margen sur del Tajo y trabajamos en todo Portugal. Fuera de estas zonas, el desplazamiento se presupuesta aparte."]]],
+["Cómo trabajamos",[
+["¿Tenéis que venir para trabajar juntos?","No necesariamente. Gran parte del trabajo se hace a distancia: llamadas o videollamadas, propuestas y aprobaciones por email. Solo nos desplazamos cuando hay que grabar."],
+["¿Hay permanencia?","Los planes mensuales tienen un periodo mínimo de tres meses; después se renuevan mes a mes. Las webs y los vídeos tienen precio cerrado."],
+["¿Cómo empezamos?","Escribidnos por el formulario de abajo o a hello@eagleviewportugal.com. Os respondemos con una propuesta a medida."]]]]},
+en:{title:"FAQ",lead:"The questions we hear most, answered straight.",cats:[
+["Social media",[
+["Why does my business need social media?","Before booking a table or a room, almost everyone checks Instagram or Facebook. A page that hasn’t moved in months looks like a closed business; an active page shows you’re open, what’s new and what the place feels like."],
+["If I’m the one filming, why not post it myself?","Filming takes seconds. What takes time is everything else: choosing what to show, cutting and editing the videos, adding captions, writing copy that makes people want to come, posting at the right time and keeping it up every week, including the busy ones. That’s where most pages stop. With us you spend a few minutes filming from a simple brief; the plan, editing, copy and scheduling are ours, and nothing goes out without your approval."],
+["I don’t have the time or the knack for filming.","Every month we send a brief with concrete ideas: three 10-second clips, say, the dish of the day, a full dining room, the view at sunset. And in Mourão, Reguengos de Monsaraz, Monsaraz, Montijo and Alcochete we can run a filming session that gives material for several months."],
+["Word of mouth is enough for me.","Word of mouth is still the best there is. Social media is where that word of mouth goes to check: people who hear about you look you up on their phone before they come."],
+["How soon will I see results?","Social media won’t fill the place in the first month. The first two or three months build rhythm and a consistent image, which is why plans have a three-month minimum."],
+["Can I see everything before it’s posted?","Yes, always. The monthly plan and every post are approved by you before they’re scheduled."]]],
+["Websites",[
+["I already have Facebook and Instagram. Why a website?","Social platforms aren’t yours: the algorithm decides who sees each post. Your website is your own address. It shows up on Google and keeps your menu or rooms, hours, map and a booking request that comes straight to you."],
+["We’re on Booking.com. Isn’t that enough?","Booking brings guests, and it’s worth staying there, but it takes a commission on every booking. With a website that takes direct bookings, people who already know you, come back or find you on Google can book with you, with no middleman."],
+["Isn’t a website expensive and hard to keep up?","Websites have a fixed price per package, with the domain and hosting for the first year included. If you’d rather not deal with it, there’s a monthly maintenance plan where we update your menu, prices, hours and photos for you."],
+["How do I know I’ll like it?","Before you decide, we show you a demo built with your business’s own information. We only go ahead if it makes sense for you."],
+["Will the website be in my name?","Yes. The domain is registered to your business; we take care of the technical side."],
+["Does it work on phones and in other languages?","Yes. Sites are designed for phones first, where most people look you up, and can be in Portuguese, English and Spanish."]]],
+["Video & drone",[
+["Why a professional video if I can film on my phone?","Phones are great for day-to-day social media. A professional video is your calling card: drone shots, good light and sound, editing, colour and music. It’s the video that stays on your website, on Booking and in your ads for years."],
+["Is it worth the investment?","A good video is used for a long time and in many places: website, social media, booking platforms and ads. From the same shoot we also cut short versions for Reels."],
+["Is drone filming legal?","Yes. Our pilots are EASA-certified and we handle the flight permits needed."],
+["Where do you work?","We’re based between the Alentejo and the south bank of the Tagus and work across Portugal. Outside these areas, travel is quoted separately."]]],
+["How we work",[
+["Do you need to come over to work together?","Not necessarily. Most of the work is done remotely: phone or video calls, proposals and approvals by email. We only travel when there’s filming to do."],
+["Is there a minimum term?","Monthly plans have a three-month minimum, then renew month to month. Websites and videos are fixed-price projects."],
+["How do we start?","Send us a message through the form below or to hello@eagleviewportugal.com. We’ll reply with a proposal tailored to your business."]]]]}};
+var cur=0,SL=["redes","sites","video","como"];
+(function(){var m=location.hash.match(/^#faq-([a-z]+)/);if(m&&SL.indexOf(m[1])>-1){cur=SL.indexOf(m[1]);addEventListener("load",function(){var f=document.getElementById("faq");if(f)setTimeout(function(){f.scrollIntoView()},300)})}})();
+function L(){var l=document.documentElement.lang;return F[l]?l:"pt"}
+function render(){var d=F[L()];document.getElementById("faqTitle").textContent=d.title;document.getElementById("faqLead").textContent=d.lead;
+ var tabs=document.getElementById("faqTabs");tabs.innerHTML="";
+ d.cats.forEach(function(c,i){var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",String(i===cur));b.textContent=c[0];b.onclick=function(){cur=i;render()};tabs.appendChild(b)});
+ var list=document.getElementById("faqList");list.innerHTML="";
+ d.cats[cur][1].forEach(function(q,i){var det=document.createElement("details");if(i===0)det.open=true;var s=document.createElement("summary");s.textContent=q[0];var ic=document.createElement("i");s.appendChild(ic);var p=document.createElement("p");p.className="a";p.textContent=q[1];det.appendChild(s);det.appendChild(p);list.appendChild(det)})}
+new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
+render();
+var ld={"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]};
+F.pt.cats.forEach(function(c){c[1].forEach(function(q){ld.mainEntity.push({"@type":"Question","name":q[0],"acceptedAnswer":{"@type":"Answer","text":q[1]}})})});
+var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
+})();
+</script>
+
 </body>
 </html>
