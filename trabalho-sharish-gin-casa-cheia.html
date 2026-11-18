@@ -327,6 +327,7 @@ footer .flogo{height:46px;width:auto;opacity:.9}
 .wk .txt p{color:var(--mute);line-height:1.75;max-width:62ch;margin:0 0 14px;font-size:1.05rem}
 .wk .vid{border:1px solid var(--line);border-radius:18px;background:var(--card);min-height:300px;display:grid;place-items:center;overflow:hidden}
 .wk .vid .instagram-media{margin:0!important;width:100%!important;min-width:0!important;max-width:540px!important;border:0!important}
+.wk a.ph{text-decoration:none;color:inherit}
 .wk .ph{display:grid;gap:14px;justify-items:center;text-align:center;padding:30px}
 .wk .ph p{color:var(--mute);margin:0;font-size:.92rem;max-width:30ch}
 .wk .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -380,7 +381,7 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
         <div class="acts"><a class="btn btn-primary" href="index.html#contacto">Pedir proposta</a><a class="btn btn-ghost" href="https://www.instagram.com/reel/DKhZNGztww9/" target="_blank" rel="noopener">Ver no Instagram</a></div>
       </div>
       <div class="vid" id="vid">
-        <div class="ph" id="ph" style="background-image:linear-gradient(rgba(10,11,12,.45),rgba(10,11,12,.8)),url(monsaraz.webp)"><p>O vídeo vem do Instagram e usa os cookies dele.</p><button class="btn btn-primary" type="button" id="show">Mostrar vídeo</button></div>
+        <a class="ph" id="ph" style="background-image:linear-gradient(rgba(10,11,12,.45),rgba(10,11,12,.8)),url(monsaraz.webp)" href="https://www.instagram.com/reel/DKhZNGztww9/" target="_blank" rel="noopener"><p>Este Reel só pode ser visto no Instagram.</p><span class="btn btn-primary">Ver no Instagram</span></a>
       </div>
     </div>
   </section>
@@ -399,15 +400,6 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
     <div class="fl"><a href="sites.html">Sites</a><a href="privacidade.html">Privacidade</a></div>
   </div>
 </footer>
-<script>
-(function(){const reel="https://www.instagram.com/reel/DKhZNGztww9/",vid=document.getElementById("vid");
-const embed=()=>{vid.innerHTML='<blockquote class="instagram-media" data-instgrm-permalink="'+reel+'" data-instgrm-version="14"><a href="'+reel+'">Ver no Instagram</a></blockquote>';
- const s=document.createElement("script");s.async=true;s.src="https://www.instagram.com/embed.js";document.body.appendChild(s);};
-let c=null;try{c=localStorage.getItem("ev-consent")}catch(e){}
-if(c==="yes")embed();
-document.getElementById("show").addEventListener("click",()=>{try{localStorage.setItem("ev-consent","yes")}catch(e){}embed();});
-})();
-</script>
 <script>
 /* "Voltar" returns to the exact place the visitor came from on this site; otherwise goes to the fallback link */
 document.querySelectorAll(".back").forEach(function(b){b.addEventListener("click",function(e){try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});});
