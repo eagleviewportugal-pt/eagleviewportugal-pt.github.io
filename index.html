@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" data-page="pt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Eagleview Portugal · Produção de vídeo, drone e redes sociais</title>
 <meta name="description" content="Eagleview Productions (Eagleview Portugal): produção de vídeo, filmagem aérea com drone, Reels, gestão de redes sociais e sites para restaurantes e alojamento local. Mourão, Alentejo.">
 <link rel="canonical" href="https://eagleviewportugal.com/">
+<link rel="alternate" hreflang="pt" href="https://eagleviewportugal.com/">
+<link rel="alternate" hreflang="es" href="https://eagleviewportugal.com/es.html">
+<link rel="alternate" hreflang="en" href="https://eagleviewportugal.com/en.html">
+<link rel="alternate" hreflang="x-default" href="https://eagleviewportugal.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Eagleview Productions">
 <meta property="og:url" content="https://eagleviewportugal.com/">
@@ -271,6 +275,26 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 .vfb-l{margin:0;font-weight:600;text-transform:uppercase;letter-spacing:-.015em;line-height:.95;font-size:clamp(2.2rem,6.5vw,5.6rem);max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
 @media (max-width:600px){.osd.tr,.osd.br{display:none}.osd.tl,.osd.bl{left:42px}}
 @media (prefers-reduced-motion:reduce){.rec{animation:none}}
+
+/* films (YouTube) */
+.films{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media (max-width:980px){.films{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.films{grid-template-columns:1fr}}
+.film{all:unset;cursor:pointer;display:grid;gap:8px;align-content:start}
+.film .fi{position:relative;display:block;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.film img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.film:hover img,.film:focus-visible img{transform:scale(1.04)}
+.film .pl{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.film .pl svg{width:22px;height:22px;margin-left:3px}
+.film .du{position:absolute;right:10px;bottom:10px;font-size:.78rem;background:rgba(11,12,13,.75);padding:.15em .55em;border-radius:6px}
+.film .ft{font-weight:600;font-size:1.05rem;line-height:1.25}
+.film .fk{color:var(--mute);font-size:.85rem}
+.film:focus-visible .fi{outline:2px solid var(--acc);outline-offset:3px}
+.fbox{position:fixed;inset:0;z-index:80;background:rgba(5,6,7,.92);display:grid;place-items:center;padding:clamp(12px,4vw,60px)}
+.fbox[hidden]{display:none}
+.fv{width:min(1200px,100%);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+.fv iframe{width:100%;height:100%;border:0;display:block}
+.fx{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(240,238,232,.3);background:rgba(11,12,13,.6);color:var(--paper);font-size:1.6rem;line-height:1;cursor:pointer}
 </style>
 </head>
 <body>
@@ -350,6 +374,13 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
     <div class="pf-more"><a class="btn btn-line" href="https://www.instagram.com/eagleviewportugal" target="_blank" rel="noopener" data-i="rl.more">Mais no Instagram</a><a class="btn btn-line" href="https://www.youtube.com/@eagleviewproductions" target="_blank" rel="noopener" data-i="rl.yt">YouTube</a></div>
   </section>
 
+  <section class="sec wrap" id="filmes" style="border-top:1px solid var(--line)">
+    <div class="head"><h2 class="h2 rv" data-i="fm.title">Filmes</h2><p class="lbl" data-i="fm.lead" style="max-width:36ch;margin:0"></p></div>
+    <div class="films"><button class="film rv" type="button" data-yt="Wwr_Nl0GSEQ"><span class="fi"><img src="w-Wwr_Nl0GSEQ.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">7:18</span></span><span class="ft">Bombeiros Voluntários de Mourão</span><span class="fk" data-i="fm.1"></span></button><button class="film rv" type="button" data-yt="VEfMdZh0DN4"><span class="fi"><img src="w-VEfMdZh0DN4.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">2:54</span></span><span class="ft">Assim foi… Aldeia da Luz</span><span class="fk" data-i="fm.2"></span></button><button class="film rv" type="button" data-yt="wf4tqgQt_j8"><span class="fi"><img src="w-wf4tqgQt_j8.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">2:17</span></span><span class="ft">Veligandu Island Resort & Spa</span><span class="fk" data-i="fm.3"></span></button><button class="film rv" type="button" data-yt="McoOXE_OuHk"><span class="fi"><img src="w-McoOXE_OuHk.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">3:38</span></span><span class="ft">Mourão — O Alentejo é tudo isto</span><span class="fk" data-i="fm.4"></span></button><button class="film rv" type="button" data-yt="PmblYcWHzR0"><span class="fi"><img src="w-PmblYcWHzR0.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">0:36</span></span><span class="ft">Alqueva Gin Premium</span><span class="fk" data-i="fm.5"></span></button><button class="film rv" type="button" data-yt="BuCLqgIKgxE"><span class="fi"><img src="w-BuCLqgIKgxE.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">4:29</span></span><span class="ft">Festa de Nª Srª das Candeias 2024</span><span class="fk" data-i="fm.6"></span></button><button class="film rv" type="button" data-yt="4u3ReO82R0U"><span class="fi"><img src="w-4u3ReO82R0U.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">3:03</span></span><span class="ft">Alentejo em balão de ar quente</span><span class="fk" data-i="fm.7"></span></button><button class="film rv" type="button" data-yt="xJqq81e5aP0"><span class="fi"><img src="w-xJqq81e5aP0.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">2:13</span></span><span class="ft">Beach Club Mourão</span><span class="fk" data-i="fm.8"></span></button><button class="film rv" type="button" data-yt="57MtxXh4TG8"><span class="fi"><img src="w-57MtxXh4TG8.webp" alt="" loading="lazy" width="480" height="270"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="du">3:22</span></span><span class="ft">Sahida para o Telheiro — after movie</span><span class="fk" data-i="fm.9"></span></button></div>
+    <p class="cknote" data-i="fm.note"></p>
+  </section>
+  <div class="fbox" id="fbox" hidden role="dialog" aria-modal="true" aria-label="Filme"><button class="fx" type="button" id="fx" aria-label="Fechar">×</button><div class="fv" id="fv"></div></div>
+
   <section class="sec gal" aria-label="Testemunhos">
     <div class="wrap">
       <div class="head"><h2 class="h2 rv" data-i="tst.title">O que dizem</h2></div>
@@ -427,6 +458,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 (function(){
 const T={
 pt:{
+ "fm.title":"Filmes","fm.lead":"Vídeos institucionais, promocionais e de eventos, no nosso canal de YouTube.","fm.note":"Os filmes abrem com o leitor do YouTube só quando carrega num deles.","fm.1":"Vídeo institucional","fm.2":"Documentário · trailer","fm.3":"Hotel · Maldivas","fm.4":"Promoção turística · Município","fm.5":"Anúncio de produto","fm.6":"Evento · Mourão","fm.7":"Drone · balões","fm.8":"Vídeo promocional","fm.9":"Evento · after movie",
  "vf.l":"O seu negócio, visto de cima.","vf.cta":"Pedir proposta",
  "t.title":"Eagleview Portugal · Produção de vídeo, drone e redes sociais","ct.tel":"Mostrar telefone","f.note":"Usamos os seus dados só para responder a este pedido.","f.priv":"Política de privacidade","ft.priv":"Privacidade",
  "nav.services":"Serviços","nav.work":"Trabalho","nav.about":"Sobre","nav.faq":"Perguntas","nav.contact":"Contacto","nav.cta":"Pedir proposta",
@@ -464,6 +496,7 @@ pt:{
  "ft.rights":"Todos os direitos reservados","ft.top":"Voltar ao topo"
 },
 es:{
+ "fm.title":"Películas","fm.lead":"Vídeos institucionales, promocionales y de eventos, en nuestro canal de YouTube.","fm.note":"Las películas se abren con el reproductor de YouTube solo cuando hace clic en una.","fm.1":"Vídeo institucional","fm.2":"Documental · tráiler","fm.3":"Hotel · Maldivas","fm.4":"Promoción turística · Ayuntamiento","fm.5":"Anuncio de producto","fm.6":"Evento · Mourão","fm.7":"Dron · globos","fm.8":"Vídeo promocional","fm.9":"Evento · after movie",
  "vf.l":"Su negocio, visto desde arriba.","vf.cta":"Pedir presupuesto",
  "t.title":"Eagleview Portugal · Producción de vídeo, dron y redes sociales","ct.tel":"Mostrar teléfono","f.note":"Usamos sus datos solo para responder a esta solicitud.","f.priv":"Política de privacidad","ft.priv":"Privacidad",
  "nav.services":"Servicios","nav.work":"Trabajo","nav.about":"Nosotros","nav.faq":"Preguntas","nav.contact":"Contacto","nav.cta":"Pedir presupuesto",
@@ -501,6 +534,7 @@ es:{
  "ft.rights":"Todos los derechos reservados","ft.top":"Volver arriba"
 },
 en:{
+ "fm.title":"Films","fm.lead":"Institutional, promotional and event films, on our YouTube channel.","fm.note":"Films open in the YouTube player only when you click one.","fm.1":"Institutional film","fm.2":"Documentary · trailer","fm.3":"Hotel · Maldives","fm.4":"Tourism promotion · Council","fm.5":"Product commercial","fm.6":"Event · Mourão","fm.7":"Drone · balloons","fm.8":"Promotional film","fm.9":"Event · after movie",
  "vf.l":"Your business, seen from above.","vf.cta":"Get a quote",
  "t.title":"Eagleview Portugal · Video production, drone and social media","ct.tel":"Show phone number","f.note":"We only use your details to reply to this request.","f.priv":"Privacy policy","ft.priv":"Privacy",
  "nav.services":"Services","nav.work":"Work","nav.about":"About","nav.faq":"FAQ","nav.contact":"Contact","nav.cta":"Get a quote",
@@ -587,7 +621,8 @@ const nav=$("#nav"),mb=$("#menuBtn"),hdr=$("#hdr");
 mb.addEventListener("click",()=>{const o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",String(o));hdr.classList.add("solid");});
 nav.addEventListener("click",e=>{if(e.target.tagName==="A"){nav.classList.remove("open");mb.setAttribute("aria-expanded","false");}});
 const onScroll=()=>hdr.classList.toggle("solid",scrollY>40||nav.classList.contains("open"));addEventListener("scroll",onScroll,{passive:true});onScroll();
-$$(".lang button").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang)));
+const PAGE=document.documentElement.dataset.page||"pt",URLS={pt:"/",es:"/es.html",en:"/en.html"};
+$$(".lang button").forEach(b=>b.addEventListener("click",()=>{const l=b.dataset.lang;try{localStorage.setItem("ev-lang",l)}catch(e){}if(l!==PAGE)location.href=URLS[l]+location.hash;}));
 
 /* service hover image */
 const peek=$("#peek");let px=0,py=0,tx=0,ty=0;
@@ -620,6 +655,14 @@ $("#copyMail").addEventListener("click",async e=>{const b=e.currentTarget;try{aw
   const f=()=>{const r=b.getBoundingClientRect(),p=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));im.style.transform=`translate3d(0,${(p*-60).toFixed(1)}px,0) scale(1.04)`;on=false;};
   addEventListener("scroll",()=>{if(!on){on=true;requestAnimationFrame(f);}},{passive:true});f();})();
 
+
+/* films: the YouTube player (privacy-enhanced domain) is only loaded when a film is clicked */
+(function(){const box=$("#fbox"),fv=$("#fv");let last=null;
+  const close=()=>{fv.innerHTML="";box.hidden=true;document.body.style.overflow="";if(last)last.focus();};
+  $$(".film").forEach(b=>b.addEventListener("click",()=>{last=b;fv.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&rel=0&modestbranding=1" title="${b.querySelector(".ft").textContent}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;box.hidden=false;document.body.style.overflow="hidden";$("#fx").focus();}));
+  $("#fx").addEventListener("click",close);box.addEventListener("click",e=>{if(e.target===box)close();});
+  addEventListener("keydown",e=>{if(e.key==="Escape"&&!box.hidden)close();});})();
+
 /* phone is only written into the page on request, to keep it away from scrapers */
 $("#showTel").addEventListener("click",e=>{const n=["918","999","734"],el=$("#tel");el.innerHTML=`<a href="tel:+351${n.join("")}">${n.join(" ")}</a>`;el.hidden=false;e.currentTarget.remove();});
 /* service rows open the form with that service already chosen */
@@ -648,9 +691,13 @@ $("#form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTar
   const c=get();if(c==="yes")arm();else note.hidden=false;
   if(stGet()===null)setTimeout(()=>{ck.hidden=false;},1200);})();
 
+/* each page has a fixed language; the Portuguese home sends visitors to their language page once (never crawlers) */
 let s0="";try{s0=localStorage.getItem("ev-lang")||""}catch(e){}
-if(!s0){const n=(navigator.language||"pt").slice(0,2);s0=T[n]?n:"en";}
-applyLang(s0);
+if(PAGE==="pt"&&!/bot|crawl|spider|lighthouse|google|bing/i.test(navigator.userAgent)&&!navigator.webdriver){
+  if(!s0){const n=(navigator.language||"pt").slice(0,2);s0=T[n]?n:"en";try{localStorage.setItem("ev-lang",s0)}catch(e){}}
+  if(s0!=="pt"&&URLS[s0]){location.replace(URLS[s0]+location.hash);}
+}
+applyLang(PAGE);
 })();
 </script>
 <style>
@@ -754,7 +801,7 @@ function render(){var d=F[L()];document.getElementById("faqTitle").textContent=d
 new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
 render();
 var ld={"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]};
-F.pt.cats.forEach(function(c){c[1].forEach(function(q){ld.mainEntity.push({"@type":"Question","name":q[0],"acceptedAnswer":{"@type":"Answer","text":q[1]}})})});
+F[document.documentElement.dataset.page||"pt"].cats.forEach(function(c){c[1].forEach(function(q){ld.mainEntity.push({"@type":"Question","name":q[0],"acceptedAnswer":{"@type":"Answer","text":q[1]}})})});
 var s=document.createElement("script");s.type="application/ld+json";s.textContent=JSON.stringify(ld);document.head.appendChild(s);
 })();
 </script>
