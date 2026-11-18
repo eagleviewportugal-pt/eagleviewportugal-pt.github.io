@@ -606,7 +606,7 @@ $("#copyMail").addEventListener("click",async e=>{const b=e.currentTarget;try{aw
 
 /* slow parallax on the aerial interlude */
 (function(){const b=$(".vfb"),im=$(".vfb-img");if(!b||reduce)return;let on=false;
-  const f=()=>{const r=b.getBoundingClientRect(),p=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.transform=`translate3d(0,${(p*-60).toFixed(1)}px,0) scale(1.04)`;on=false;};
+  const f=()=>{const r=b.getBoundingClientRect(),p=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));im.style.transform=`translate3d(0,${(p*-60).toFixed(1)}px,0) scale(1.04)`;on=false;};
   addEventListener("scroll",()=>{if(!on){on=true;requestAnimationFrame(f);}},{passive:true});f();})();
 
 /* phone is only written into the page on request, to keep it away from scrapers */
