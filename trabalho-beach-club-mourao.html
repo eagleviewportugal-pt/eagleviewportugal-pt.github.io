@@ -353,6 +353,8 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
 .legal h2{font-size:1.15rem;text-transform:none;letter-spacing:0;margin:34px 0 10px}
 .legal p,.legal li{color:var(--mute);line-height:1.75}
 .legal a:not(.btn){color:var(--paper)}
+
+.backrow{margin:0 0 26px}.backrow.end{margin:44px 0 0}
 </style>
 </head>
 <body>
@@ -370,6 +372,7 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
   <section class="wk">
     <div class="wrap in">
       <div class="txt">
+        <p class="backrow"><a class="btn btn-ghost back" href="index.html#trabalho">← Voltar</a></p>
         <div class="crumb"><a href="index.html">Início</a> · <a href="index.html#trabalho">Trabalho</a></div>
         <h1>Beach Club Mourão — vídeo promocional na Praia Fluvial de Mourão</h1>
         <div class="facts"><span>Vídeo promocional</span><span>Praia Fluvial de Mourão</span><span>2026</span><span>Cliente: Beach Club Mourão e Mourão Watersports</span></div>
@@ -385,6 +388,7 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
     <div class="wrap">
       <h2 class="h2" style="font-size:clamp(1.4rem,2.6vw,1.9rem)">Outros trabalhos</h2>
       <ul><li><a href="trabalho-passadico-da-luz.html">Passadiço da Luz<small>Reel de turismo · Mourão, Alqueva</small></a></li><li><a href="trabalho-alqueva-vibes.html">Alqueva Vibes<small>Vídeo de evento · Praia Fluvial de Mourão</small></a></li><li><a href="trabalho-festas-de-mourao-2026.html">Festas de Mourão 2026<small>Vídeo de evento · Mourão</small></a></li><li><a href="trabalho-sharish-gin-casa-cheia.html">Sharish Gin — Casa Cheia<small>Vídeo de evento · Monsaraz</small></a></li><li><a href="trabalho-natal-em-mourao.html">Natal em Mourão<small>Reel · Mourão</small></a></li></ul>
+      <p class="backrow end"><a class="btn btn-ghost back" href="index.html#trabalho">← Voltar</a></p>
     </div>
   </section>
 </main>
@@ -403,6 +407,10 @@ let c=null;try{c=localStorage.getItem("ev-consent")}catch(e){}
 if(c==="yes")embed();
 document.getElementById("show").addEventListener("click",()=>{try{localStorage.setItem("ev-consent","yes")}catch(e){}embed();});
 })();
+</script>
+<script>
+/* "Voltar" returns to the exact place the visitor came from on this site; otherwise goes to the fallback link */
+document.querySelectorAll(".back").forEach(function(b){b.addEventListener("click",function(e){try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});});
 </script>
 <script src="/stats.js"></script>
 </body>

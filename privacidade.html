@@ -395,7 +395,7 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
 </footer>
 <script>
 /* "Voltar" returns to the exact place the visitor came from, not to the top of the home page */
-document.querySelectorAll(".back").forEach(function(b){b.addEventListener("click",function(e){if(history.length>1){e.preventDefault();history.back();}});});
+document.querySelectorAll(".back").forEach(function(b){b.addEventListener("click",function(e){try{if(document.referrer&&new URL(document.referrer).host===location.host&&history.length>1){e.preventDefault();history.back();}}catch(x){}});});
 </script>
 <script src="/stats.js"></script>
 </body>
