@@ -300,7 +300,8 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 <main id="top">
   <section class="hero" aria-label="Eagleview">
     <div class="slides" id="slides" role="img" aria-label="Imagens aéreas da Eagleview"></div>
-    <video class="hv" id="hv" muted playsinline loop preload="none" poster="hero-poster2.webp" aria-hidden="true"></video>
+    <video class="hv" id="hv" muted playsinline preload="none" poster="hero-poster2.webp" aria-hidden="true"></video>
+    <video class="hv" id="hv2" muted playsinline preload="none" aria-hidden="true"></video>
     <div class="loc" aria-live="polite"><span id="locTxt">Alqueva</span><span class="dots" id="dots"></span></div>
     <div class="wrap">
       <h1 class="big"><span><i data-i="hero.l1">Vídeo</i></span><span><i data-i="hero.l2">Drone</i></span><span><i data-i="hero.l3">Redes</i></span></h1>
@@ -556,10 +557,20 @@ const sl=$("#slides"),dots=$("#dots");
 SLIDES.forEach(([src,,pos],i)=>{const d=document.createElement("div");d.className="slide";d.style.backgroundImage=`url("${src}")`;d.style.backgroundPosition=pos;sl.appendChild(d);dots.appendChild(document.createElement("b"));});
 let cur=-1;function show(i){const s=$$(".slide"),b=$$("#dots b");cur=i%s.length;s.forEach((e,j)=>e.classList.toggle("on",j===cur));b.forEach((e,j)=>e.classList.toggle("on",j===cur));$("#locTxt").textContent=SLIDES[cur][1];}
 show(0);let tick=reduce?null:setInterval(()=>show(cur+1),5500);
-(function(){const v=$("#hv"),c=navigator.connection;if(reduce||(c&&c.saveData)||!v.canPlayType("video/mp4"))return;
-  v.src=innerWidth<760?"hero-loop-m.mp4":"hero-loop.mp4";
-  v.addEventListener("playing",()=>{v.classList.add("on");$(".hero").classList.add("vid");clearInterval(tick);$("#locTxt").textContent="Aldeia da Luz · Alentejo";$("#dots").hidden=true;},{once:true});
-  const p=v.play();if(p&&p.catch)p.catch(()=>{});})();
+(function(){const c=navigator.connection,A=$("#hv"),B=$("#hv2");if(reduce||(c&&c.saveData)||!A.canPlayType("video/mp4"))return;
+  /* the hero cycles through three aerial clips: FPV over the Passadiço da Luz, balloons over the Alqueva at sunrise, Monsaraz at dusk */
+  const m=innerWidth<760,L=[["hero-loop","Aldeia da Luz · Alentejo"],["hero-baloes","Alqueva · Alentejo"],["hero-monsaraz","Monsaraz · Alentejo"]];
+  const src=i=>L[i][0]+(m?"-m":"")+".mp4";let i=0,cur=A,nxt=B,started=false;
+  const prep=(v,n)=>{v.src=src(n);v.preload="auto";v.load();};
+  const go=()=>{const n=(i+1)%L.length;const p=nxt.play();if(p&&p.catch)p.catch(()=>{});
+    nxt.classList.add("on");cur.classList.remove("on");$("#locTxt").textContent=L[n][1];
+    const old=cur;cur=nxt;nxt=old;i=n;setTimeout(()=>{old.pause();prep(old,(i+1)%L.length);},1100);};
+  A.src=src(0);
+  A.addEventListener("playing",()=>{if(started)return;started=true;A.classList.add("on");$(".hero").classList.add("vid");clearInterval(tick);$("#locTxt").textContent=L[0][1];$("#dots").hidden=true;prep(B,1);},{once:true});
+  [A,B].forEach(v=>{v.addEventListener("timeupdate",()=>{if(v===cur&&v.duration&&v.currentTime>v.duration-1.1&&!v._sw){v._sw=true;go();}});v.addEventListener("play",()=>{v._sw=false;});});
+  /* pause when the hero is off screen to save battery and data */
+  if("IntersectionObserver" in window)new IntersectionObserver(es=>es.forEach(e=>{if(!started)return;if(e.isIntersecting){const p=cur.play();if(p&&p.catch)p.catch(()=>{});}else cur.pause();})).observe($(".hero"));
+  const p=A.play();if(p&&p.catch)p.catch(()=>{});})();
 requestAnimationFrame(()=>setTimeout(()=>document.body.classList.add("ready"),120));
 
 /* marquee */
