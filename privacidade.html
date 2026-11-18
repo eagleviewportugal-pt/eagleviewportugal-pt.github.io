@@ -365,8 +365,8 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
 <main>
   <section class="legal">
     <div class="wrap">
+      <p style="margin:0 0 30px"><a class="btn btn-ghost back" href="index.html">← Voltar</a></p>
       <h1>Política de privacidade</h1>
-      <p>Esta página explica que dados pessoais este site recolhe, para quê e durante quanto tempo. Última atualização: novembro de 2026.</p>
       <h2>Quem é o responsável</h2>
       <p>Eagleview Productions é a marca com que Marco Fernandes exerce a sua atividade, com sede em Mourão, Portugal. Para qualquer questão sobre os seus dados, escreva para <a href="mailto:hello@eagleviewportugal.com">hello@eagleviewportugal.com</a>.</p>
       <h2>Formulário de contacto</h2>
@@ -381,7 +381,7 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
       </ul>
       <h2>Os seus direitos</h2>
       <p>Pode pedir para ver, corrigir ou apagar os seus dados, ou opor-se ao seu uso, escrevendo para <a href="mailto:hello@eagleviewportugal.com">hello@eagleviewportugal.com</a>. Se entender que os seus direitos não foram respeitados, pode apresentar queixa à Comissão Nacional de Proteção de Dados (<a href="https://www.cnpd.pt" target="_blank" rel="noopener">cnpd.pt</a>).</p>
-      <p style="margin-top:34px"><a class="btn btn-ghost" href="index.html">Voltar ao início</a></p>
+      <p style="margin-top:34px"><a class="btn btn-ghost back" href="index.html">← Voltar</a></p>
     </div>
   </section>
 </main>
@@ -392,5 +392,9 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
     <div class="fl"><a href="sites.html">Sites</a><a href="privacidade.html">Privacidade</a></div>
   </div>
 </footer>
+<script>
+/* "Voltar" returns to the exact place the visitor came from, not to the top of the home page */
+document.querySelectorAll(".back").forEach(function(b){b.addEventListener("click",function(e){if(history.length>1){e.preventDefault();history.back();}});});
+</script>
 </body>
 </html>
