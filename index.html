@@ -254,6 +254,23 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 .fnote{margin:0;color:var(--mute);font-size:.85rem}.fnote a{color:var(--paper)}
 @media (max-width:960px){.lang button{min-width:38px;min-height:38px}}
 @media (min-width:961px){.ck{left:auto;right:var(--gr);bottom:auto;top:calc(88px + env(safe-area-inset-top,0px))}}
+
+/* aerial interlude framed like a drone viewfinder */
+.vfb{position:relative;height:min(78vh,720px);min-height:420px;overflow:hidden;display:grid;align-items:center;isolation:isolate}
+.vfb-img{position:absolute;inset:-12% 0;background-size:cover;background-position:center;z-index:-2;will-change:transform}
+.vfb::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 90% at 50% 50%,rgba(11,12,13,.15),rgba(11,12,13,.75))}
+.vfb-frame{position:absolute;inset:clamp(18px,4vw,48px);pointer-events:none}
+.vfb-frame i{position:absolute;width:34px;height:34px;border:2px solid rgba(240,238,232,.85)}
+.vfb-frame i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0}.vfb-frame i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0}
+.vfb-frame i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0}.vfb-frame i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0}
+.osd{position:absolute;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,238,232,.88);font-variant-numeric:tabular-nums}
+.osd.tl{top:12px;left:48px;display:flex;align-items:center;gap:8px}.osd.tr{top:12px;right:48px}.osd.bl{bottom:12px;left:48px}.osd.br{bottom:12px;right:48px}
+.rec{width:9px;height:9px;border-radius:50%;background:#ff4b3e;animation:rec 1.6s steps(1) infinite}
+@keyframes rec{50%{opacity:0}}
+.vfb-in{display:grid;justify-items:center;text-align:center;gap:26px}
+.vfb-l{margin:0;font-weight:600;text-transform:uppercase;letter-spacing:-.015em;line-height:.95;font-size:clamp(2.2rem,6.5vw,5.6rem);max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+@media (max-width:600px){.osd.tr,.osd.br{display:none}.osd.tl,.osd.bl{left:42px}}
+@media (prefers-reduced-motion:reduce){.rec{animation:none}}
 </style>
 </head>
 <body>
@@ -337,7 +354,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
       <div class="head"><h2 class="h2 rv" data-i="tst.title">O que dizem</h2></div>
       <div class="tsts">
         <figure class="tst rv"><blockquote class="q" data-i="tst.1"></blockquote><figcaption class="by"><b>Cláudia Acabado</b><a href="https://www.instagram.com/xarezmonsaraz" target="_blank" rel="noopener">Xarez · Monsaraz</a></figcaption></figure>
-        <figure class="tst rv"><blockquote class="q" data-i="tst.2"></blockquote><figcaption class="by"><b>João</b><a href="https://www.instagram.com/sahida.monsaraz" target="_blank" rel="noopener">Sahida · Monsaraz</a></figcaption></figure>
+        <figure class="tst rv"><blockquote class="q" data-i="tst.2"></blockquote><figcaption class="by"><b>João Fazenda</b><a href="https://www.instagram.com/sahida.monsaraz" target="_blank" rel="noopener">Sahida · Monsaraz</a></figcaption></figure>
       </div>
     </div>
   </section>
@@ -353,6 +370,14 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
       <div class="rv"><h2 class="h2" data-i="ab.title" style="margin-bottom:30px">Sobre</h2><p data-i="ab.p1"></p><p data-i="ab.p2"></p><div class="bio"><h3 data-i="ab.bh"></h3><p data-i="ab.b1"></p><p data-i="ab.b2"></p></div></div>
       <figure class="me rv"><img src="marco.webp" width="880" height="1100" alt="Marco Fernandes, fundador da Eagleview" loading="lazy"></figure>
     </div>
+  </section>
+
+  <section class="vfb" aria-label="Monsaraz visto de drone">
+    <div class="vfb-img" style="background-image:url(monsaraz.webp)"></div>
+    <div class="vfb-frame" aria-hidden="true"><i></i><i></i><i></i><i></i>
+      <span class="osd tl"><b class="rec"></b>REC</span><span class="osd tr">4K · 25fps</span>
+      <span class="osd bl">Monsaraz · 38.44°N 7.38°W</span><span class="osd br">ALT 110 m</span></div>
+    <div class="wrap vfb-in"><p class="vfb-l" data-i="vf.l">O seu negócio, visto de cima.</p><a class="btn btn-acc" href="#contacto" data-i="vf.cta">Pedir proposta</a></div>
   </section>
 
   <section class="sec wrap" id="contacto" style="border-top:1px solid var(--line)">
@@ -401,6 +426,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 (function(){
 const T={
 pt:{
+ "vf.l":"O seu negócio, visto de cima.","vf.cta":"Pedir proposta",
  "t.title":"Eagleview Portugal · Produção de vídeo, drone e redes sociais","ct.tel":"Mostrar telefone","f.note":"Usamos os seus dados só para responder a este pedido.","f.priv":"Política de privacidade","ft.priv":"Privacidade",
  "nav.services":"Serviços","nav.work":"Trabalho","nav.about":"Sobre","nav.faq":"Perguntas","nav.contact":"Contacto","nav.cta":"Pedir proposta",
  "hero.l1":"Vídeo","hero.l2":"Drone","hero.l3":"Redes",
@@ -426,8 +452,8 @@ pt:{
  "ab.p1":"Somos uma agência criativa e de marketing digital, sediada em Mourão. Criamos conteúdo desde 2018 para hotéis, restaurantes, marcas, eventos e câmaras municipais.",
  "ab.p2":"Começámos pelo drone e hoje fazemos também vídeo em terra, Reels, redes sociais e sites. Vamos sempre ao local do cliente, no Alentejo e em todo o país.",
  "ab.bh":"Marco Fernandes, fundador",
- "ab.b1":"O Marco tem 20 anos de experiência a liderar equipas e operações de cliente para marcas como American Express, Air France, YouTube Premium e Amazon, entre Portugal, Inglaterra, México e Estados Unidos.",
- "ab.b2":"Em 2018 levou essa experiência para a imagem e criou a Eagleview. Junta o olhar criativo à disciplina de quem gere grandes operações: ouve o cliente, pensa a história e entrega no prazo.",
+ "ab.b1":"Filma desde 2018. Começou pelo drone e hoje grava também em terra, edita e trata das redes sociais dos clientes.",
+ "ab.b2":"Já fez vídeos para os municípios de Mourão e de Reguengos de Monsaraz, para eventos como as Festas de Mourão e o Starman Night Triathlon, e para hotéis, restaurantes e marcas do Alentejo. Antes disso passou 20 anos a gerir equipas e operações, e é daí que vem a forma de trabalhar: ouvir o cliente, pensar a história e entregar no prazo.",
  "ct.title":"Vamos falar","ct.lead":"Diga-nos o que precisa (vídeo, drone, redes sociais ou um site), para quando e onde. Normalmente respondemos no mesmo dia útil.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nome","f.svc":"Serviço","f.other":"Outro","f.msg":"Mensagem","f.ph":"O que precisa, datas e local.","f.send":"Enviar pedido",
@@ -437,6 +463,7 @@ pt:{
  "ft.rights":"Todos os direitos reservados","ft.top":"Voltar ao topo"
 },
 es:{
+ "vf.l":"Su negocio, visto desde arriba.","vf.cta":"Pedir presupuesto",
  "t.title":"Eagleview Portugal · Producción de vídeo, dron y redes sociales","ct.tel":"Mostrar teléfono","f.note":"Usamos sus datos solo para responder a esta solicitud.","f.priv":"Política de privacidad","ft.priv":"Privacidad",
  "nav.services":"Servicios","nav.work":"Trabajo","nav.about":"Nosotros","nav.faq":"Preguntas","nav.contact":"Contacto","nav.cta":"Pedir presupuesto",
  "hero.l1":"Vídeo","hero.l2":"Dron","hero.l3":"Redes",
@@ -462,8 +489,8 @@ es:{
  "ab.p1":"Somos una agencia creativa y de marketing digital con sede en Mourão, Portugal. Creamos contenido desde 2018 para hoteles, restaurantes, marcas, eventos y ayuntamientos.",
  "ab.p2":"Empezamos con el dron y hoy también hacemos vídeo en tierra, Reels, redes sociales y webs. Siempre vamos al lugar del cliente, en el Alentejo y en todo Portugal.",
  "ab.bh":"Marco Fernandes, fundador",
- "ab.b1":"Marco tiene 20 años de experiencia liderando equipos y operaciones de cliente para marcas como American Express, Air France, YouTube Premium y Amazon, entre Portugal, Inglaterra, México y Estados Unidos.",
- "ab.b2":"En 2018 llevó esa experiencia a la imagen y creó Eagleview. Une la mirada creativa a la disciplina de quien gestiona grandes operaciones: escucha al cliente, piensa la historia y entrega a tiempo.",
+ "ab.b1":"Graba desde 2018. Empezó con el dron y hoy también graba en tierra, edita y gestiona las redes sociales de sus clientes.",
+ "ab.b2":"Ha hecho vídeos para los ayuntamientos de Mourão y Reguengos de Monsaraz, para eventos como las Fiestas de Mourão y el Starman Night Triathlon, y para hoteles, restaurantes y marcas del Alentejo. Antes pasó 20 años gestionando equipos y operaciones, y de ahí viene su forma de trabajar: escuchar al cliente, pensar la historia y entregar a tiempo.",
  "ct.title":"Hablemos","ct.lead":"Cuéntenos qué necesita (vídeo, dron, redes sociales o una web), para cuándo y dónde. Normalmente respondemos el mismo día laborable.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nombre","f.svc":"Servicio","f.other":"Otro","f.msg":"Mensaje","f.ph":"Qué necesita, fechas y lugar.","f.send":"Enviar solicitud",
@@ -473,6 +500,7 @@ es:{
  "ft.rights":"Todos los derechos reservados","ft.top":"Volver arriba"
 },
 en:{
+ "vf.l":"Your business, seen from above.","vf.cta":"Get a quote",
  "t.title":"Eagleview Portugal · Video production, drone and social media","ct.tel":"Show phone number","f.note":"We only use your details to reply to this request.","f.priv":"Privacy policy","ft.priv":"Privacy",
  "nav.services":"Services","nav.work":"Work","nav.about":"About","nav.faq":"FAQ","nav.contact":"Contact","nav.cta":"Get a quote",
  "hero.l1":"Video","hero.l2":"Drone","hero.l3":"Social",
@@ -498,8 +526,8 @@ en:{
  "ab.p1":"We are a creative and digital marketing agency based in Mourão, Portugal. We have been making content since 2018 for hotels, restaurants, brands, events and local councils.",
  "ab.p2":"We started with drones and now also film on the ground, make Reels, manage social media and build websites. We always go to the client, in the Alentejo and anywhere in Portugal.",
  "ab.bh":"Marco Fernandes, founder",
- "ab.b1":"Marco has 20 years of experience leading customer teams and operations for brands such as American Express, Air France, YouTube Premium and Amazon, across Portugal, England, Mexico and the United States.",
- "ab.b2":"In 2018 he brought that experience to the image and founded Eagleview. He pairs a creative eye with the discipline of someone who runs large operations: he listens to the client, shapes the story and delivers on time.",
+ "ab.b1":"He has been filming since 2018. He started with drones and now also films on the ground, edits and runs his clients' social media.",
+ "ab.b2":"He has made videos for the Mourão and Reguengos de Monsaraz councils, for events such as the Festas de Mourão and the Starman Night Triathlon, and for hotels, restaurants and brands across the Alentejo. Before that he spent 20 years running teams and operations, which is where his way of working comes from: listen to the client, shape the story and deliver on time.",
  "ct.title":"Let's talk","ct.lead":"Tell us what you need (video, drone, social media or a website), when and where. We usually reply the same working day.",
  "ct.copy":"Copy","ct.copied":"Copied",
  "f.name":"Name","f.svc":"Service","f.other":"Other","f.msg":"Message","f.ph":"What you need, dates and location.","f.send":"Send request",
@@ -574,6 +602,12 @@ if("IntersectionObserver" in window&&!reduce){const io=new IntersectionObserver(
 /* copy email */
 $("#copyMail").addEventListener("click",async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText("hello@eagleviewportugal.com");b.textContent=t("ct.copied");setTimeout(()=>b.textContent=t("ct.copy"),1800);}catch(err){const r=document.createRange();r.selectNodeContents($("#mail"));const s=getSelection();s.removeAllRanges();s.addRange(r);}});
 
+
+
+/* slow parallax on the aerial interlude */
+(function(){const b=$(".vfb"),im=$(".vfb-img");if(!b||reduce)return;let on=false;
+  const f=()=>{const r=b.getBoundingClientRect(),p=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.transform=`translate3d(0,${(p*-60).toFixed(1)}px,0) scale(1.04)`;on=false;};
+  addEventListener("scroll",()=>{if(!on){on=true;requestAnimationFrame(f);}},{passive:true});f();})();
 
 /* phone is only written into the page on request, to keep it away from scrapers */
 $("#showTel").addEventListener("click",e=>{const n=["918","999","734"],el=$("#tel");el.innerHTML=`<a href="tel:+351${n.join("")}">${n.join(" ")}</a>`;el.hidden=false;e.currentTarget.remove();});
@@ -705,7 +739,7 @@ function render(){var d=F[L()];document.getElementById("faqTitle").textContent=d
  var tabs=document.getElementById("faqTabs");tabs.innerHTML="";
  d.cats.forEach(function(c,i){var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",String(i===cur));b.textContent=c[0];b.onclick=function(){cur=i;render()};tabs.appendChild(b)});
  var list=document.getElementById("faqList");list.innerHTML="";
- d.cats[cur][1].forEach(function(q,i){var det=document.createElement("details");if(i===0)det.open=true;var s=document.createElement("summary");s.textContent=q[0];var ic=document.createElement("i");s.appendChild(ic);var p=document.createElement("p");p.className="a";p.textContent=q[1];det.appendChild(s);det.appendChild(p);list.appendChild(det)})}
+ d.cats[cur][1].forEach(function(q,i){var det=document.createElement("details");var s=document.createElement("summary");s.textContent=q[0];var ic=document.createElement("i");s.appendChild(ic);var p=document.createElement("p");p.className="a";p.textContent=q[1];det.appendChild(s);det.appendChild(p);list.appendChild(det)})}
 new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});
 render();
 var ld={"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]};
