@@ -432,7 +432,7 @@ pt:{
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nome","f.svc":"Serviço","f.other":"Outro","f.msg":"Mensagem","f.ph":"O que precisa, datas e local.","f.send":"Enviar pedido",
  "f.err":"Preencha o nome, um email válido e a mensagem.","f.ok":"Obrigado. Recebemos o seu pedido e respondemos em breve.","f.sending":"A enviar…","f.fail":"Não foi possível enviar. Tente de novo ou escreva para hello@eagleviewportugal.com.",
- "ck.p":"Usamos apenas os cookies do Instagram, para mostrar os vídeos do nosso trabalho. Não usamos cookies de publicidade nem de estatísticas.","ck.yes":"Aceitar","ck.no":"Só os essenciais","ck.link":"Cookies",
+ "ck.p":"Usamos os cookies do Instagram, para mostrar os vídeos do nosso trabalho, e do Microsoft Clarity, para percebermos como o site é usado. Não usamos cookies de publicidade.","ck.yes":"Aceitar","ck.no":"Só os essenciais","ck.link":"Cookies",
  "ck.show":"Os vídeos vêm do Instagram e só aparecem se aceitar os cookies dele.","ck.showb":"Mostrar vídeos",
  "ft.rights":"Todos os direitos reservados","ft.top":"Voltar ao topo"
 },
@@ -468,7 +468,7 @@ es:{
  "ct.copy":"Copiar","ct.copied":"Copiado",
  "f.name":"Nombre","f.svc":"Servicio","f.other":"Otro","f.msg":"Mensaje","f.ph":"Qué necesita, fechas y lugar.","f.send":"Enviar solicitud",
  "f.err":"Indique su nombre, un email válido y el mensaje.","f.ok":"Gracias. Hemos recibido su solicitud y responderemos pronto.","f.sending":"Enviando…","f.fail":"No se pudo enviar. Inténtelo de nuevo o escriba a hello@eagleviewportugal.com.",
- "ck.p":"Solo usamos las cookies de Instagram, para mostrar los vídeos de nuestro trabajo. No usamos cookies de publicidad ni de estadísticas.","ck.yes":"Aceptar","ck.no":"Solo las esenciales","ck.link":"Cookies",
+ "ck.p":"Usamos las cookies de Instagram, para mostrar los vídeos de nuestro trabajo, y de Microsoft Clarity, para entender cómo se usa la web. No usamos cookies de publicidad.","ck.yes":"Aceptar","ck.no":"Solo las esenciales","ck.link":"Cookies",
  "ck.show":"Los vídeos vienen de Instagram y solo aparecen si acepta sus cookies.","ck.showb":"Mostrar vídeos",
  "ft.rights":"Todos los derechos reservados","ft.top":"Volver arriba"
 },
@@ -504,7 +504,7 @@ en:{
  "ct.copy":"Copy","ct.copied":"Copied",
  "f.name":"Name","f.svc":"Service","f.other":"Other","f.msg":"Message","f.ph":"What you need, dates and location.","f.send":"Send request",
  "f.err":"Please add your name, a valid email and a message.","f.ok":"Thank you. We've received your request and will reply soon.","f.sending":"Sending…","f.fail":"We couldn't send it. Please try again or write to hello@eagleviewportugal.com.",
- "ck.p":"We only use Instagram cookies, to show the videos of our work. We don't use advertising or analytics cookies.","ck.yes":"Accept","ck.no":"Essential only","ck.link":"Cookies",
+ "ck.p":"We use Instagram cookies, to show the videos of our work, and Microsoft Clarity cookies, to understand how the site is used. We don't use advertising cookies.","ck.yes":"Accept","ck.no":"Essential only","ck.link":"Cookies",
  "ck.show":"The videos come from Instagram and only appear if you accept its cookies.","ck.showb":"Show videos",
  "ft.rights":"All rights reserved","ft.top":"Back to top"
 }};
@@ -594,11 +594,14 @@ $("#form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTar
   const get=()=>{try{return localStorage.getItem("ev-consent")}catch(e){return null}},set=v=>{try{localStorage.setItem("ev-consent",v)}catch(e){}};
   const load=()=>{if(done)return;done=true;const sc=document.createElement("script");sc.async=true;sc.src="https://www.instagram.com/embed.js";document.body.appendChild(sc);};
   const arm=()=>{if(armed)return;armed=true;if("IntersectionObserver" in window){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();o.disconnect();}},{rootMargin:"800px 0px"});o.observe(pf);}else load();};
-  const yes=()=>{set("yes");ck.hidden=true;note.hidden=true;arm();};
-  $("#ckYes").addEventListener("click",yes);$("#ckShow").addEventListener("click",yes);
-  $("#ckNo").addEventListener("click",()=>{set("no");ck.hidden=true;note.hidden=false;});
+  const st=v=>{try{localStorage.setItem("ev-stats",v)}catch(e){}if(window.evStats)window.evStats(v==="yes");};
+  const stGet=()=>{try{return localStorage.getItem("ev-stats")}catch(e){return null}};
+  const ig=()=>{set("yes");note.hidden=true;arm();};
+  $("#ckYes").addEventListener("click",()=>{st("yes");ig();ck.hidden=true;});$("#ckShow").addEventListener("click",ig);
+  $("#ckNo").addEventListener("click",()=>{set("no");st("no");ck.hidden=true;note.hidden=false;});
   $("#ftCk").addEventListener("click",()=>{ck.hidden=false;});
-  const c=get();if(c==="yes")arm();else{note.hidden=false;if(c!=="no")setTimeout(()=>{ck.hidden=false;},1200);}})();
+  const c=get();if(c==="yes")arm();else note.hidden=false;
+  if(stGet()===null)setTimeout(()=>{ck.hidden=false;},1200);})();
 
 let s0="";try{s0=localStorage.getItem("ev-lang")||""}catch(e){}
 if(!s0){const n=(navigator.language||"pt").slice(0,2);s0=T[n]?n:"en";}
@@ -711,5 +714,6 @@ var s=document.createElement("script");s.type="application/ld+json";s.textConten
 })();
 </script>
 
+<script src="/stats.js"></script>
 </body>
 </html>

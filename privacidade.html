@@ -374,8 +374,9 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
       <p>O envio é feito através do serviço Web3Forms, que recebe a mensagem e a encaminha para o nosso email. Guardamos as mensagens enquanto durar o contacto e o trabalho que daí resultar. As que não derem origem a trabalho são apagadas ao fim de 12 meses.</p>
       <h2>Cookies e serviços externos</h2>
       <ul>
-        <li>O site não usa cookies de publicidade nem de estatísticas.</li>
+        <li>O site não usa cookies de publicidade.</li>
         <li>Guardamos no seu navegador apenas a língua escolhida e a sua resposta ao aviso de cookies.</li>
+        <li>Se aceitar os cookies, usamos o Microsoft Clarity para perceber como o site é usado: que páginas são vistas, até onde se faz scroll e onde se clica. O Clarity regista as visitas de forma anónima e esconde o que se escreve nos campos do formulário. Os dados são tratados pela Microsoft. Se recusar, o Clarity não é carregado.</li>
         <li>Os vídeos do portefólio vêm do Instagram. Só são carregados se aceitar, e nesse caso o Instagram (Meta) pode instalar os seus próprios cookies. Pode mudar de ideias em "Cookies", no rodapé da página inicial.</li>
         <li>O tipo de letra é servido pelo Google Fonts e o site está alojado no GitHub Pages. Ao abrir a página, estes serviços recebem o seu endereço IP, como acontece com qualquer site.</li>
       </ul>
@@ -396,5 +397,6 @@ footer .fl{display:flex;gap:18px;flex-wrap:wrap}footer .fl a{color:var(--mute);t
 /* "Voltar" returns to the exact place the visitor came from, not to the top of the home page */
 document.querySelectorAll(".back").forEach(function(b){b.addEventListener("click",function(e){if(history.length>1){e.preventDefault();history.back();}});});
 </script>
+<script src="/stats.js"></script>
 </body>
 </html>
