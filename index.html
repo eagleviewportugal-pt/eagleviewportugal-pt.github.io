@@ -295,6 +295,17 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
 .fv{width:min(1200px,100%);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
 .fv iframe{width:100%;height:100%;border:0;display:block}
 .fx{position:absolute;top:max(14px,env(safe-area-inset-top,0px));right:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(240,238,232,.3);background:rgba(11,12,13,.6);color:var(--paper);font-size:1.6rem;line-height:1;cursor:pointer}
+
+/* Presença Digital pop-up */
+.pdp{position:fixed;right:20px;bottom:20px;z-index:70;width:min(380px,calc(100vw - 32px));background:var(--card);border:1px solid rgba(255,204,51,.45);border-radius:20px;padding:22px 22px 20px;box-shadow:0 24px 60px rgba(0,0,0,.55);display:grid;gap:10px;transform:translateY(24px);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .4s}
+.pdp.on{transform:none;opacity:1}
+.pdp .lbl,.pdp h3{padding-right:34px}
+.pdp h3{margin:0;font-size:1.25rem;line-height:1.25;font-weight:600}
+.pdp p{margin:0;color:var(--mute);font-size:.95rem;line-height:1.5}
+.pdp .btn{justify-self:start;margin-top:6px}
+.pdx{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--paper);font-size:1.15rem;line-height:1;cursor:pointer}
+.pdx:hover{border-color:var(--paper)}
+@media (max-width:560px){.pdp{left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom,0px));width:auto}}
 </style>
 </head>
 <body>
@@ -454,10 +465,19 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
   <div class="r"><button class="btn btn-acc" type="button" id="ckYes" data-i="ck.yes">Aceitar</button><button class="btn btn-line" type="button" id="ckNo" data-i="ck.no">Só os essenciais</button></div>
 </div>
 
+<div class="pdp" id="pdp" hidden role="dialog" aria-labelledby="pdpT">
+  <button class="pdx" id="pdx" type="button" aria-label="Fechar">×</button>
+  <p class="lbl" data-i="pdp.k">Novo · Presença Digital</p>
+  <h3 id="pdpT" data-i="pdp.t">Site, Google e redes sociais por 149 € + IVA por mês</h3>
+  <p data-i="pdp.p">Para restaurantes e alojamento local. O site vem incluído, sem custo de entrada.</p>
+  <a class="btn btn-acc" href="presenca-digital.html" data-i="pdp.b">Ver como funciona</a>
+</div>
+
 <script>
 (function(){
 const T={
 pt:{
+ "pdp.k":"Novo · Presença Digital","pdp.t":"Site, Google e redes sociais por 149 € + IVA por mês","pdp.p":"Para restaurantes e alojamento local. O site vem incluído, sem custo de entrada.","pdp.b":"Ver como funciona",
  "fm.title":"Filmes","fm.lead":"Vídeos institucionais, promocionais e de eventos, no nosso canal de YouTube.","fm.note":"Os filmes abrem com o leitor do YouTube só quando carrega num deles.","fm.1":"Vídeo institucional","fm.2":"Documentário · trailer","fm.3":"Hotel · Maldivas","fm.4":"Promoção turística · Município","fm.5":"Anúncio de produto","fm.6":"Evento · Mourão","fm.7":"Drone · balões","fm.8":"Vídeo promocional","fm.9":"Evento · after movie",
  "vf.l":"O seu negócio, visto de cima.","vf.cta":"Pedir proposta",
  "t.title":"Eagleview Portugal · Produção de vídeo, drone e redes sociais","ct.tel":"Mostrar telefone","f.note":"Usamos os seus dados só para responder a este pedido.","f.priv":"Política de privacidade","ft.priv":"Privacidade",
@@ -496,6 +516,7 @@ pt:{
  "ft.rights":"Todos os direitos reservados","ft.top":"Voltar ao topo"
 },
 es:{
+ "pdp.k":"Nuevo · Presencia Digital","pdp.t":"Web, Google y redes sociales por 149 € + IVA al mes","pdp.p":"Para restaurantes y alojamientos turísticos. La web va incluida, sin coste de entrada.","pdp.b":"Ver cómo funciona",
  "fm.title":"Películas","fm.lead":"Vídeos institucionales, promocionales y de eventos, en nuestro canal de YouTube.","fm.note":"Las películas se abren con el reproductor de YouTube solo cuando hace clic en una.","fm.1":"Vídeo institucional","fm.2":"Documental · tráiler","fm.3":"Hotel · Maldivas","fm.4":"Promoción turística · Ayuntamiento","fm.5":"Anuncio de producto","fm.6":"Evento · Mourão","fm.7":"Dron · globos","fm.8":"Vídeo promocional","fm.9":"Evento · after movie",
  "vf.l":"Su negocio, visto desde arriba.","vf.cta":"Pedir presupuesto",
  "t.title":"Eagleview Portugal · Producción de vídeo, dron y redes sociales","ct.tel":"Mostrar teléfono","f.note":"Usamos sus datos solo para responder a esta solicitud.","f.priv":"Política de privacidad","ft.priv":"Privacidad",
@@ -534,6 +555,7 @@ es:{
  "ft.rights":"Todos los derechos reservados","ft.top":"Volver arriba"
 },
 en:{
+ "pdp.k":"New · Online Presence","pdp.t":"Website, Google and social media for €149 + VAT a month","pdp.p":"For restaurants and holiday rentals. The website is included, with no setup fee.","pdp.b":"See how it works",
  "fm.title":"Films","fm.lead":"Institutional, promotional and event films, on our YouTube channel.","fm.note":"Films open in the YouTube player only when you click one.","fm.1":"Institutional film","fm.2":"Documentary · trailer","fm.3":"Hotel · Maldives","fm.4":"Tourism promotion · Council","fm.5":"Product commercial","fm.6":"Event · Mourão","fm.7":"Drone · balloons","fm.8":"Promotional film","fm.9":"Event · after movie",
  "vf.l":"Your business, seen from above.","vf.cta":"Get a quote",
  "t.title":"Eagleview Portugal · Video production, drone and social media","ct.tel":"Show phone number","f.note":"We only use your details to reply to this request.","f.priv":"Privacy policy","ft.priv":"Privacy",
@@ -807,5 +829,17 @@ var s=document.createElement("script");s.type="application/ld+json";s.textConten
 </script>
 
 <script src="/stats.js"></script>
+<script>
+/* Presença Digital pop-up: shows once after the visitor has scrolled a good part of the page (or after 25 s); closing hides it for 7 days */
+(function(){var b=document.getElementById("pdp");if(!b)return;var K="ev-pdp",W=7*864e5,shown=false;
+ try{var v=+localStorage.getItem(K);if(v&&Date.now()-v<W)return;}catch(e){}
+ function show(){if(shown)return;shown=true;b.hidden=false;requestAnimationFrame(function(){b.classList.add("on")});removeEventListener("scroll",onS);}
+ function close(){b.classList.remove("on");setTimeout(function(){b.hidden=true},400);try{localStorage.setItem(K,String(Date.now()))}catch(e){}}
+ function onS(){var h=document.documentElement;if((scrollY+innerHeight)/h.scrollHeight>.45)show();}
+ addEventListener("scroll",onS,{passive:true});setTimeout(show,25000);
+ document.getElementById("pdx").addEventListener("click",close);
+ b.querySelector("a").addEventListener("click",function(){try{localStorage.setItem(K,String(Date.now()))}catch(e){}});
+})();
+</script>
 </body>
 </html>
