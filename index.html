@@ -438,7 +438,7 @@ footer{border-top:1px solid var(--line);padding-top:clamp(50px,7vw,90px);overflo
           <label for="f-email"><span>Email</span><input id="f-email" name="email" type="email" autocomplete="email" required></label>
         </div>
         <label for="f-svc"><span data-i="f.svc">Serviço</span>
-          <select id="f-svc" name="service"><option data-i="svc.1t"></option><option data-i="svc.2t"></option><option data-i="svc.3t"></option><option data-i="svc.4t"></option><option data-i="svc.5t"></option><option data-i="f.other"></option></select>
+          <select id="f-svc" name="service"><option data-i="svc.1t"></option><option data-i="svc.2t"></option><option data-i="svc.3t"></option><option data-i="svc.4t"></option><option data-i="svc.5t"></option><option data-i="f.pd"></option><option data-i="f.other"></option></select>
         </label>
         <label for="f-msg"><span data-i="f.msg">Mensagem</span><textarea id="f-msg" name="message" required data-ph="f.ph"></textarea></label>
         <input type="checkbox" name="botcheck" id="f-bot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
@@ -509,7 +509,7 @@ pt:{
  "ab.b2":"Já fez vídeos para os municípios de Mourão e de Reguengos de Monsaraz, para eventos como as Festas de Mourão e o Starman Night Triathlon, e para hotéis, restaurantes e marcas do Alentejo. Antes disso passou 20 anos a gerir equipas e operações, e é daí que vem a forma de trabalhar: ouvir o cliente, pensar a história e entregar no prazo.",
  "ct.title":"Vamos falar","ct.lead":"Diga-nos o que precisa (vídeo, drone, redes sociais ou um site), para quando e onde. Normalmente respondemos no mesmo dia útil.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
- "f.name":"Nome","f.svc":"Serviço","f.other":"Outro","f.msg":"Mensagem","f.ph":"O que precisa, datas e local.","f.send":"Enviar pedido",
+ "f.name":"Nome","f.svc":"Serviço","f.pd":"Presença digital","f.other":"Outro","f.msg":"Mensagem","f.ph":"O que precisa, datas e local.","f.send":"Enviar pedido",
  "f.err":"Preencha o nome, um email válido e a mensagem.","f.ok":"Obrigado. Recebemos o seu pedido e respondemos em breve.","f.sending":"A enviar…","f.fail":"Não foi possível enviar. Tente de novo ou escreva para hello@eagleviewportugal.com.",
  "ck.p":"Usamos os cookies do Instagram, para mostrar os vídeos do nosso trabalho, e do Microsoft Clarity, para percebermos como o site é usado. Não usamos cookies de publicidade.","ck.yes":"Aceitar","ck.no":"Só os essenciais","ck.link":"Cookies",
  "ck.show":"Os vídeos vêm do Instagram e só aparecem se aceitar os cookies dele.","ck.showb":"Mostrar vídeos",
@@ -548,7 +548,7 @@ es:{
  "ab.b2":"Ha hecho vídeos para los ayuntamientos de Mourão y Reguengos de Monsaraz, para eventos como las Fiestas de Mourão y el Starman Night Triathlon, y para hoteles, restaurantes y marcas del Alentejo. Antes pasó 20 años gestionando equipos y operaciones, y de ahí viene su forma de trabajar: escuchar al cliente, pensar la historia y entregar a tiempo.",
  "ct.title":"Hablemos","ct.lead":"Cuéntenos qué necesita (vídeo, dron, redes sociales o una web), para cuándo y dónde. Normalmente respondemos el mismo día laborable.",
  "ct.copy":"Copiar","ct.copied":"Copiado",
- "f.name":"Nombre","f.svc":"Servicio","f.other":"Otro","f.msg":"Mensaje","f.ph":"Qué necesita, fechas y lugar.","f.send":"Enviar solicitud",
+ "f.name":"Nombre","f.svc":"Servicio","f.pd":"Presencia digital","f.other":"Otro","f.msg":"Mensaje","f.ph":"Qué necesita, fechas y lugar.","f.send":"Enviar solicitud",
  "f.err":"Indique su nombre, un email válido y el mensaje.","f.ok":"Gracias. Hemos recibido su solicitud y responderemos pronto.","f.sending":"Enviando…","f.fail":"No se pudo enviar. Inténtelo de nuevo o escriba a hello@eagleviewportugal.com.",
  "ck.p":"Usamos las cookies de Instagram, para mostrar los vídeos de nuestro trabajo, y de Microsoft Clarity, para entender cómo se usa la web. No usamos cookies de publicidad.","ck.yes":"Aceptar","ck.no":"Solo las esenciales","ck.link":"Cookies",
  "ck.show":"Los vídeos vienen de Instagram y solo aparecen si acepta sus cookies.","ck.showb":"Mostrar vídeos",
@@ -587,7 +587,7 @@ en:{
  "ab.b2":"He has made videos for the Mourão and Reguengos de Monsaraz councils, for events such as the Festas de Mourão and the Starman Night Triathlon, and for hotels, restaurants and brands across the Alentejo. Before that he spent 20 years running teams and operations, which is where his way of working comes from: listen to the client, shape the story and deliver on time.",
  "ct.title":"Let's talk","ct.lead":"Tell us what you need (video, drone, social media or a website), when and where. We usually reply the same working day.",
  "ct.copy":"Copy","ct.copied":"Copied",
- "f.name":"Name","f.svc":"Service","f.other":"Other","f.msg":"Message","f.ph":"What you need, dates and location.","f.send":"Send request",
+ "f.name":"Name","f.svc":"Service","f.pd":"Online presence","f.other":"Other","f.msg":"Message","f.ph":"What you need, dates and location.","f.send":"Send request",
  "f.err":"Please add your name, a valid email and a message.","f.ok":"Thank you. We've received your request and will reply soon.","f.sending":"Sending…","f.fail":"We couldn't send it. Please try again or write to hello@eagleviewportugal.com.",
  "ck.p":"We use Instagram cookies, to show the videos of our work, and Microsoft Clarity cookies, to understand how the site is used. We don't use advertising cookies.","ck.yes":"Accept","ck.no":"Essential only","ck.link":"Cookies",
  "ck.show":"The videos come from Instagram and only appear if you accept its cookies.","ck.showb":"Show videos",
@@ -689,6 +689,7 @@ $("#copyMail").addEventListener("click",async e=>{const b=e.currentTarget;try{aw
 $("#showTel").addEventListener("click",e=>{const n=["918","999","734"],el=$("#tel");el.innerHTML=`<a href="tel:+351${n.join("")}">${n.join(" ")}</a>`;el.hidden=false;e.currentTarget.remove();});
 /* service rows open the form with that service already chosen */
 $$(".svc a[data-svc]").forEach(a=>a.addEventListener("click",()=>{$("#f-svc").selectedIndex=+a.dataset.svc;}));
+(function(){try{if(new URLSearchParams(location.search).get("servico")==="presenca-digital"){const sel=$("#f-svc"),o=sel.querySelector('option[data-i="f.pd"]');if(o)o.selected=true;}}catch(e){}})();
 
 /* form → Web3Forms */
 $("#form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTarget,st=$("#status");
@@ -717,7 +718,7 @@ $("#form").addEventListener("submit",e=>{e.preventDefault();const f=e.currentTar
 let s0="";try{s0=localStorage.getItem("ev-lang")||""}catch(e){}
 if(PAGE==="pt"&&!/bot|crawl|spider|lighthouse|google|bing/i.test(navigator.userAgent)&&!navigator.webdriver){
   if(!s0){const n=(navigator.language||"pt").slice(0,2);s0=T[n]?n:"en";try{localStorage.setItem("ev-lang",s0)}catch(e){}}
-  if(s0!=="pt"&&URLS[s0]){location.replace(URLS[s0]+location.hash);}
+  if(s0!=="pt"&&URLS[s0]){location.replace(URLS[s0]+location.search+location.hash);}
 }
 applyLang(PAGE);
 })();
